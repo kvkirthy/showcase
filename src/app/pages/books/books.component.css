@@ -1,5 +1,13 @@
+mat-card{
+  width: 310px;
+}
+
 mat-card-content{
   height: 45px;
+}
+
+mat-card-actions{
+  text-align: center;
 }
 
 button{
@@ -8,16 +16,6 @@ button{
 
 .small-text{
   font-size: 10pt;
-}
-
-.example-card {
-  max-width: 280px;
-  text-align: center;
-}
-  
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
 }
 
 .book-content {
