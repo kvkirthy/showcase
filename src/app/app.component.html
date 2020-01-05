@@ -1,16 +1,10 @@
 <div class="fixed-header">
     <sc-toolbar></sc-toolbar>
-</div>
-<div>
     <nav mat-tab-nav-bar>
-        <a mat-tab-link 
-        *ngFor="let page of pages" 
-        [routerLink]="page.path" 
-        routerLinkActive 
-        #rla="routerLinkActive"
-        [active]="rla.isActive">{{page.label}} </a>
+        <a mat-tab-link *ngFor="let page of pages" [routerLink]="page.path" routerLinkActive #rla="routerLinkActive"
+            [active]="rla.isActive">{{page.label}} </a>
     </nav>
-    <div class="root-node">
-        <router-outlet></router-outlet>
-    </div>
+</div>
+<div class="root-node">
+    <router-outlet></router-outlet>
 </div>
