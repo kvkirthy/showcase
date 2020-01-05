@@ -5,8 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ScToolbarComponent } from './components/sc-toolbar/sc-toolbar.component';
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -28,7 +33,10 @@ import { OpinionComponent } from './pages/opinion/opinion.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
