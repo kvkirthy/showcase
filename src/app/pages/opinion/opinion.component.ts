@@ -10,6 +10,7 @@ export class OpinionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    twttr.widgets.load();
   }
 
 }
