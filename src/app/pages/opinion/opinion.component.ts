@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpinionComponent implements OnInit {
 
+  twttr = window['twttr'] || {};
+
   constructor() { }
 
   ngOnInit() {
-    twttr.widgets.load();
+    this.twttr && this.twttr.widgets.load();
   }
 
 }
