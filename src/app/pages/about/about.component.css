@@ -4,6 +4,7 @@ div{
   
   mat-card{
     width: 100%;
+    border-radius: 10px;
   }
 
 .img-logo{
@@ -17,4 +18,8 @@ div{
 
 a{
   color: black;
+}
+
+mat-grid-tile{
+  border-radius: 5px;
 }

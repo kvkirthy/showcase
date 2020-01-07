@@ -11,6 +11,7 @@ export class AboutComponent implements OnInit {
   color2 = "#F4EAE8";
   color3 = "lightpink";
   color4 = "lightgreen";
+  color5 = "#FEBDB0"
 
   constructor() { }
 
