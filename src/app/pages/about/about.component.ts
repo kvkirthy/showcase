@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  color1 = "skyblue";
+  color2 = "#F4EAE8";
+  color3 = "lightpink";
+  color4 = "lightgreen";
+
   constructor() { }
 
   ngOnInit() {

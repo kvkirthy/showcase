@@ -1,5 +1,7 @@
-.twitter-content {
-    margin: inherit;
-    width: 650px;
-    padding: 10px;
-  }
+div{
+  margin: 20px 1px 1px 15px;
+}
+
+mat-card{
+  width: 280px;
+}

@@ -1,0 +1,20 @@
+div{
+    margin: 30px 1px 1px 15px;
+  }
+  
+  mat-card{
+    width: 100%;
+  }
+
+.img-logo{
+  width: 40px;
+}
+
+.link{
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+a{
+  color: black;
+}
