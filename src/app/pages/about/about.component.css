@@ -23,3 +23,12 @@ a{
 mat-grid-tile{
   border-radius: 5px;
 }
+
+span{
+  margin: 15px;
+  font-family: "Book Antiqua"
+}
+
+i{
+  font-size: 24pt
+}

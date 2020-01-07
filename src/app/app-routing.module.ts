@@ -7,12 +7,7 @@ import { BooksComponent } from './pages/books/books.component';
 import { OpinionComponent } from './pages/opinion/opinion.component';
 
 
-export const pages= [
-  {
-    path: 'home',
-    component: HomeComponent,
-    label: "Home"
-  },  
+export const pages= [  
   {
     path: 'opinion',
     component: OpinionComponent,
@@ -33,7 +28,7 @@ export const pages= [
 const routes: Routes = [ ...pages,
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '/opinion',
     pathMatch: 'full'
   },
   {
