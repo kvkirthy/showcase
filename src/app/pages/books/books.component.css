@@ -1,5 +1,5 @@
 mat-card{
-  width: 310px;
+  width: 308px;
 }
 
 mat-card-content{
@@ -20,11 +20,28 @@ button{
 
 .book-content {
   margin: auto;
-  width: 86%;
   padding: 10px;
 }
 
 .book-image {
   height: 440px;
   width: auto;
+}
+
+.row{
+  margin-top: 10px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.book-description{
+  padding: 10px;
+  font-size: 11pt;
+  text-align: justify;
+}
+
+.strong{
+  font-weight: bold;
 }
