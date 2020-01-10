@@ -1,5 +1,10 @@
-mat-card{
-  width: 308px;
+.col-6 mat-card{
+  width: 309px;
+}
+
+.col-md-6 mat-card{
+  width: 200px;
+  margin-top: 10px;
 }
 
 mat-card-content{
@@ -18,14 +23,24 @@ button{
   font-size: 10pt;
 }
 
-.book-content {
+.d-xl-block .book-content {
   margin: auto;
+  width:90%;
   padding: 10px;
 }
 
-.book-image {
+.col-6 .book-image {
   height: 440px;
   width: auto;
+}
+
+.col-md-6 .book-image {
+  height: 287px;
+  width: auto;
+}
+
+.d-xl-none .book-content {
+  margin: 5px;
 }
 
 .row{
