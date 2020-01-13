@@ -794,18 +794,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./pages/books/books.component */
     "./src/app/pages/books/books.component.ts");
-    /* harmony import */
-
-
-    var _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
-    /*! ./pages/opinion/opinion.component */
-    "./src/app/pages/opinion/opinion.component.ts");
 
     var pages = [{
-      path: 'opinion',
-      component: _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_6__["OpinionComponent"],
-      label: "Opinion"
-    }, {
       path: 'books',
       component: _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__["BooksComponent"],
       label: "Books"
@@ -816,7 +806,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }];
     var routes = [].concat(pages, [{
       path: '',
-      redirectTo: '/opinion',
+      redirectTo: '/about',
       pathMatch: 'full'
     }, {
       path: '**',

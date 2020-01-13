@@ -360,8 +360,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_error_error_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/error/error.component */ "./src/app/pages/error/error.component.ts");
 /* harmony import */ var _pages_about_about_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/about/about.component */ "./src/app/pages/about/about.component.ts");
 /* harmony import */ var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/books/books.component */ "./src/app/pages/books/books.component.ts");
-/* harmony import */ var _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/opinion/opinion.component */ "./src/app/pages/opinion/opinion.component.ts");
-
 
 
 
@@ -369,11 +367,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const pages = [
-    {
-        path: 'opinion',
-        component: _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_6__["OpinionComponent"],
-        label: "Opinion"
-    },
     {
         path: 'books',
         component: _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__["BooksComponent"],
@@ -388,7 +381,7 @@ const pages = [
 const routes = [...pages,
     {
         path: '',
-        redirectTo: '/opinion',
+        redirectTo: '/about',
         pathMatch: 'full'
     },
     {

@@ -9,11 +9,6 @@ import { OpinionComponent } from './pages/opinion/opinion.component';
 
 export const pages= [  
   {
-    path: 'opinion',
-    component: OpinionComponent,
-    label: "Opinion"
-  },
-  {
     path: 'books',
     component: BooksComponent,
     label: "Books"
@@ -28,7 +23,7 @@ export const pages= [
 const routes: Routes = [ ...pages,
   {
     path: '',
-    redirectTo: '/opinion',
+    redirectTo: '/about',
     pathMatch: 'full'
   },
   {
