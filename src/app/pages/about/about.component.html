@@ -11,49 +11,48 @@
         </mat-card>
     </div>
     <div class="col-md-7">
-        <mat-grid-list cols="3" rowHeight="200px">
-            <mat-grid-tile colspan="2" [style.background]="color5">
-                <span>
-                    <i>I've</i> been in software development for over 17 years. 
-                    I'm a three-time Microsoft MVP and the author of a two books, and several technology articles from Dot Net Curry and DNC magazine. 
-                    I hold a master's degree in software systems from the University of St. Thomas, Minneapolis and St. Paul, USA.    
-                </span>
-                </mat-grid-tile>
-            <a href="https://www.linkedin.com/in/keertikotaru/" target="__blank">
-                <mat-grid-tile [style.background]="color1">
-                    <img src="assets/Linkedin.png" class="img-logo" alt="LinkedIn logo">
-                    <div class="link">
-                        View LinkedIn Profile
-                    </div>
-                </mat-grid-tile>
-            </a>
-            <a href="https://twitter.com/keertikotaru" target="__blank">
-                <mat-grid-tile [style.background]="color2">
-                    <img src="assets/twitter.png" class="img-logo" alt="LinkedIn logo">
-                    <div class="link">
-                        Follow on Twitter
-                    </div>
-                </mat-grid-tile>
-            </a>
-            <a href="https://github.com/kvkirthy/" target="__blank">
-
-                <mat-grid-tile [style.background]="color3">
-                    <img src="assets/github.png" class="img-logo" alt="LinkedIn logo">
-                    <div class="link">
-                        Github Profile
-                    </div>
-                </mat-grid-tile>
-            </a>
-            <a href="https://stackoverflow.com/users/2955455/vencki" target="__blank">
-                <mat-grid-tile [style.background]="color4">
-                    <img src="assets/stackoverflow.png" class="img-logo" alt="LinkedIn logo">
-                    <div class="link">
-                        Stackoverflow Profile
-                    </div>
-                </mat-grid-tile>
-            </a>
-
-        </mat-grid-list>
+        <div class="d-none d-md-block">
+            <mat-grid-list cols="3" rowHeight="200px">
+                <mat-grid-tile colspan="2" [style.background]="color5">
+                    <span [innerHtml]="introParagraph"></span>
+                    </mat-grid-tile>
+                <a href="https://www.linkedin.com/in/keertikotaru/" target="__blank">
+                    <mat-grid-tile [style.background]="color1">
+                        <img src="assets/Linkedin.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            View LinkedIn Profile
+                        </div>
+                    </mat-grid-tile>
+                </a>
+                <a href="https://twitter.com/keertikotaru" target="__blank">
+                    <mat-grid-tile [style.background]="color2">
+                        <img src="assets/twitter.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            Follow on Twitter
+                        </div>
+                    </mat-grid-tile>
+                </a>
+                <a href="https://github.com/kvkirthy/" target="__blank">
+    
+                    <mat-grid-tile [style.background]="color3">
+                        <img src="assets/github.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            Github Profile
+                        </div>
+                    </mat-grid-tile>
+                </a>
+                <a href="https://stackoverflow.com/users/2955455/vencki" target="__blank">
+                    <mat-grid-tile [style.background]="color4">
+                        <img src="assets/stackoverflow.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            Stackoverflow Profile
+                        </div>
+                    </mat-grid-tile>
+                </a>
+    
+            </mat-grid-list>
+        </div>
+      
     </div>
     <!-- <div class="col-md-4">
         <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="keertikotaru"><a class="LI-simple-link" href='https://www.linkedin.com/in/keertikotaru?trk=profile-badge'>V Keerti Kotaru</a></div>

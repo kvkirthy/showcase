@@ -29,8 +29,7 @@
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": [
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -127,5 +126,8 @@
       }
     }
   },
-  "defaultProject": "showcase"
+  "defaultProject": "showcase",
+  "cli": {
+    "analytics": "313f6450-0fd0-4287-8a79-47d9e81c5e0d"
+  }
 }
