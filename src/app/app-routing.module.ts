@@ -10,7 +10,7 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 
 export const pages= [  
   {
-    path: 'Blog',
+    path: 'blog',
     component: BlogsComponent,
     label: "Blog"
   },
@@ -29,7 +29,7 @@ export const pages= [
 const routes: Routes = [ ...pages,
   {
     path: '',
-    redirectTo: '/about',
+    redirectTo: '/blog',
     pathMatch: 'full'
   },
   {

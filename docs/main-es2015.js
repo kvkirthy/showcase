@@ -396,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const pages = [
     {
-        path: 'Blog',
+        path: 'blog',
         component: _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_6__["BlogsComponent"],
         label: "Blog"
     },
@@ -414,7 +414,7 @@ const pages = [
 const routes = [...pages,
     {
         path: '',
-        redirectTo: '/about',
+        redirectTo: '/blog',
         pathMatch: 'full'
     },
     {

@@ -842,7 +842,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./src/app/pages/blogs/blogs.component.ts");
 
     var pages = [{
-      path: 'Blog',
+      path: 'blog',
       component: _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_6__["BlogsComponent"],
       label: "Blog"
     }, {
@@ -856,7 +856,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }];
     var routes = [].concat(pages, [{
       path: '',
-      redirectTo: '/about',
+      redirectTo: '/blog',
       pathMatch: 'full'
     }, {
       path: '**',
