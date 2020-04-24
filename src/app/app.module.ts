@@ -12,12 +12,15 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list'
+import { MatListModule } from '@angular/material/list';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { OpinionComponent } from './pages/opinion/opinion.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
+import { StoryCardComponent } from './components/story-card/story-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { OpinionComponent } from './pages/opinion/opinion.component';
     ErrorComponent,
     AboutComponent,
     BooksComponent,
-    OpinionComponent
+    OpinionComponent,
+    BlogsComponent,
+    StoryCardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,8 @@ import { OpinionComponent } from './pages/opinion/opinion.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

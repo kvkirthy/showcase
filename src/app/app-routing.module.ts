@@ -5,9 +5,15 @@ import { ErrorComponent } from './pages/error/error.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { OpinionComponent } from './pages/opinion/opinion.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
 
 
 export const pages= [  
+  {
+    path: 'Blog',
+    component: BlogsComponent,
+    label: "Blog"
+  },
   {
     path: 'books',
     component: BooksComponent,
