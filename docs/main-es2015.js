@@ -49,6 +49,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<a (click)=\"onCardClick()\">\n    <ng-container *ngIf=\"!xsMode\">\n        <div class=\"row\">\n            <div class=\"col-sm-4\">\n                <img class=\"regular\" [src]=\"imageUrl\">\n            </div>\n            <div class=\"col-sm-8 content\">\n                <div>\n                    <strong>{{title}}</strong>\n                </div>\n                <div>\n                    {{description}}\n                </div>\n    \n            </div>\n        </div>\n    </ng-container>\n\n    <ng-container  *ngIf=\"xsMode\">\n        <div class=\"row\">\n            <div class=\"col-xs-2\">\n                <img class=\"xs\" [src]=\"imageUrl\">\n            </div>\n            <div class=\"col-xs-8 content\">\n                <strong>{{title}}</strong>\n            </div>\n        </div>\n        <div class=\"row\">\n                {{description}}\n        </div>\n    </ng-container>\n</a>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html":
 /*!****************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html ***!
@@ -58,7 +71,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n\r\n    <div class=\"col-md-3\">\r\n        <mat-card>\r\n            <img mat-card-image src=\"assets/profile-pic.jpg\" class=\"book-image\" alt=\"profile picture\">\r\n\r\n            <mat-card-header>\r\n                <mat-card-title>Venkata Keerti Kotaru</mat-card-title>\r\n                <mat-card-subtitle>Author, Three time Microsoft MVP and a blogger</mat-card-subtitle>\r\n            </mat-card-header>\r\n        </mat-card>\r\n    </div>\r\n    <div class=\"col-md-7\">\r\n        <mat-grid-list cols=\"3\" rowHeight=\"200px\">\r\n            <mat-grid-tile colspan=\"2\" [style.background]=\"color5\">\r\n                <span>\r\n                    <i>I've</i> been in software development for over 17 years. \r\n                    I'm a three-time Microsoft MVP and the author of a two books, and several technology articles from Dot Net Curry and DNC magazine. \r\n                    I hold a master's degree in software systems from the University of St. Thomas, Minneapolis and St. Paul, USA.    \r\n                </span>\r\n                </mat-grid-tile>\r\n            <a href=\"https://www.linkedin.com/in/keertikotaru/\" target=\"__blank\">\r\n                <mat-grid-tile [style.background]=\"color1\">\r\n                    <img src=\"assets/Linkedin.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                    <div class=\"link\">\r\n                        View LinkedIn Profile\r\n                    </div>\r\n                </mat-grid-tile>\r\n            </a>\r\n            <a href=\"https://twitter.com/keertikotaru\" target=\"__blank\">\r\n                <mat-grid-tile [style.background]=\"color2\">\r\n                    <img src=\"assets/twitter.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                    <div class=\"link\">\r\n                        Follow on Twitter\r\n                    </div>\r\n                </mat-grid-tile>\r\n            </a>\r\n            <a href=\"https://github.com/kvkirthy/\" target=\"__blank\">\r\n\r\n                <mat-grid-tile [style.background]=\"color3\">\r\n                    <img src=\"assets/github.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                    <div class=\"link\">\r\n                        Github Profile\r\n                    </div>\r\n                </mat-grid-tile>\r\n            </a>\r\n            <a href=\"https://stackoverflow.com/users/2955455/vencki\" target=\"__blank\">\r\n                <mat-grid-tile [style.background]=\"color4\">\r\n                    <img src=\"assets/stackoverflow.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                    <div class=\"link\">\r\n                        Stackoverflow Profile\r\n                    </div>\r\n                </mat-grid-tile>\r\n            </a>\r\n\r\n        </mat-grid-list>\r\n    </div>\r\n    <!-- <div class=\"col-md-4\">\r\n        <div class=\"LI-profile-badge\"  data-version=\"v1\" data-size=\"large\" data-locale=\"en_US\" data-type=\"vertical\" data-theme=\"dark\" data-vanity=\"keertikotaru\"><a class=\"LI-simple-link\" href='https://www.linkedin.com/in/keertikotaru?trk=profile-badge'>V Keerti Kotaru</a></div>\r\n        <div> <a href=\"https://twitter.com/keertikotaru?ref_src=twsrc%5Etfw\" class=\"twitter-follow-button\" data-size=\"large\" data-show-count=\"true\">Follow @keertikotaru</a></div>\r\n    </div> -->\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"row\">\r\n\r\n    <div class=\"col-md-5 col-lg-3\">\r\n        <mat-card>\r\n            <img mat-card-image src=\"assets/profile-pic.jpg\" class=\"book-image\" alt=\"profile picture\">\r\n\r\n            <mat-card-header>\r\n                <mat-card-title>Venkata Keerti Kotaru</mat-card-title>\r\n                <mat-card-subtitle>Author, Three time Microsoft MVP and a blogger</mat-card-subtitle>\r\n            </mat-card-header>\r\n        </mat-card>\r\n    </div>\r\n    <div class=\"col-md-6\">\r\n        <p class=\"d-none d-lg-block\">\r\n            <mat-grid-list cols=\"3\" rowHeight=\"220px\">\r\n                <mat-grid-tile colspan=\"2\" [style.background]=\"color5\">\r\n                    <span [innerHtml]=\"introParagraph\"></span>\r\n                </mat-grid-tile>\r\n                <a href=\"https://www.linkedin.com/in/keertikotaru/\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color1\">\r\n                        <img src=\"assets/Linkedin.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            View LinkedIn Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://twitter.com/keertikotaru\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color2\">\r\n                        <img src=\"assets/twitter.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Follow on Twitter\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://github.com/kvkirthy/\" target=\"__blank\">\r\n\r\n                    <mat-grid-tile [style.background]=\"color3\">\r\n                        <img src=\"assets/github.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Github Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://stackoverflow.com/users/2955455/vencki\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color4\">\r\n                        <img src=\"assets/stackoverflow.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Stackoverflow Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n\r\n            </mat-grid-list>\r\n        </p>\r\n        <p class=\"d-lg-none d-sm-block\">\r\n            <mat-grid-list cols=\"1\" rowHeight=\"240px\" class=\"single-item\">\r\n                <mat-grid-tile [style.background]=\"color5\">\r\n                    <span [innerHtml]=\"introParagraph\"></span>\r\n                </mat-grid-tile>\r\n            </mat-grid-list>\r\n            <mat-grid-list cols=\"1\" rowHeight=\"120px\" gutterSize=\"5px\">\r\n                <a href=\"https://www.linkedin.com/in/keertikotaru/\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color1\">\r\n                        <img src=\"assets/Linkedin.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            View LinkedIn Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://twitter.com/keertikotaru\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color2\">\r\n                        <img src=\"assets/twitter.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Follow on Twitter\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://github.com/kvkirthy/\" target=\"__blank\">\r\n\r\n                    <mat-grid-tile [style.background]=\"color3\">\r\n                        <img src=\"assets/github.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Github Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n                <a href=\"https://stackoverflow.com/users/2955455/vencki\" target=\"__blank\">\r\n                    <mat-grid-tile [style.background]=\"color4\">\r\n                        <img src=\"assets/stackoverflow.png\" class=\"img-logo\" alt=\"LinkedIn logo\">\r\n                        <div class=\"link\">\r\n                            Stackoverflow Profile\r\n                        </div>\r\n                    </mat-grid-tile>\r\n                </a>\r\n\r\n            </mat-grid-list>\r\n        </p>\r\n    </div>\r\n    <!-- <div class=\"col-md-4\">\r\n        <div class=\"LI-profile-badge\"  data-version=\"v1\" data-size=\"large\" data-locale=\"en_US\" data-type=\"vertical\" data-theme=\"dark\" data-vanity=\"keertikotaru\"><a class=\"LI-simple-link\" href='https://www.linkedin.com/in/keertikotaru?trk=profile-badge'>V Keerti Kotaru</a></div>\r\n        <div> <a href=\"https://twitter.com/keertikotaru?ref_src=twsrc%5Etfw\" class=\"twitter-follow-button\" data-size=\"large\" data-show-count=\"true\">Follow @keertikotaru</a></div>\r\n    </div> -->\r\n</div>\r\n<div class=\"d-none d-xs-block\">\r\n    small\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/blogs/blogs.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/blogs/blogs.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"d-none d-lg-block\">\n    <div class=\"row\">\n        <div class=\"col-md-3\" *ngIf=\"highlightedBlog\">\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\" class=\"book-image\" alt=\"profile picture\">\n\n                <mat-card-header>\n                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color=\"accent\">fiber_new</mat-icon>\n                    </mat-card-title>\n                    <mat-card-subtitle>{{highlightedBlog.description}}</mat-card-subtitle>\n                </mat-card-header>\n            </mat-card>\n        </div>\n\n        <div class=\"col-md-4\">\n            <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\n                <app-story-card *ngIf=\"i%2 === 0\" [title]=\"blog.title\" [description]=\"blog.description\"\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card>\n            </ng-container>\n\n            <!-- <mat-list>\n            <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\" >\n                <mat-list-item *ngIf=\"i%2 === 0\">\n                    <img mat-list-icon  [src]=\"blog.imageUrl\" alt=\"\" />\n                    <div mat-line>{{blog.title}}</div>\n                    <div matLine>{{blog.description}}</div>\n                </mat-list-item>\n            </ng-container>\n        </mat-list> -->\n        </div>\n        <div class=\"col-md-4\">\n\n            <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\n                <app-story-card *ngIf=\"i%2 === 1\" [title]=\"blog.title\" [description]=\"blog.description\"\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card>\n            </ng-container>\n        </div>\n\n    </div>\n</div>\n<div class=\"d-xs-block d-lg-none\">\n    <div class=\"row\">\n        <div class=\"col-sm-10\" *ngIf=\"highlightedBlog\">\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\" class=\"book-image\" alt=\"profile picture\">\n\n                <mat-card-header>\n                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color=\"accent\">fiber_new</mat-icon>\n                    </mat-card-title>\n                    <mat-card-subtitle>{{highlightedBlog.description}}</mat-card-subtitle>\n                </mat-card-header>\n            </mat-card>\n        </div>\n    </div>\n    <div class=\"row\">\n        <div class=\"col-md-10\">\n            <ng-container *ngFor=\"let blog of blogList$ | async;\">\n                <app-story-card xsMode=\"true\" [title]=\"blog.title\" [description]=\"blog.description\"\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card>\n            </ng-container>\n        </div>\n\n    </div>\n</div>");
 
 /***/ }),
 
@@ -360,6 +386,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_error_error_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/error/error.component */ "./src/app/pages/error/error.component.ts");
 /* harmony import */ var _pages_about_about_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/about/about.component */ "./src/app/pages/about/about.component.ts");
 /* harmony import */ var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/books/books.component */ "./src/app/pages/books/books.component.ts");
+/* harmony import */ var _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/blogs/blogs.component */ "./src/app/pages/blogs/blogs.component.ts");
+
 
 
 
@@ -367,6 +395,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const pages = [
+    {
+        path: 'Blog',
+        component: _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_6__["BlogsComponent"],
+        label: "Blog"
+    },
     {
         path: 'books',
         component: _pages_books_books_component__WEBPACK_IMPORTED_MODULE_5__["BooksComponent"],
@@ -471,11 +504,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm2015/button.js");
 /* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm2015/icon.js");
 /* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm2015/grid-list.js");
-/* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
-/* harmony import */ var _pages_error_error_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/error/error.component */ "./src/app/pages/error/error.component.ts");
-/* harmony import */ var _pages_about_about_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/about/about.component */ "./src/app/pages/about/about.component.ts");
-/* harmony import */ var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/books/books.component */ "./src/app/pages/books/books.component.ts");
-/* harmony import */ var _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/opinion/opinion.component */ "./src/app/pages/opinion/opinion.component.ts");
+/* harmony import */ var _angular_material_list__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/list */ "./node_modules/@angular/material/esm2015/list.js");
+/* harmony import */ var _pages_home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/home/home.component */ "./src/app/pages/home/home.component.ts");
+/* harmony import */ var _pages_error_error_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/error/error.component */ "./src/app/pages/error/error.component.ts");
+/* harmony import */ var _pages_about_about_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/about/about.component */ "./src/app/pages/about/about.component.ts");
+/* harmony import */ var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/books/books.component */ "./src/app/pages/books/books.component.ts");
+/* harmony import */ var _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./pages/opinion/opinion.component */ "./src/app/pages/opinion/opinion.component.ts");
+/* harmony import */ var _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/blogs/blogs.component */ "./src/app/pages/blogs/blogs.component.ts");
+/* harmony import */ var _components_story_card_story_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/story-card/story-card.component */ "./src/app/components/story-card/story-card.component.ts");
+
+
+
 
 
 
@@ -501,11 +540,13 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         declarations: [
             _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
             _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_6__["ScToolbarComponent"],
-            _pages_home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
-            _pages_error_error_component__WEBPACK_IMPORTED_MODULE_14__["ErrorComponent"],
-            _pages_about_about_component__WEBPACK_IMPORTED_MODULE_15__["AboutComponent"],
-            _pages_books_books_component__WEBPACK_IMPORTED_MODULE_16__["BooksComponent"],
-            _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_17__["OpinionComponent"]
+            _pages_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"],
+            _pages_error_error_component__WEBPACK_IMPORTED_MODULE_15__["ErrorComponent"],
+            _pages_about_about_component__WEBPACK_IMPORTED_MODULE_16__["AboutComponent"],
+            _pages_books_books_component__WEBPACK_IMPORTED_MODULE_17__["BooksComponent"],
+            _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_18__["OpinionComponent"],
+            _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_19__["BlogsComponent"],
+            _components_story_card_story_card_component__WEBPACK_IMPORTED_MODULE_20__["StoryCardComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -516,7 +557,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"],
             _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"],
             _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"],
-            _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_12__["MatGridListModule"]
+            _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_12__["MatGridListModule"],
+            _angular_material_list__WEBPACK_IMPORTED_MODULE_13__["MatListModule"]
         ],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -571,6 +613,70 @@ ScToolbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/components/story-card/story-card.component.css":
+/*!****************************************************************!*\
+  !*** ./src/app/components/story-card/story-card.component.css ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("img.regular{\r\n    max-height: 100px;\r\n    max-width: 100px;\r\n}\r\n\r\nimg.xs{\r\n    max-height: 35px;\r\n    max-width: 35px;\r\n}\r\n\r\n.row {\r\n    margin-top: 15px;\r\n\r\n}\r\n\r\n.col-sm-4 {\r\n    text-align: right;\r\n}\r\n\r\n.col-xs-4 {\r\n    text-align: left;\r\n}\r\n\r\n.col-xs-8 {\r\n    text-align: right;\r\n    padding-left: 20px\r\n}\r\n\r\ndiv {\r\n    font-size: 10pt;\r\n}\r\n\r\n.content{\r\n    padding-top: 5px;\r\n}\r\n\r\na{\r\n    cursor:pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zdG9yeS1jYXJkL3N0b3J5LWNhcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGdCQUFnQjs7QUFFcEI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakI7QUFDSjs7QUFFQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zdG9yeS1jYXJkL3N0b3J5LWNhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImltZy5yZWd1bGFye1xyXG4gICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDEwMHB4O1xyXG59XHJcblxyXG5pbWcueHN7XHJcbiAgICBtYXgtaGVpZ2h0OiAzNXB4O1xyXG4gICAgbWF4LXdpZHRoOiAzNXB4O1xyXG59XHJcblxyXG4ucm93IHtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcblxyXG59XHJcblxyXG4uY29sLXNtLTQge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuXHJcbi5jb2wteHMtNCB7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG59XHJcblxyXG4uY29sLXhzLTgge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHhcclxufVxyXG5cclxuZGl2IHtcclxuICAgIGZvbnQtc2l6ZTogMTBwdDtcclxufVxyXG5cclxuLmNvbnRlbnR7XHJcbiAgICBwYWRkaW5nLXRvcDogNXB4O1xyXG59XHJcblxyXG5he1xyXG4gICAgY3Vyc29yOnBvaW50ZXI7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/story-card/story-card.component.ts":
+/*!***************************************************************!*\
+  !*** ./src/app/components/story-card/story-card.component.ts ***!
+  \***************************************************************/
+/*! exports provided: StoryCardComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoryCardComponent", function() { return StoryCardComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let StoryCardComponent = class StoryCardComponent {
+    constructor() {
+        this.xsMode = false;
+    }
+    ngOnInit() {
+    }
+    onCardClick() {
+        window.open(this.linkUrl, "__blog");
+    }
+};
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], StoryCardComponent.prototype, "title", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], StoryCardComponent.prototype, "description", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], StoryCardComponent.prototype, "imageUrl", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], StoryCardComponent.prototype, "linkUrl", void 0);
+tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], StoryCardComponent.prototype, "xsMode", void 0);
+StoryCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-story-card',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./story-card.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./story-card.component.css */ "./src/app/components/story-card/story-card.component.css")).default]
+    })
+], StoryCardComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/about/about.component.css":
 /*!*************************************************!*\
   !*** ./src/app/pages/about/about.component.css ***!
@@ -580,7 +686,7 @@ ScToolbarComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("div{\r\n    margin: 30px 1px 1px 15px;\r\n  }\r\n  \r\n  mat-card{\r\n    width: 100%;\r\n    border-radius: 10px;\r\n  }\r\n  \r\n  .img-logo{\r\n  width: 40px;\r\n}\r\n  \r\n  .link{\r\n  font-size: 10pt;\r\n  font-weight: bold;\r\n}\r\n  \r\n  a{\r\n  color: black;\r\n}\r\n  \r\n  mat-grid-tile{\r\n  border-radius: 5px;\r\n}\r\n  \r\n  span{\r\n  margin: 15px;\r\n  font-family: \"Book Antiqua\"\r\n}\r\n  \r\n  i{\r\n  font-size: 24pt\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWJvdXQvYWJvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtFQUMzQjs7RUFFQTtJQUNFLFdBQVc7SUFDWCxtQkFBbUI7RUFDckI7O0VBRUY7RUFDRSxXQUFXO0FBQ2I7O0VBRUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0FBQ25COztFQUVBO0VBQ0UsWUFBWTtBQUNkOztFQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztFQUVBO0VBQ0UsWUFBWTtFQUNaO0FBQ0Y7O0VBRUE7RUFDRTtBQUNGIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYWJvdXQvYWJvdXQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdntcclxuICAgIG1hcmdpbjogMzBweCAxcHggMXB4IDE1cHg7XHJcbiAgfVxyXG4gIFxyXG4gIG1hdC1jYXJke1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIH1cclxuXHJcbi5pbWctbG9nb3tcclxuICB3aWR0aDogNDBweDtcclxufVxyXG5cclxuLmxpbmt7XHJcbiAgZm9udC1zaXplOiAxMHB0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG5he1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxubWF0LWdyaWQtdGlsZXtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuXHJcbnNwYW57XHJcbiAgbWFyZ2luOiAxNXB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIkJvb2sgQW50aXF1YVwiXHJcbn1cclxuXHJcbml7XHJcbiAgZm9udC1zaXplOiAyNHB0XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("div{\r\n    margin: 30px 1px 1px 15px;\r\n  }\r\n  \r\n  mat-card{\r\n    width: 100%;\r\n    border-radius: 10px;\r\n  }\r\n  \r\n  .img-logo{\r\n  width: 40px;\r\n}\r\n  \r\n  .link{\r\n  font-size: 10pt;\r\n  font-weight: bold;\r\n}\r\n  \r\n  a{\r\n  color: black;\r\n}\r\n  \r\n  mat-grid-tile{\r\n  border-radius: 5px;\r\n}\r\n  \r\n  span{\r\n  margin: 15px;\r\n  font-family: \"Book Antiqua\"\r\n}\r\n  \r\n  i{\r\n  font-size: 24pt\r\n}\r\n  \r\n  mat-grid-list.single-item{\r\n  margin-bottom: 15px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWJvdXQvYWJvdXQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtFQUMzQjs7RUFFQTtJQUNFLFdBQVc7SUFDWCxtQkFBbUI7RUFDckI7O0VBRUY7RUFDRSxXQUFXO0FBQ2I7O0VBRUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0FBQ25COztFQUVBO0VBQ0UsWUFBWTtBQUNkOztFQUVBO0VBQ0Usa0JBQWtCO0FBQ3BCOztFQUVBO0VBQ0UsWUFBWTtFQUNaO0FBQ0Y7O0VBRUE7RUFDRTtBQUNGOztFQUVBO0VBQ0UsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYWJvdXQvYWJvdXQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdntcclxuICAgIG1hcmdpbjogMzBweCAxcHggMXB4IDE1cHg7XHJcbiAgfVxyXG4gIFxyXG4gIG1hdC1jYXJke1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIH1cclxuXHJcbi5pbWctbG9nb3tcclxuICB3aWR0aDogNDBweDtcclxufVxyXG5cclxuLmxpbmt7XHJcbiAgZm9udC1zaXplOiAxMHB0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG5he1xyXG4gIGNvbG9yOiBibGFjaztcclxufVxyXG5cclxubWF0LWdyaWQtdGlsZXtcclxuICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbn1cclxuXHJcbnNwYW57XHJcbiAgbWFyZ2luOiAxNXB4O1xyXG4gIGZvbnQtZmFtaWx5OiBcIkJvb2sgQW50aXF1YVwiXHJcbn1cclxuXHJcbml7XHJcbiAgZm9udC1zaXplOiAyNHB0XHJcbn1cclxuXHJcbm1hdC1ncmlkLWxpc3Quc2luZ2xlLWl0ZW17XHJcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -605,6 +711,9 @@ let AboutComponent = class AboutComponent {
         this.color3 = "lightpink";
         this.color4 = "lightgreen";
         this.color5 = "#FEBDB0";
+        this.introParagraph = "<i>I've</i> been in software development for over 17 years." +
+            "<br />I'm a three-time Microsoft MVP and the author of a two books, and several technology articles from Dot Net Curry and DNC magazine." +
+            "I hold a master's degree in software systems from the University of St. Thomas, Minneapolis and St. Paul, USA.";
     }
     ngOnInit() {
     }
@@ -616,6 +725,147 @@ AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./about.component.css */ "./src/app/pages/about/about.component.css")).default]
     })
 ], AboutComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/blogs/blogs.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/pages/blogs/blogs.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("div{\r\n    margin: 30px 1px 1px 15px;\r\n  }\r\n  \r\n  mat-card{\r\n    width: 100%;\r\n    border-radius: 10px;\r\n  }\r\n  \r\n  .img-logo{\r\n  width: 40px;\r\n}\r\n  \r\n  .link{\r\n  font-size: 10pt;\r\n  font-weight: bold;\r\n}\r\n  \r\n  a{\r\n  color: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHlCQUF5QjtFQUMzQjs7RUFFQTtJQUNFLFdBQVc7SUFDWCxtQkFBbUI7RUFDckI7O0VBRUY7RUFDRSxXQUFXO0FBQ2I7O0VBRUE7RUFDRSxlQUFlO0VBQ2YsaUJBQWlCO0FBQ25COztFQUVBO0VBQ0UsWUFBWTtBQUNkIiwiZmlsZSI6InNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImRpdntcclxuICAgIG1hcmdpbjogMzBweCAxcHggMXB4IDE1cHg7XHJcbiAgfVxyXG4gIFxyXG4gIG1hdC1jYXJke1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xyXG4gIH1cclxuXHJcbi5pbWctbG9nb3tcclxuICB3aWR0aDogNDBweDtcclxufVxyXG5cclxuLmxpbmt7XHJcbiAgZm9udC1zaXplOiAxMHB0O1xyXG4gIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59XHJcblxyXG5he1xyXG4gIGNvbG9yOiBibGFjaztcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/pages/blogs/blogs.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/pages/blogs/blogs.component.ts ***!
+  \************************************************/
+/*! exports provided: BlogsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BlogsComponent", function() { return BlogsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+
+
+
+let mockBlogResponse = [
+    {
+        title: "Memoization",
+        description: "This article describes memoization in JavaScript. We begin with basics. The article elaborates memoization technique with a simple example.",
+        imageUrl: "https://miro.medium.com/max/1000/1*sqvl0IJngpf5k6UHtNKDYg.jpeg",
+        linkToBlog: "https://medium.com/@kvkirthy/memoization-51d35ac2a3cf",
+        isHighlighted: true
+    },
+    {
+        title: "Building Single Page Applications (SPA) with Angular Router",
+        description: "Routing is an important aspect of building a SPA (Single Page Application). In this two-part Basic to Advanced tutorial on Angular Routing, we will discuss all the important components required to implement routing in your applications",
+        imageUrl: "https://angular.io/assets/images/logos/angular/angular.png",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1467",
+        isHighlighted: false
+    },
+    {
+        title: "Angular Evolution - Version 1.x to 6",
+        description: "This Angular tutorial summarizes the evolution process of the Angular.js framework. It attempts to look back at the original context of Angular application development and how it has progressed. It covers Angular 1.x, v2, v4, v5 and Angular version 6",
+        imageUrl: "https://www.dotnetcurry.com/images/angular/versions/angular-evolution.jpg",
+        linkToBlog: "https://www.dotnetcurry.com/angularjs/1453/angular-evolution-versions-1-to-6",
+        isHighlighted: false
+    }, {
+        title: "Angular HttpClient Deep Dive (Headers, HTTP events, non-JSON data and Interceptors)",
+        description: "Explore advanced scenarios with the HTTP Client in Angular. In this tutorial, we add headers and parameters to the request, access the response object, work with the HTTPEvent, and look at Interceptors in Angular.",
+        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/http.png",
+        linkToBlog: "https://www.dotnetcurry.com/angularjs/1448/angular-http-client-interceptors-headers-event",
+        isHighlighted: false
+    }, {
+        title: "Getting Started with HTTP Client in Angular (GET, POST, PUT, DELETE methods)",
+        description: "Learn the basics of making HTTP calls over GET/POST/PUT/DELETE methods in an Angular application. Also explore error handling scenarios and solutions for separating presentation logic from service API integration details.",
+        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/http.png",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1438",
+        isHighlighted: false
+    }, {
+        title: "ES8 (or ES2017) – What’s New in JavaScript?",
+        description: "ES8 or ES2017 is the eighth version of the JavaScript language specification created to offer new features and ways of working with JavaScript. This article talks about the new features in ES8/ES 2017.",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1405",
+        isHighlighted: false
+    }, {
+        title: "Angular 4 Development Cheat Sheet",
+        description: "This Angular cheat sheet is a quick reference to get you going with Angular development. It uses Angular v4 with TypeScript.",
+        imageUrl: "https://angular.io/assets/images/logos/angular/angular_solidBlack.png",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1385",
+        isHighlighted: false
+    }, {
+        title: "Angular 4 application development with Bootstrap 4 and TypeScript",
+        description: "In this tutorial, we will explore how to develop an Angular 4 application using TypeScript. We will also explore Angular 4 New Features, Angular CLI, as well as differences between Angular v2 vs 4 application development.",
+        imageUrl: "https://pluspng.com/img-png/bootstrap-logo-vector-png-bootstrap-logo-512.jpg",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1366",
+        isHighlighted: false
+    }, {
+        title: "Ionic 2 Tutorial - Building a hybrid mobile app using Angular",
+        description: "The Ionic framework is one of the most popular hybrid mobile application frameworks. This tutorial focuses on building a simple hybrid app using Ionic 2, Angular 2 and TypeScript.",
+        imageUrl: "https://media-exp1.licdn.com/dms/image/C510BAQHe0GgjFhdIBQ/company-logo_200_200/0?e=2159024400&v=beta&t=7jQ06NmrITyrCAlQsbpeQwXlwXiUV-Nqtw1m9UQd3Ho",
+        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1355",
+        isHighlighted: false
+    }, {
+        title: "Angular V4 (or) call it just Angular",
+        description: "This blog is a high level gist of Angular 4 features. For detailed explanation refer to my article in DNC magazine. Article is titled \"Angular 4 application development with Bootstrap 4 and TypeScript\". Follow this link to download the magazine for free.",
+        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/animations.png",
+        linkToBlog: "http://venckicode.blogspot.com/",
+        isHighlighted: false
+    }, {
+        title: "CSS and styling options in ReactJS",
+        description: "ReactJS provides multiple options for styling components. We might use traditional approach to have a style-sheet in the project; Then apply CSS classes for elements in the component. Or we might pick a contentious approach to code styles within the component.",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+        linkToBlog: "http://venckicode.blogspot.com/2017/01/css-and-styling-options-in-reactjs.html",
+        isHighlighted: false
+    }, {
+        title: "Using Flow types with React components",
+        description: "Continuing series on Flow, in this blog I'm writing about Flow with React. It details advantages of using Flow while building React components.",
+        imageUrl: "https://pbs.twimg.com/profile_images/889697663087542272/7mfszmjJ_400x400.jpg",
+        linkToBlog: "http://venckicode.blogspot.com/2016/12/getting-started-with-react-component.html",
+        isHighlighted: false
+    }, {
+        title: "Working with Flow on Visual Studio Code",
+        description: "Blog describes what I believe is an optimal development setup with Flow. It details using Visual Studio Code IDE with Flow.",
+        imageUrl: "https://seeklogo.com/images/V/visual-studio-code-logo-284BC24C39-seeklogo.com.png",
+        linkToBlog: "http://venckicode.blogspot.com/2016/12/optimizing-flow-using-it-with-vs-code.html",
+        isHighlighted: false
+    }, {
+        title: "Getting started with AngularFire 2",
+        description: "The blog describes using AngularFire2, Angular 2 and TypeScript API for Firebase. It is a beginner guide with a sample for retrieval and update to Firebase database.",
+        linkToBlog: "http://venckicode.blogspot.com/2016/10/getting-started-with-angularfire-2_65.html",
+        imageUrl: "https://img.icons8.com/color/480/firebase.png",
+        isHighlighted: false
+    }
+];
+let BlogsComponent = class BlogsComponent {
+    constructor() { }
+    ngOnInit() {
+        let allBlogs = mockBlogResponse;
+        this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
+        this.blogList$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(allBlogs.filter(i => !i.isHighlighted));
+    }
+    cardClickHandler(linkToBlog) {
+        window.open(linkToBlog, "__blog");
+    }
+};
+BlogsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-blogs',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./blogs.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/blogs/blogs.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./blogs.component.css */ "./src/app/pages/blogs/blogs.component.css")).default]
+    })
+], BlogsComponent);
 
 
 
