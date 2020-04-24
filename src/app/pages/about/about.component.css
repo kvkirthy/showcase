@@ -32,3 +32,7 @@ span{
 i{
   font-size: 24pt
 }
+
+mat-grid-list.single-item{
+  margin-bottom: 15px;
+}
