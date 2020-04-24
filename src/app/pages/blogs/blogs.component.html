@@ -1,24 +1,24 @@
-<div class="row">
+<div class="d-none d-lg-block">
+    <div class="row">
+        <div class="col-md-3" *ngIf="highlightedBlog">
+            <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
+                <img mat-card-image [src]="highlightedBlog.imageUrl" class="book-image" alt="profile picture">
 
-    <div class="col-md-3" *ngIf="highlightedBlog">
-        <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-            <img mat-card-image [src]="highlightedBlog.imageUrl" class="book-image" alt="profile picture">
+                <mat-card-header>
+                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color="accent">fiber_new</mat-icon>
+                    </mat-card-title>
+                    <mat-card-subtitle>{{highlightedBlog.description}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
 
-            <mat-card-header>
-                <mat-card-title>{{highlightedBlog.title}} <mat-icon color="accent">fiber_new</mat-icon>
-                </mat-card-title>
-                <mat-card-subtitle>{{highlightedBlog.description}}</mat-card-subtitle>
-            </mat-card-header>
-        </mat-card>
-    </div>
+        <div class="col-md-4">
+            <ng-container *ngFor="let blog of blogList$ | async; let i=index">
+                <app-story-card *ngIf="i%2 === 0" [title]="blog.title" [description]="blog.description"
+                    [imageUrl]="blog.imageUrl" [linkUrl]="blog.linkToBlog"></app-story-card>
+            </ng-container>
 
-    <div class="col-md-4">
-        <ng-container *ngFor="let blog of blogList$ | async; let i=index">
-            <app-story-card *ngIf="i%2 === 0" [title]="blog.title" [description]="blog.description"
-                [imageUrl]="blog.imageUrl" [linkUrl]="blog.linkToBlog"></app-story-card>
-        </ng-container>
-
-        <!-- <mat-list>
+            <!-- <mat-list>
             <ng-container *ngFor="let blog of blogList$ | async; let i=index" >
                 <mat-list-item *ngIf="i%2 === 0">
                     <img mat-list-icon  [src]="blog.imageUrl" alt="" />
@@ -27,13 +27,38 @@
                 </mat-list-item>
             </ng-container>
         </mat-list> -->
-    </div>
-    <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
 
-    <ng-container *ngFor="let blog of blogList$ | async; let i=index">
-        <app-story-card *ngIf="i%2 === 1" [title]="blog.title" [description]="blog.description"
-            [imageUrl]="blog.imageUrl" [linkUrl]="blog.linkToBlog"></app-story-card>
-    </ng-container>
-    </div>
+            <ng-container *ngFor="let blog of blogList$ | async; let i=index">
+                <app-story-card *ngIf="i%2 === 1" [title]="blog.title" [description]="blog.description"
+                    [imageUrl]="blog.imageUrl" [linkUrl]="blog.linkToBlog"></app-story-card>
+            </ng-container>
+        </div>
 
+    </div>
+</div>
+<div class="d-xs-block d-lg-none">
+    <div class="row">
+        <div class="col-sm-10" *ngIf="highlightedBlog">
+            <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
+                <img mat-card-image [src]="highlightedBlog.imageUrl" class="book-image" alt="profile picture">
+
+                <mat-card-header>
+                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color="accent">fiber_new</mat-icon>
+                    </mat-card-title>
+                    <mat-card-subtitle>{{highlightedBlog.description}}</mat-card-subtitle>
+                </mat-card-header>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <ng-container *ngFor="let blog of blogList$ | async;">
+                <app-story-card xsMode="true" [title]="blog.title" [description]="blog.description"
+                    [imageUrl]="blog.imageUrl" [linkUrl]="blog.linkToBlog"></app-story-card>
+            </ng-container>
+        </div>
+
+    </div>
 </div>

@@ -1,11 +1,29 @@
-img{
-    max-height: 120px;
-    max-width: 120px;
+img.regular{
+    max-height: 100px;
+    max-width: 100px;
+}
+
+img.xs{
+    max-height: 35px;
+    max-width: 35px;
 }
 
 .row {
     margin-top: 15px;
 
+}
+
+.col-sm-4 {
+    text-align: right;
+}
+
+.col-xs-4 {
+    text-align: left;
+}
+
+.col-xs-8 {
+    text-align: right;
+    padding-left: 20px
 }
 
 div {

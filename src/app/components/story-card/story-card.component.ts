@@ -11,6 +11,7 @@ export class StoryCardComponent implements OnInit {
   @Input() description: string;
   @Input() imageUrl: string;
   @Input() linkUrl: string;
+  @Input() xsMode: boolean = false;
 
   constructor() { }
 
