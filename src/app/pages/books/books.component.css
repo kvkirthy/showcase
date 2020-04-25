@@ -6,9 +6,8 @@
   width: 200px;
   margin-top: 10px;
 }
-
-mat-card-content{
-  height: 45px;
+mat-card{
+  margin-top: 10px;
 }
 
 mat-card-actions{
@@ -17,16 +16,6 @@ mat-card-actions{
 
 button{
   padding: 2px;
-}
-
-.small-text{
-  font-size: 10pt;
-}
-
-.d-xl-block .book-content {
-  margin: auto;
-  width:90%;
-  padding: 10px;
 }
 
 .col-6 .book-image {
@@ -39,24 +28,9 @@ button{
   width: auto;
 }
 
-.d-xl-none .book-content {
-  margin: 35px;
-}
-
 .row{
   margin-top: 10px;
-}
-
-.flex-container{
-  display: flex;
-}
-
-.book-description{
-  padding: 10px;
-  font-size: 10pt;
-  text-align: justify;
-}
-
-.strong{
-  font-weight: bold;
+  margin-left: 1px;
+  padding-top: 10px;
+  width: 100%;
 }
