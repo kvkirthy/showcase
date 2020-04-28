@@ -1426,11 +1426,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     "./node_modules/rxjs/_esm2015/index.js");
 
     var mockBlogResponse = [{
-      title: "Memoization",
+      title: "Memoization with Selectors in NgRx",
+      description: "The prior article on Memoization in JavaScript discusses caching results of a long running JavaScript function. Majority of the functions that run in a browser finish fairly quickly, return in milliseconds. That begs the question, what are the real-world use cases for memoization in JavaScript? This article describes one such use case.",
+      imageUrl: "https://miro.medium.com/max/1400/1*jX76ElYc3BXOUhvVqPQa_g.jpeg",
+      linkToBlog: "https://medium.com/@kvkirthy/memoization-with-selectors-in-ngrx-c60e67a08161",
+      isHighlighted: true
+    }, {
+      title: "Memoization - JavaScript",
       description: "This article describes memoization in JavaScript. We begin with basics. The article elaborates memoization technique with a simple example.",
       imageUrl: "https://miro.medium.com/max/1000/1*sqvl0IJngpf5k6UHtNKDYg.jpeg",
       linkToBlog: "https://medium.com/@kvkirthy/memoization-51d35ac2a3cf",
-      isHighlighted: true
+      isHighlighted: false
     }, {
       title: "Building Single Page Applications (SPA) with Angular Router",
       description: "Routing is an important aspect of building a SPA (Single Page Application). In this two-part Basic to Advanced tutorial on Angular Routing, we will discuss all the important components required to implement routing in your applications",
