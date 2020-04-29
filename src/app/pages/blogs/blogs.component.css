@@ -1,10 +1,24 @@
 div{
     margin: 30px 1px 1px 5px;
   }
-  
+
+  .small-banner{
+    max-height: 125px;
+    max-width: auto;
+    width: auto;
+  }
+
+  .dark {
+    color: lightslategray;
+  }
+
   mat-card{
     width: 100%;
     border-radius: 10px;
+    margin-top: 20px;
+    max-width: 500px;
+    min-height: 250px;
+    height: auto;
   }
 
 .img-logo{
