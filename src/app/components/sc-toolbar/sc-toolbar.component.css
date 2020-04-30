@@ -1,3 +1,19 @@
-mat-toolbar{
+mat-toolbar {
     font-size: medium;
+}
+
+.title-text {
+    margin-left: 10px;
+    font-family: Constantia, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.small-font {
+    font-size: 12pt;
+    margin-left: 10px;
+    line-break: strict;
+    font-family: "ink free";
+    display: block;
+    margin-top: -10px;
 }
