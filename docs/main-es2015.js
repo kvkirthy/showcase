@@ -761,11 +761,18 @@ __webpack_require__.r(__webpack_exports__);
 
 let mockBlogResponse = [
     {
+        title: "Dynamic Import() in JavaScript",
+        description: "Discuss native support for on-the-fly import of modules in ES 2020 (also called ES 11). Towards the end, a quick description of how JavaScript features are standardized and implemented by various browsers.",
+        imageUrl: "https://miro.medium.com/max/2000/1*ibQ7bd0wnGLXY3jMlhpgYA.jpeg",
+        linkToBlog: "https://medium.com/@kvkirthy/discuss-native-support-for-on-the-fly-import-of-modules-in-es-2020-also-called-es-11-ad4f899e0c2",
+        isHighlighted: true
+    },
+    {
         title: "Memoization with Selectors in NgRx",
         description: "The prior article on Memoization in JavaScript discusses caching results of a long running JavaScript function. Majority of the functions that run in a browser finish fairly quickly, return in milliseconds. That begs the question, what are the real-world use cases for memoization in JavaScript? This article describes one such use case.",
         imageUrl: "https://miro.medium.com/max/1400/1*jX76ElYc3BXOUhvVqPQa_g.jpeg",
         linkToBlog: "https://medium.com/@kvkirthy/memoization-with-selectors-in-ngrx-c60e67a08161",
-        isHighlighted: true
+        isHighlighted: false
     },
     {
         title: "Memoization - JavaScript",
