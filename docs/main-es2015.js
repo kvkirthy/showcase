@@ -763,7 +763,7 @@ let mockBlogResponse = [
     {
         title: "Dynamic Import() in JavaScript",
         description: "Discuss native support for on-the-fly import of modules in ES 2020 (also called ES 11). Towards the end, a quick description of how JavaScript features are standardized and implemented by various browsers.",
-        imageUrl: "https://miro.medium.com/max/2000/1*ibQ7bd0wnGLXY3jMlhpgYA.jpeg",
+        imageUrl: "assets/ny.jpeg",
         linkToBlog: "https://medium.com/@kvkirthy/discuss-native-support-for-on-the-fly-import-of-modules-in-es-2020-also-called-es-11-ad4f899e0c2",
         isHighlighted: true
     },
