@@ -20,7 +20,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { OpinionComponent } from './pages/opinion/opinion.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
-import { StoryCardComponent } from './components/story-card/story-card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { StoryCardComponent } from './components/story-card/story-card.component
     BooksComponent,
     OpinionComponent,
     BlogsComponent,
-    StoryCardComponent
   ],
   imports: [
     BrowserModule,

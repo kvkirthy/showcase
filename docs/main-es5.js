@@ -76,26 +76,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   },
 
   /***/
-  "./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html":
-  /*!*******************************************************************************************************!*\
-    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html ***!
-    \*******************************************************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function node_modulesRawLoaderDistCjsJsSrcAppComponentsStoryCardStoryCardComponentHtml(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "<a (click)=\"onCardClick()\">\n    <ng-container *ngIf=\"!xsMode\">\n        <div class=\"row\">\n            <div class=\"col-sm-4\">\n                <img class=\"regular\" [src]=\"imageUrl\">\n            </div>\n            <div class=\"col-sm-8 content\">\n                <div>\n                    <strong>{{title}}</strong>\n                </div>\n                <div>\n                    {{description}}\n                </div>\n    \n            </div>\n        </div>\n    </ng-container>\n\n    <ng-container  *ngIf=\"xsMode\">\n        <div class=\"row\">\n            <div class=\"col-xs-2\">\n                <img class=\"xs\" [src]=\"imageUrl\">\n            </div>\n            <div class=\"col-xs-8 content\">\n                <strong>{{title}}</strong>\n            </div>\n        </div>\n        <div class=\"row\">\n                {{description}}\n        </div>\n    </ng-container>\n</a>";
-    /***/
-  },
-
-  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html":
   /*!****************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/about/about.component.html ***!
@@ -131,7 +111,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"d-none d-lg-block\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3\" *ngIf=\"highlightedBlog\">\r\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\r\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\" >\r\n\r\n                <mat-card-header>\r\n                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color=\"accent\">fiber_new</mat-icon>\r\n                    </mat-card-title>\r\n                </mat-card-header>\r\n                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n\r\n        <div class=\"col-md-4\">\r\n            <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\r\n                <app-story-card *ngIf=\"i%2 === 0\" [title]=\"blog.title\" [description]=\"blog.description\"\r\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card>\r\n            </ng-container>\r\n        </div>\r\n        <div class=\"col-md-4\">\r\n            <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\r\n                <app-story-card *ngIf=\"i%2 === 1\" [title]=\"blog.title\" [description]=\"blog.description\"\r\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card>\r\n            </ng-container>\r\n        </div>\r\n\r\n    </div>\r\n</div>\r\n<div class=\"d-xs-block d-lg-none\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-10\" *ngIf=\"highlightedBlog\">\r\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\r\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\" >\r\n\r\n                <mat-card-header>\r\n                    <mat-card-title>{{highlightedBlog.title}} <mat-icon color=\"accent\">fiber_new</mat-icon>\r\n                    </mat-card-title>\r\n                </mat-card-header>\r\n                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-10\">\r\n            <ng-container *ngFor=\"let blog of blogList$ | async;\">\r\n                <mat-card (click)=\"cardClickHandler(blog.linkToBlog)\">\r\n                    <mat-card-header>\r\n                        <img mat-card-avatar class=\"avatar\" [src]=\"blog.imageUrl\" >\r\n                        <mat-card-subtitle >{{blog.title}}</mat-card-subtitle>\r\n                    </mat-card-header>\r\n                    <mat-card-content>{{blog.description}}</mat-card-content>\r\n                </mat-card>\r\n                <!-- <app-story-card xsMode=\"true\" [title]=\"blog.title\" [description]=\"blog.description\"\r\n                    [imageUrl]=\"blog.imageUrl\" [linkUrl]=\"blog.linkToBlog\"></app-story-card> -->\r\n            </ng-container>\r\n        </div>\r\n\r\n    </div>\r\n</div>";
+    __webpack_exports__["default"] = "<div class=\"d-none d-lg-block\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-4 primary-card\" *ngIf=\"highlightedBlog\">\r\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\r\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\">\r\n\r\n                <mat-card-header>\r\n                    <mat-card-title>{{highlightedBlog.title}}\r\n                        <mat-icon color=\"accent\">fiber_new</mat-icon>\r\n                    </mat-card-title>\r\n                </mat-card-header>\r\n                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n\r\n        <div class=\"col-sm-8\">\r\n            <div class=\"row\">\r\n                <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\r\n                    <div class=\"col-md-6 small-cards\">\r\n                        <mat-card *ngIf=\"i < 4\" (click)=\"cardClickHandler(blog.linkToBlog)\">\r\n\r\n                            <mat-card-header>\r\n                                <img mat-card-avatar [src]=\"blog.imageUrl\">\r\n                                <mat-card-subtitle>\r\n                                    {{blog.title}}\r\n                                </mat-card-subtitle>\r\n                            </mat-card-header>\r\n                            <mat-card-content>{{blog.description}}</mat-card-content>\r\n                        </mat-card>\r\n                    </div>\r\n                </ng-container>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <ng-container *ngFor=\"let blog of blogList$ | async; let i=index\">\r\n            <div *ngIf=\"i >= 4\" class=\"col-sm-4 small-cards\">\r\n                <mat-card (click)=\"cardClickHandler(blog.linkToBlog)\">\r\n\r\n                    <mat-card-header>\r\n                        <img mat-card-avatar [src]=\"blog.imageUrl\">\r\n                        <mat-card-subtitle>\r\n                            {{blog.title}}\r\n                        </mat-card-subtitle>\r\n                    </mat-card-header>\r\n                    <mat-card-content>{{blog.description}}</mat-card-content>\r\n                </mat-card>\r\n            </div>\r\n        </ng-container>\r\n    </div>\r\n</div>\r\n<div class=\"d-xs-block d-lg-none\">\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-10\" *ngIf=\"highlightedBlog\">\r\n            <mat-card (click)=\"cardClickHandler(highlightedBlog.linkToBlog)\">\r\n                <img mat-card-image [src]=\"highlightedBlog.imageUrl\">\r\n\r\n                <mat-card-header>\r\n                    <mat-card-title>{{highlightedBlog.title}}\r\n                        <mat-icon color=\"accent\">fiber_new</mat-icon>\r\n                    </mat-card-title>\r\n                </mat-card-header>\r\n                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-md-10\">\r\n            <ng-container *ngFor=\"let blog of blogList$ | async;\">\r\n                <mat-card (click)=\"cardClickHandler(blog.linkToBlog)\">\r\n                    <mat-card-header>\r\n                        <img mat-card-avatar class=\"avatar\" [src]=\"blog.imageUrl\">\r\n                        <mat-card-subtitle>{{blog.title}}</mat-card-subtitle>\r\n                    </mat-card-header>\r\n                    <mat-card-content>{{blog.description}}</mat-card-content>\r\n                </mat-card>\r\n            </ng-container>\r\n        </div>\r\n\r\n    </div>\r\n</div>";
     /***/
   },
 
@@ -1091,19 +1071,13 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
     /*! ./pages/blogs/blogs.component */
     "./src/app/pages/blogs/blogs.component.ts");
-    /* harmony import */
-
-
-    var _components_story_card_story_card_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
-    /*! ./components/story-card/story-card.component */
-    "./src/app/components/story-card/story-card.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_6__["ScToolbarComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_15__["ErrorComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_16__["AboutComponent"], _pages_books_books_component__WEBPACK_IMPORTED_MODULE_17__["BooksComponent"], _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_18__["OpinionComponent"], _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_19__["BlogsComponent"], _components_story_card_story_card_component__WEBPACK_IMPORTED_MODULE_20__["StoryCardComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_6__["ScToolbarComponent"], _pages_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"], _pages_error_error_component__WEBPACK_IMPORTED_MODULE_15__["ErrorComponent"], _pages_about_about_component__WEBPACK_IMPORTED_MODULE_16__["AboutComponent"], _pages_books_books_component__WEBPACK_IMPORTED_MODULE_17__["BooksComponent"], _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_18__["OpinionComponent"], _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_19__["BlogsComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_7__["MatToolbarModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_8__["MatTabsModule"], _angular_material_card__WEBPACK_IMPORTED_MODULE_9__["MatCardModule"], _angular_material_button__WEBPACK_IMPORTED_MODULE_10__["MatButtonModule"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIconModule"], _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_12__["MatGridListModule"], _angular_material_list__WEBPACK_IMPORTED_MODULE_13__["MatListModule"]],
       providers: [],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -1187,97 +1161,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       /*! ./sc-toolbar.component.css */
       "./src/app/components/sc-toolbar/sc-toolbar.component.css")).default]
     })], ScToolbarComponent);
-    /***/
-  },
-
-  /***/
-  "./src/app/components/story-card/story-card.component.css":
-  /*!****************************************************************!*\
-    !*** ./src/app/components/story-card/story-card.component.css ***!
-    \****************************************************************/
-
-  /*! exports provided: default */
-
-  /***/
-  function srcAppComponentsStoryCardStoryCardComponentCss(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony default export */
-
-
-    __webpack_exports__["default"] = "img.regular{\r\n    max-height: 100px;\r\n    max-width: 100px;\r\n}\r\n\r\nimg.xs{\r\n    max-height: 35px;\r\n    max-width: 35px;\r\n}\r\n\r\n.row {\r\n    margin-top: 15px;\r\n\r\n}\r\n\r\n.col-sm-4 {\r\n    text-align: right;\r\n}\r\n\r\n.col-xs-4 {\r\n    text-align: left;\r\n}\r\n\r\n.col-xs-8 {\r\n    text-align: right;\r\n    padding-left: 20px\r\n}\r\n\r\ndiv {\r\n    font-size: 10pt;\r\n}\r\n\r\n.content{\r\n    padding-top: 5px;\r\n}\r\n\r\na{\r\n    cursor:pointer;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zdG9yeS1jYXJkL3N0b3J5LWNhcmQuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZUFBZTtBQUNuQjs7QUFFQTtJQUNJLGdCQUFnQjs7QUFFcEI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakI7QUFDSjs7QUFFQTtJQUNJLGVBQWU7QUFDbkI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxjQUFjO0FBQ2xCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9zdG9yeS1jYXJkL3N0b3J5LWNhcmQuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImltZy5yZWd1bGFye1xyXG4gICAgbWF4LWhlaWdodDogMTAwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDEwMHB4O1xyXG59XHJcblxyXG5pbWcueHN7XHJcbiAgICBtYXgtaGVpZ2h0OiAzNXB4O1xyXG4gICAgbWF4LXdpZHRoOiAzNXB4O1xyXG59XHJcblxyXG4ucm93IHtcclxuICAgIG1hcmdpbi10b3A6IDE1cHg7XHJcblxyXG59XHJcblxyXG4uY29sLXNtLTQge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbn1cclxuXHJcbi5jb2wteHMtNCB7XHJcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xyXG59XHJcblxyXG4uY29sLXhzLTgge1xyXG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XHJcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHhcclxufVxyXG5cclxuZGl2IHtcclxuICAgIGZvbnQtc2l6ZTogMTBwdDtcclxufVxyXG5cclxuLmNvbnRlbnR7XHJcbiAgICBwYWRkaW5nLXRvcDogNXB4O1xyXG59XHJcblxyXG5he1xyXG4gICAgY3Vyc29yOnBvaW50ZXI7XHJcbn0iXX0= */";
-    /***/
-  },
-
-  /***/
-  "./src/app/components/story-card/story-card.component.ts":
-  /*!***************************************************************!*\
-    !*** ./src/app/components/story-card/story-card.component.ts ***!
-    \***************************************************************/
-
-  /*! exports provided: StoryCardComponent */
-
-  /***/
-  function srcAppComponentsStoryCardStoryCardComponentTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "StoryCardComponent", function () {
-      return StoryCardComponent;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-    /* harmony import */
-
-
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
-    /*! @angular/core */
-    "./node_modules/@angular/core/fesm2015/core.js");
-
-    var StoryCardComponent =
-    /*#__PURE__*/
-    function () {
-      function StoryCardComponent() {
-        _classCallCheck(this, StoryCardComponent);
-
-        this.xsMode = false;
-      }
-
-      _createClass(StoryCardComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {}
-      }, {
-        key: "onCardClick",
-        value: function onCardClick() {
-          window.open(this.linkUrl, "__blog");
-        }
-      }]);
-
-      return StoryCardComponent;
-    }();
-
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], StoryCardComponent.prototype, "title", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], StoryCardComponent.prototype, "description", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], StoryCardComponent.prototype, "imageUrl", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], StoryCardComponent.prototype, "linkUrl", void 0);
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], StoryCardComponent.prototype, "xsMode", void 0);
-    StoryCardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-      selector: 'app-story-card',
-      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
-      /*! raw-loader!./story-card.component.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/components/story-card/story-card.component.html")).default,
-      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
-      /*! ./story-card.component.css */
-      "./src/app/components/story-card/story-card.component.css")).default]
-    })], StoryCardComponent);
     /***/
   },
 
@@ -1383,7 +1266,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "div {\r\n    margin: 1px 1px 1px 1px;\r\n}\r\n\r\n.d-lg-block {\r\n    margin-left: 50px;\r\n}\r\n\r\n.small-banner {\r\n    max-height: 125px;\r\n    max-width: auto;\r\n    width: auto;\r\n}\r\n\r\n.dark {\r\n    color: lightslategray;\r\n}\r\n\r\nmat-card {\r\n    width: 100%;\r\n    border-radius: 10px;\r\n    margin-top: 20px;\r\n    max-width: 500px;\r\n}\r\n\r\n.img-logo {\r\n    width: 40px;\r\n}\r\n\r\n.avatar {\r\n    margin-bottom: 7px;\r\n}\r\n\r\n.link {\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n}\r\n\r\na {\r\n    color: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLHVCQUF1QjtBQUMzQjs7QUFFQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixlQUFlO0lBQ2YsV0FBVztBQUNmOztBQUVBO0lBQ0kscUJBQXFCO0FBQ3pCOztBQUVBO0lBQ0ksV0FBVztJQUNYLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksV0FBVztBQUNmOztBQUVBO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ibG9ncy9ibG9ncy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2IHtcclxuICAgIG1hcmdpbjogMXB4IDFweCAxcHggMXB4O1xyXG59XHJcblxyXG4uZC1sZy1ibG9jayB7XHJcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcclxufVxyXG5cclxuLnNtYWxsLWJhbm5lciB7XHJcbiAgICBtYXgtaGVpZ2h0OiAxMjVweDtcclxuICAgIG1heC13aWR0aDogYXV0bztcclxuICAgIHdpZHRoOiBhdXRvO1xyXG59XHJcblxyXG4uZGFyayB7XHJcbiAgICBjb2xvcjogbGlnaHRzbGF0ZWdyYXk7XHJcbn1cclxuXHJcbm1hdC1jYXJkIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgYm9yZGVyLXJhZGl1czogMTBweDtcclxuICAgIG1hcmdpbi10b3A6IDIwcHg7XHJcbiAgICBtYXgtd2lkdGg6IDUwMHB4O1xyXG59XHJcblxyXG4uaW1nLWxvZ28ge1xyXG4gICAgd2lkdGg6IDQwcHg7XHJcbn1cclxuXHJcbi5hdmF0YXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG59XHJcblxyXG4ubGluayB7XHJcbiAgICBmb250LXNpemU6IDEwcHQ7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuYSB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn0iXX0= */";
+    __webpack_exports__["default"] = ".d-lg-block {\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.small-banner {\r\n    max-height: 125px;\r\n    max-width: auto;\r\n    width: auto;\r\n}\r\n\r\n.dark {\r\n    color: lightslategray;\r\n}\r\n\r\nmat-card {\r\n    width: 100%;\r\n    border-radius: 10px;\r\n    margin-top: 20px;\r\n    max-width: 500px;\r\n}\r\n\r\n.small-cards mat-card {\r\n    height: 95%\r\n}\r\n\r\n.primary-card mat-card {\r\n    min-height: 80%\r\n}\r\n\r\n/* .img-logo {\r\n    width: 40px;\r\n} */\r\n\r\n.avatar {\r\n    margin-bottom: 7px;\r\n}\r\n\r\n.link {\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n}\r\n\r\na {\r\n    color: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLFdBQVc7QUFDZjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJO0FBQ0o7O0FBRUE7SUFDSTtBQUNKOztBQUdBOztHQUVHOztBQUVIO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ibG9ncy9ibG9ncy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmQtbGctYmxvY2sge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbn1cclxuXHJcbi5zbWFsbC1iYW5uZXIge1xyXG4gICAgbWF4LWhlaWdodDogMTI1cHg7XHJcbiAgICBtYXgtd2lkdGg6IGF1dG87XHJcbiAgICB3aWR0aDogYXV0bztcclxufVxyXG5cclxuLmRhcmsge1xyXG4gICAgY29sb3I6IGxpZ2h0c2xhdGVncmF5O1xyXG59XHJcblxyXG5tYXQtY2FyZCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxufVxyXG5cclxuLnNtYWxsLWNhcmRzIG1hdC1jYXJkIHtcclxuICAgIGhlaWdodDogOTUlXHJcbn1cclxuXHJcbi5wcmltYXJ5LWNhcmQgbWF0LWNhcmQge1xyXG4gICAgbWluLWhlaWdodDogODAlXHJcbn1cclxuXHJcblxyXG4vKiAuaW1nLWxvZ28ge1xyXG4gICAgd2lkdGg6IDQwcHg7XHJcbn0gKi9cclxuXHJcbi5hdmF0YXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG59XHJcblxyXG4ubGluayB7XHJcbiAgICBmb250LXNpemU6IDEwcHQ7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuYSB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn0iXX0= */";
     /***/
   },
 

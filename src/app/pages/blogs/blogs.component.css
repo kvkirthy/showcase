@@ -1,9 +1,6 @@
-div {
-    margin: 1px 1px 1px 1px;
-}
-
 .d-lg-block {
-    margin-left: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .small-banner {
@@ -23,9 +20,18 @@ mat-card {
     max-width: 500px;
 }
 
-.img-logo {
-    width: 40px;
+.small-cards mat-card {
+    height: 95%
 }
+
+.primary-card mat-card {
+    min-height: 80%
+}
+
+
+/* .img-logo {
+    width: 40px;
+} */
 
 .avatar {
     margin-bottom: 7px;
