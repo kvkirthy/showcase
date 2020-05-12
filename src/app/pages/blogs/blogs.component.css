@@ -20,12 +20,22 @@ mat-card {
     max-width: 500px;
 }
 
-.small-cards mat-card {
-    height: 95%
+.small-cards-recent mat-card {
+    min-height: 205px;
+    height: 95%;
 }
 
-.primary-card mat-card {
-    min-height: 80%
+.small-cards mat-card {
+    min-height: 200px;
+    height: 95%;
+}
+
+mat-card img.card-image {
+    min-height: 268px;
+}
+
+mat-card-content {
+    padding-top: 15px;
 }
 
 

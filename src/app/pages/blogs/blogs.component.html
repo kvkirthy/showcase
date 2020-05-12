@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-                <img mat-card-image [src]="highlightedBlog.imageUrl">
+                <img mat-card-image class="card-image" [src]="highlightedBlog.imageUrl">
 
                 <mat-card-header>
                     <mat-card-title>{{highlightedBlog.title}}
@@ -16,7 +16,7 @@
         <div class="col-sm-8">
             <div class="row">
                 <ng-container *ngFor="let blog of blogList$ | async; let i=index">
-                    <div class="col-md-6 small-cards">
+                    <div class="col-md-6 small-cards-recent">
                         <mat-card *ngIf="i < 4" (click)="cardClickHandler(blog.linkToBlog)">
 
                             <mat-card-header>
@@ -36,7 +36,6 @@
         <ng-container *ngFor="let blog of blogList$ | async; let i=index">
             <div *ngIf="i >= 4" class="col-sm-4 small-cards">
                 <mat-card (click)="cardClickHandler(blog.linkToBlog)">
-
                     <mat-card-header>
                         <img mat-card-avatar [src]="blog.imageUrl">
                         <mat-card-subtitle>
