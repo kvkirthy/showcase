@@ -650,6 +650,17 @@ AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
+/***/ "./src/app/pages/blogs/blogs-data.json":
+/*!*********************************************!*\
+  !*** ./src/app/pages/blogs/blogs-data.json ***!
+  \*********************************************/
+/*! exports provided: blogs, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"blogs\":[{\"title\":\"Cumulative Layout Shift (CLS)\",\"description\":\"Visual Stability data point among Web Vitals. Identify and fix clumsy user experience with jumpy buttons, text and other controls on a web page.\",\"imageUrl\":\"assets/ny.jpg\",\"linkToBlog\":\"https://medium.com/@kvkirthy/cumulative-layout-shifts-cls-ab3ef9b98b70\",\"isHighlighted\":true},{\"title\":\"Dynamic Import() in JavaScript\",\"description\":\"Discuss native support for on-the-fly import of modules in ES 2020 (also called ES 11). Towards the end, a quick description of how JavaScript features are standardized and implemented by various browsers.\",\"imageUrl\":\"https://miro.medium.com/max/2000/1*ibQ7bd0wnGLXY3jMlhpgYA.jpeg\",\"linkToBlog\":\"https://medium.com/@kvkirthy/discuss-native-support-for-on-the-fly-import-of-modules-in-es-2020-also-called-es-11-ad4f899e0c2\",\"isHighlighted\":false},{\"title\":\"Memoization with Selectors in NgRx\",\"description\":\"The prior article on Memoization in JavaScript discusses caching results of a long running JavaScript function. Majority of the functions that run in a browser finish fairly quickly, return in milliseconds. That begs the question, what are the real-world use cases for memoization in JavaScript? This article describes one such use case.\",\"imageUrl\":\"https://miro.medium.com/max/1400/1*jX76ElYc3BXOUhvVqPQa_g.jpeg\",\"linkToBlog\":\"https://medium.com/@kvkirthy/memoization-with-selectors-in-ngrx-c60e67a08161\",\"isHighlighted\":false},{\"title\":\"Memoization - JavaScript\",\"description\":\"This article describes memoization in JavaScript. We begin with basics. The article elaborates memoization technique with a simple example.\",\"imageUrl\":\"https://miro.medium.com/max/1000/1*sqvl0IJngpf5k6UHtNKDYg.jpeg\",\"linkToBlog\":\"https://medium.com/@kvkirthy/memoization-51d35ac2a3cf\",\"isHighlighted\":false},{\"title\":\"Building Single Page Applications (SPA) with Angular Router\",\"description\":\"Routing is an important aspect of building a SPA (Single Page Application). In this two-part Basic to Advanced tutorial on Angular Routing, we will discuss all the important components required to implement routing in your applications\",\"imageUrl\":\"https://angular.io/assets/images/logos/angular/angular.png\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1467\",\"isHighlighted\":false},{\"title\":\"Angular Evolution - Version 1.x to 6\",\"description\":\"This Angular tutorial summarizes the evolution process of the Angular.js framework. It attempts to look back at the original context of Angular application development and how it has progressed. It covers Angular 1.x, v2, v4, v5 and Angular version 6\",\"imageUrl\":\"https://www.dotnetcurry.com/images/angular/versions/angular-evolution.jpg\",\"linkToBlog\":\"https://www.dotnetcurry.com/angularjs/1453/angular-evolution-versions-1-to-6\",\"isHighlighted\":false},{\"title\":\"Angular HttpClient Deep Dive (Headers, HTTP events, non-JSON data and Interceptors)\",\"description\":\"Explore advanced scenarios with the HTTP Client in Angular. In this tutorial, we add headers and parameters to the request, access the response object, work with the HTTPEvent, and look at Interceptors in Angular.\",\"imageUrl\":\"https://angular.io/generated/images/marketing/concept-icons/http.png\",\"linkToBlog\":\"https://www.dotnetcurry.com/angularjs/1448/angular-http-client-interceptors-headers-event\",\"isHighlighted\":false},{\"title\":\"Getting Started with HTTP Client in Angular (GET, POST, PUT, DELETE methods)\",\"description\":\"Learn the basics of making HTTP calls over GET/POST/PUT/DELETE methods in an Angular application. Also explore error handling scenarios and solutions for separating presentation logic from service API integration details.\",\"imageUrl\":\"https://angular.io/generated/images/marketing/concept-icons/http.png\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1438\",\"isHighlighted\":false},{\"title\":\"ES8 (or ES2017) – What’s New in JavaScript?\",\"description\":\"ES8 or ES2017 is the eighth version of the JavaScript language specification created to offer new features and ways of working with JavaScript. This article talks about the new features in ES8/ES 2017.\",\"imageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1405\",\"isHighlighted\":false},{\"title\":\"Angular 4 Development Cheat Sheet\",\"description\":\"This Angular cheat sheet is a quick reference to get you going with Angular development. It uses Angular v4 with TypeScript.\",\"imageUrl\":\"https://angular.io/assets/images/logos/angular/angular_solidBlack.png\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1385\",\"isHighlighted\":false},{\"title\":\"Angular 4 application development with Bootstrap 4 and TypeScript\",\"description\":\"In this tutorial, we will explore how to develop an Angular 4 application using TypeScript. We will also explore Angular 4 New Features, Angular CLI, as well as differences between Angular v2 vs 4 application development.\",\"imageUrl\":\"https://pluspng.com/img-png/bootstrap-logo-vector-png-bootstrap-logo-512.jpg\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1366\",\"isHighlighted\":false},{\"title\":\"Ionic 2 Tutorial - Building a hybrid mobile app using Angular\",\"description\":\"The Ionic framework is one of the most popular hybrid mobile application frameworks. This tutorial focuses on building a simple hybrid app using Ionic 2, Angular 2 and TypeScript.\",\"imageUrl\":\"https://media-exp1.licdn.com/dms/image/C510BAQHe0GgjFhdIBQ/company-logo_200_200/0?e=2159024400&v=beta&t=7jQ06NmrITyrCAlQsbpeQwXlwXiUV-Nqtw1m9UQd3Ho\",\"linkToBlog\":\"https://www.dotnetcurry.com/ShowArticle.aspx?ID=1355\",\"isHighlighted\":false},{\"title\":\"Angular V4 (or) call it just Angular\",\"description\":\"This blog is a high level gist of Angular 4 features. For detailed explanation refer to my article in DNC magazine. Article is titled \\\"Angular 4 application development with Bootstrap 4 and TypeScript\\\". Follow this link to download the magazine for free.\",\"imageUrl\":\"https://angular.io/generated/images/marketing/concept-icons/animations.png\",\"linkToBlog\":\"http://venckicode.blogspot.com/\",\"isHighlighted\":false},{\"title\":\"CSS and styling options in ReactJS\",\"description\":\"ReactJS provides multiple options for styling components. We might use traditional approach to have a style-sheet in the project; Then apply CSS classes for elements in the component. Or we might pick a contentious approach to code styles within the component.\",\"imageUrl\":\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png\",\"linkToBlog\":\"http://venckicode.blogspot.com/2017/01/css-and-styling-options-in-reactjs.html\",\"isHighlighted\":false},{\"title\":\"Using Flow types with React components\",\"description\":\"Continuing series on Flow, in this blog I'm writing about Flow with React. It details advantages of using Flow while building React components.\",\"imageUrl\":\"https://pbs.twimg.com/profile_images/889697663087542272/7mfszmjJ_400x400.jpg\",\"linkToBlog\":\"http://venckicode.blogspot.com/2016/12/getting-started-with-react-component.html\",\"isHighlighted\":false},{\"title\":\"Working with Flow on Visual Studio Code\",\"description\":\"Blog describes what I believe is an optimal development setup with Flow. It details using Visual Studio Code IDE with Flow.\",\"imageUrl\":\"https://seeklogo.com/images/V/visual-studio-code-logo-284BC24C39-seeklogo.com.png\",\"linkToBlog\":\"http://venckicode.blogspot.com/2016/12/optimizing-flow-using-it-with-vs-code.html\",\"isHighlighted\":false},{\"title\":\"Getting started with AngularFire 2\",\"description\":\"The blog describes using AngularFire2, Angular 2 and TypeScript API for Firebase. It is a beginner guide with a sample for retrieval and update to Firebase database.\",\"linkToBlog\":\"http://venckicode.blogspot.com/2016/10/getting-started-with-angularfire-2_65.html\",\"imageUrl\":\"https://img.icons8.com/color/480/firebase.png\",\"isHighlighted\":false}]}");
+
+/***/ }),
+
 /***/ "./src/app/pages/blogs/blogs.component.css":
 /*!*************************************************!*\
   !*** ./src/app/pages/blogs/blogs.component.css ***!
@@ -659,7 +670,7 @@ AboutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".d-lg-block {\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.small-banner {\r\n    max-height: 125px;\r\n    max-width: auto;\r\n    width: auto;\r\n}\r\n\r\n.dark {\r\n    color: lightslategray;\r\n}\r\n\r\nmat-card {\r\n    width: 100%;\r\n    border-radius: 10px;\r\n    margin-top: 20px;\r\n    max-width: 500px;\r\n}\r\n\r\n.small-cards-recent mat-card {\r\n    min-height: 205px;\r\n    height: 95%;\r\n}\r\n\r\n.small-cards mat-card {\r\n    min-height: 200px;\r\n    height: 95%;\r\n}\r\n\r\nmat-card img.card-image {\r\n    min-height: 268px;\r\n}\r\n\r\nmat-card-content {\r\n    padding-top: 15px;\r\n}\r\n\r\n/* .img-logo {\r\n    width: 40px;\r\n} */\r\n\r\n.avatar {\r\n    margin-bottom: 7px;\r\n}\r\n\r\n.link {\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n}\r\n\r\na {\r\n    color: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLFdBQVc7QUFDZjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsV0FBVztBQUNmOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUdBOztHQUVHOztBQUVIO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ibG9ncy9ibG9ncy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmQtbGctYmxvY2sge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbn1cclxuXHJcbi5zbWFsbC1iYW5uZXIge1xyXG4gICAgbWF4LWhlaWdodDogMTI1cHg7XHJcbiAgICBtYXgtd2lkdGg6IGF1dG87XHJcbiAgICB3aWR0aDogYXV0bztcclxufVxyXG5cclxuLmRhcmsge1xyXG4gICAgY29sb3I6IGxpZ2h0c2xhdGVncmF5O1xyXG59XHJcblxyXG5tYXQtY2FyZCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxufVxyXG5cclxuLnNtYWxsLWNhcmRzLXJlY2VudCBtYXQtY2FyZCB7XHJcbiAgICBtaW4taGVpZ2h0OiAyMDVweDtcclxuICAgIGhlaWdodDogOTUlO1xyXG59XHJcblxyXG4uc21hbGwtY2FyZHMgbWF0LWNhcmQge1xyXG4gICAgbWluLWhlaWdodDogMjAwcHg7XHJcbiAgICBoZWlnaHQ6IDk1JTtcclxufVxyXG5cclxubWF0LWNhcmQgaW1nLmNhcmQtaW1hZ2Uge1xyXG4gICAgbWluLWhlaWdodDogMjY4cHg7XHJcbn1cclxuXHJcbm1hdC1jYXJkLWNvbnRlbnQge1xyXG4gICAgcGFkZGluZy10b3A6IDE1cHg7XHJcbn1cclxuXHJcblxyXG4vKiAuaW1nLWxvZ28ge1xyXG4gICAgd2lkdGg6IDQwcHg7XHJcbn0gKi9cclxuXHJcbi5hdmF0YXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG59XHJcblxyXG4ubGluayB7XHJcbiAgICBmb250LXNpemU6IDEwcHQ7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuYSB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".d-lg-block {\r\n    margin-left: 15px;\r\n    margin-right: 15px;\r\n}\r\n\r\n.small-banner {\r\n    max-height: 125px;\r\n    max-width: auto;\r\n    width: auto;\r\n}\r\n\r\n.dark {\r\n    color: lightslategray;\r\n}\r\n\r\nmat-card {\r\n    width: 100%;\r\n    border-radius: 10px;\r\n    margin-top: 20px;\r\n    max-width: 500px;\r\n}\r\n\r\n.small-cards-recent mat-card {\r\n    min-height: 205px;\r\n    height: 95%;\r\n}\r\n\r\n.small-cards mat-card {\r\n    min-height: 200px;\r\n    height: 95%;\r\n}\r\n\r\nmat-card img.card-image {\r\n    min-height: 286px;\r\n}\r\n\r\nmat-card-content {\r\n    padding-top: 15px;\r\n}\r\n\r\n/* .img-logo {\r\n    width: 40px;\r\n} */\r\n\r\n.avatar {\r\n    margin-bottom: 7px;\r\n}\r\n\r\n.link {\r\n    font-size: 10pt;\r\n    font-weight: bold;\r\n}\r\n\r\na {\r\n    color: black;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYmxvZ3MvYmxvZ3MuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsZUFBZTtJQUNmLFdBQVc7QUFDZjs7QUFFQTtJQUNJLHFCQUFxQjtBQUN6Qjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxtQkFBbUI7SUFDbkIsZ0JBQWdCO0lBQ2hCLGdCQUFnQjtBQUNwQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsV0FBVztBQUNmOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUdBOztHQUVHOztBQUVIO0lBQ0ksa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksZUFBZTtJQUNmLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9wYWdlcy9ibG9ncy9ibG9ncy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmQtbGctYmxvY2sge1xyXG4gICAgbWFyZ2luLWxlZnQ6IDE1cHg7XHJcbiAgICBtYXJnaW4tcmlnaHQ6IDE1cHg7XHJcbn1cclxuXHJcbi5zbWFsbC1iYW5uZXIge1xyXG4gICAgbWF4LWhlaWdodDogMTI1cHg7XHJcbiAgICBtYXgtd2lkdGg6IGF1dG87XHJcbiAgICB3aWR0aDogYXV0bztcclxufVxyXG5cclxuLmRhcmsge1xyXG4gICAgY29sb3I6IGxpZ2h0c2xhdGVncmF5O1xyXG59XHJcblxyXG5tYXQtY2FyZCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG4gICAgbWF4LXdpZHRoOiA1MDBweDtcclxufVxyXG5cclxuLnNtYWxsLWNhcmRzLXJlY2VudCBtYXQtY2FyZCB7XHJcbiAgICBtaW4taGVpZ2h0OiAyMDVweDtcclxuICAgIGhlaWdodDogOTUlO1xyXG59XHJcblxyXG4uc21hbGwtY2FyZHMgbWF0LWNhcmQge1xyXG4gICAgbWluLWhlaWdodDogMjAwcHg7XHJcbiAgICBoZWlnaHQ6IDk1JTtcclxufVxyXG5cclxubWF0LWNhcmQgaW1nLmNhcmQtaW1hZ2Uge1xyXG4gICAgbWluLWhlaWdodDogMjg2cHg7XHJcbn1cclxuXHJcbm1hdC1jYXJkLWNvbnRlbnQge1xyXG4gICAgcGFkZGluZy10b3A6IDE1cHg7XHJcbn1cclxuXHJcblxyXG4vKiAuaW1nLWxvZ28ge1xyXG4gICAgd2lkdGg6IDQwcHg7XHJcbn0gKi9cclxuXHJcbi5hdmF0YXIge1xyXG4gICAgbWFyZ2luLWJvdHRvbTogN3B4O1xyXG59XHJcblxyXG4ubGluayB7XHJcbiAgICBmb250LXNpemU6IDEwcHQ7XHJcbiAgICBmb250LXdlaWdodDogYm9sZDtcclxufVxyXG5cclxuYSB7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -676,116 +687,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm2015/index.js");
+/* harmony import */ var _blogs_data_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./blogs-data.json */ "./src/app/pages/blogs/blogs-data.json");
+var _blogs_data_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./blogs-data.json */ "./src/app/pages/blogs/blogs-data.json", 1);
 
 
 
-let mockBlogResponse = [
-    {
-        title: "Dynamic Import() in JavaScript",
-        description: "Discuss native support for on-the-fly import of modules in ES 2020 (also called ES 11). Towards the end, a quick description of how JavaScript features are standardized and implemented by various browsers.",
-        imageUrl: "assets/ny.jpeg",
-        linkToBlog: "https://medium.com/@kvkirthy/discuss-native-support-for-on-the-fly-import-of-modules-in-es-2020-also-called-es-11-ad4f899e0c2",
-        isHighlighted: true
-    },
-    {
-        title: "Memoization with Selectors in NgRx",
-        description: "The prior article on Memoization in JavaScript discusses caching results of a long running JavaScript function. Majority of the functions that run in a browser finish fairly quickly, return in milliseconds. That begs the question, what are the real-world use cases for memoization in JavaScript? This article describes one such use case.",
-        imageUrl: "https://miro.medium.com/max/1400/1*jX76ElYc3BXOUhvVqPQa_g.jpeg",
-        linkToBlog: "https://medium.com/@kvkirthy/memoization-with-selectors-in-ngrx-c60e67a08161",
-        isHighlighted: false
-    },
-    {
-        title: "Memoization - JavaScript",
-        description: "This article describes memoization in JavaScript. We begin with basics. The article elaborates memoization technique with a simple example.",
-        imageUrl: "https://miro.medium.com/max/1000/1*sqvl0IJngpf5k6UHtNKDYg.jpeg",
-        linkToBlog: "https://medium.com/@kvkirthy/memoization-51d35ac2a3cf",
-        isHighlighted: false
-    },
-    {
-        title: "Building Single Page Applications (SPA) with Angular Router",
-        description: "Routing is an important aspect of building a SPA (Single Page Application). In this two-part Basic to Advanced tutorial on Angular Routing, we will discuss all the important components required to implement routing in your applications",
-        imageUrl: "https://angular.io/assets/images/logos/angular/angular.png",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1467",
-        isHighlighted: false
-    },
-    {
-        title: "Angular Evolution - Version 1.x to 6",
-        description: "This Angular tutorial summarizes the evolution process of the Angular.js framework. It attempts to look back at the original context of Angular application development and how it has progressed. It covers Angular 1.x, v2, v4, v5 and Angular version 6",
-        imageUrl: "https://www.dotnetcurry.com/images/angular/versions/angular-evolution.jpg",
-        linkToBlog: "https://www.dotnetcurry.com/angularjs/1453/angular-evolution-versions-1-to-6",
-        isHighlighted: false
-    }, {
-        title: "Angular HttpClient Deep Dive (Headers, HTTP events, non-JSON data and Interceptors)",
-        description: "Explore advanced scenarios with the HTTP Client in Angular. In this tutorial, we add headers and parameters to the request, access the response object, work with the HTTPEvent, and look at Interceptors in Angular.",
-        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/http.png",
-        linkToBlog: "https://www.dotnetcurry.com/angularjs/1448/angular-http-client-interceptors-headers-event",
-        isHighlighted: false
-    }, {
-        title: "Getting Started with HTTP Client in Angular (GET, POST, PUT, DELETE methods)",
-        description: "Learn the basics of making HTTP calls over GET/POST/PUT/DELETE methods in an Angular application. Also explore error handling scenarios and solutions for separating presentation logic from service API integration details.",
-        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/http.png",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1438",
-        isHighlighted: false
-    }, {
-        title: "ES8 (or ES2017) – What’s New in JavaScript?",
-        description: "ES8 or ES2017 is the eighth version of the JavaScript language specification created to offer new features and ways of working with JavaScript. This article talks about the new features in ES8/ES 2017.",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1405",
-        isHighlighted: false
-    }, {
-        title: "Angular 4 Development Cheat Sheet",
-        description: "This Angular cheat sheet is a quick reference to get you going with Angular development. It uses Angular v4 with TypeScript.",
-        imageUrl: "https://angular.io/assets/images/logos/angular/angular_solidBlack.png",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1385",
-        isHighlighted: false
-    }, {
-        title: "Angular 4 application development with Bootstrap 4 and TypeScript",
-        description: "In this tutorial, we will explore how to develop an Angular 4 application using TypeScript. We will also explore Angular 4 New Features, Angular CLI, as well as differences between Angular v2 vs 4 application development.",
-        imageUrl: "https://pluspng.com/img-png/bootstrap-logo-vector-png-bootstrap-logo-512.jpg",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1366",
-        isHighlighted: false
-    }, {
-        title: "Ionic 2 Tutorial - Building a hybrid mobile app using Angular",
-        description: "The Ionic framework is one of the most popular hybrid mobile application frameworks. This tutorial focuses on building a simple hybrid app using Ionic 2, Angular 2 and TypeScript.",
-        imageUrl: "https://media-exp1.licdn.com/dms/image/C510BAQHe0GgjFhdIBQ/company-logo_200_200/0?e=2159024400&v=beta&t=7jQ06NmrITyrCAlQsbpeQwXlwXiUV-Nqtw1m9UQd3Ho",
-        linkToBlog: "https://www.dotnetcurry.com/ShowArticle.aspx?ID=1355",
-        isHighlighted: false
-    }, {
-        title: "Angular V4 (or) call it just Angular",
-        description: "This blog is a high level gist of Angular 4 features. For detailed explanation refer to my article in DNC magazine. Article is titled \"Angular 4 application development with Bootstrap 4 and TypeScript\". Follow this link to download the magazine for free.",
-        imageUrl: "https://angular.io/generated/images/marketing/concept-icons/animations.png",
-        linkToBlog: "http://venckicode.blogspot.com/",
-        isHighlighted: false
-    }, {
-        title: "CSS and styling options in ReactJS",
-        description: "ReactJS provides multiple options for styling components. We might use traditional approach to have a style-sheet in the project; Then apply CSS classes for elements in the component. Or we might pick a contentious approach to code styles within the component.",
-        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
-        linkToBlog: "http://venckicode.blogspot.com/2017/01/css-and-styling-options-in-reactjs.html",
-        isHighlighted: false
-    }, {
-        title: "Using Flow types with React components",
-        description: "Continuing series on Flow, in this blog I'm writing about Flow with React. It details advantages of using Flow while building React components.",
-        imageUrl: "https://pbs.twimg.com/profile_images/889697663087542272/7mfszmjJ_400x400.jpg",
-        linkToBlog: "http://venckicode.blogspot.com/2016/12/getting-started-with-react-component.html",
-        isHighlighted: false
-    }, {
-        title: "Working with Flow on Visual Studio Code",
-        description: "Blog describes what I believe is an optimal development setup with Flow. It details using Visual Studio Code IDE with Flow.",
-        imageUrl: "https://seeklogo.com/images/V/visual-studio-code-logo-284BC24C39-seeklogo.com.png",
-        linkToBlog: "http://venckicode.blogspot.com/2016/12/optimizing-flow-using-it-with-vs-code.html",
-        isHighlighted: false
-    }, {
-        title: "Getting started with AngularFire 2",
-        description: "The blog describes using AngularFire2, Angular 2 and TypeScript API for Firebase. It is a beginner guide with a sample for retrieval and update to Firebase database.",
-        linkToBlog: "http://venckicode.blogspot.com/2016/10/getting-started-with-angularfire-2_65.html",
-        imageUrl: "https://img.icons8.com/color/480/firebase.png",
-        isHighlighted: false
-    }
-];
+
 let BlogsComponent = class BlogsComponent {
     constructor() { }
     ngOnInit() {
-        let allBlogs = mockBlogResponse;
+        let allBlogs = _blogs_data_json__WEBPACK_IMPORTED_MODULE_3__["blogs"];
         this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
         this.blogList$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(allBlogs.filter(i => !i.isHighlighted));
     }
