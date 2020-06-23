@@ -1,10 +1,16 @@
 {
-    "blogs": [{
+    "blogs": [ {
+        "title": "Private Members in JavaScript Classes",
+        "description": "ES6 / ES2015 introduced classes in JavaScript. It is an encapsulation of data (fields) and behavior (functions). With a new proposal currently in stage-3, a class can have private members, which are not accessible outside the scope of the class.",
+        "imageUrl": "assets/js.jpeg",
+        "linkToBlog": "https://medium.com/@kvkirthy/private-members-in-javascript-classes-cb04944f1ae2",
+        "isHighlighted": true
+    },{
             "title": "Cumulative Layout Shift (CLS)",
             "description": "Visual Stability data point among Web Vitals. Identify and fix clumsy user experience with jumpy buttons, text and other controls on a web page.",
             "imageUrl": "assets/ny.jpg",
             "linkToBlog": "https://medium.com/@kvkirthy/cumulative-layout-shifts-cls-ab3ef9b98b70",
-            "isHighlighted": true
+            "isHighlighted": false
         },
         {
             "title": "Dynamic Import() in JavaScript",
