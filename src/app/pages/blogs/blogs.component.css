@@ -20,6 +20,10 @@ mat-card {
     max-width: 500px;
 }
 
+mat-card-title {
+    margin-left: -18px;
+}
+
 .small-cards-recent mat-card {
     min-height: 205px;
     height: 95%;
@@ -33,8 +37,8 @@ mat-card {
 mat-card img.card-image {
     min-height: 286px;
 }
-
-mat-card-content {
+ 
+.small-cards-recent mat-card-content {
     padding-top: 15px;
 }
 
