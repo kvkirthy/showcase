@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { Blog } from 'src/app/models/blog';
+import { BlogsService } from './blogs.service';
 import * as blogData from './blogs-data.json';
 
 @Component({
@@ -12,12 +13,17 @@ export class BlogsComponent implements OnInit {
 
   blogList$: Observable<Array<Blog>>;
   highlightedBlog: Blog;
-  constructor() { }
+  constructor(private blogService: BlogsService) { }
 
   ngOnInit() {
-    let allBlogs = blogData.blogs;
-    this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
-    this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
+    let allBlogs = [];
+    this.blogService
+      .getBlogs()
+      .subscribe(data => {
+        allBlogs = data;
+        this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
+        this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
+      });
   }
 
   cardClickHandler(linkToBlog){
