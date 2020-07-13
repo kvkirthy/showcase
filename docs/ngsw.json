@@ -1,0 +1,118 @@
+{
+  "configVersion": 1,
+  "timestamp": 1594662471638,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.a6d2fc5724e2b3dd4baa.js",
+        "/main-es5.a6d2fc5724e2b3dd4baa.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.a0fa45e0fa52702b64f0.js",
+        "/polyfills-es5.2dcde1efe3c1bf4aaa25.js",
+        "/runtime-es2015.409e6590615fb48d139f.js",
+        "/runtime-es5.409e6590615fb48d139f.js",
+        "/styles.4436682496ec0984f192.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/assets/Linkedin.png",
+        "/assets/book-1.jpg",
+        "/assets/book-2.jpg",
+        "/assets/github.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/js.jpeg",
+        "/assets/ny.jpg",
+        "/assets/profile-pic.jpg",
+        "/assets/stackoverflow.png",
+        "/assets/twitter.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "blogs",
+      "patterns": [
+        "\\/blog-posts"
+      ],
+      "strategy": "performance",
+      "maxSize": 1024,
+      "maxAge": 2592000000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/assets/Linkedin.png": "29ce61f3a4041de7eb19152a3dd710f841b8454b",
+    "/assets/book-1.jpg": "412e1bf63960bc739410e22519ee8d0e87126610",
+    "/assets/book-2.jpg": "467e9990428abef9f9a62a3fd3e1f9eea1931866",
+    "/assets/github.png": "3600ce3961cc4803a87b8f88b87c94686bbacb0e",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/js.jpeg": "b53b4e60ce65d03e09dd6d7bffa5e905c28264b9",
+    "/assets/ny.jpg": "0409942fdb46d95f7b64f18e152d0a438360e2ab",
+    "/assets/profile-pic.jpg": "acaf1a05c901ffeeed2ed4fe976881fc3f2572ee",
+    "/assets/stackoverflow.png": "c4f7f5eafb958cf1f7444bb64c8b62d6102d0271",
+    "/assets/twitter.png": "f2ae66d7fd9329500062e6e7e1cf2553ef9d9c81",
+    "/favicon.ico": "4cc704651e4f21a7160f235052c0afbebfcaf851",
+    "/index.html": "7a8e61b6dd5005ea6934d0b77118fdede44340c7",
+    "/main-es2015.a6d2fc5724e2b3dd4baa.js": "d21fb969ef25c5f6b66cbd99be7916c1e31b9bd0",
+    "/main-es5.a6d2fc5724e2b3dd4baa.js": "2cdc9a83d6efe0be78df39cd09ed158a603e65da",
+    "/manifest.webmanifest": "4bbff43303f58f650b975a87a9223e03211ff7ef",
+    "/polyfills-es2015.a0fa45e0fa52702b64f0.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/polyfills-es5.2dcde1efe3c1bf4aaa25.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
+    "/runtime-es2015.409e6590615fb48d139f.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/runtime-es5.409e6590615fb48d139f.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "/styles.4436682496ec0984f192.css": "be059a35f4fec61967acaba5c87e532b373918e5"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

@@ -21,6 +21,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { OpinionComponent } from './pages/opinion/opinion.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
