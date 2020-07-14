@@ -2,6 +2,11 @@ mat-toolbar {
     font-size: medium;
 }
 
+.avatar {
+    height: 75%;
+    border-radius: 50%;
+}
+
 .title-text {
     margin-left: 10px;
     font-family: Constantia, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
