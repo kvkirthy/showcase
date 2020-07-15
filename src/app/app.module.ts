@@ -1,52 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppComponent } from './app.component';
+import { ErrorComponent } from './error/error.component';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScToolbarComponent } from './components/sc-toolbar/sc-toolbar.component';
+import { ShowcaseModule } from './showcase/showcase.module';
+import { NewspaperModule } from './newspaper/newspaper.module';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatGridListModule } from '@angular/material/grid-list'
-import { MatListModule } from '@angular/material/list';
-
-import { HomeComponent } from './pages/home/home.component';
-import { ErrorComponent } from './pages/error/error.component';
-import { AboutComponent } from './pages/about/about.component';
-import { BooksComponent } from './pages/books/books.component';
-import { OpinionComponent } from './pages/opinion/opinion.component';
-import { BlogsComponent } from './pages/blogs/blogs.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ScToolbarComponent,
-    HomeComponent,
     ErrorComponent,
-    AboutComponent,
-    BooksComponent,
-    OpinionComponent,
-    BlogsComponent,
   ],
   imports: [
     BrowserModule,
+    ShowcaseModule,
+    NewspaperModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatTabsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-    MatGridListModule,
-    MatListModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
