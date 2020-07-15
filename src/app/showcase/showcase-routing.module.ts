@@ -35,7 +35,7 @@ const routes: Routes = [
   {
     path: 'showcase',
     redirectTo: '/showcase/blog',
-    pathMatch: 'prefix'
+    pathMatch: 'full'
   },
   ...pages,
 ];
