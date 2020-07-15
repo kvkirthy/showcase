@@ -1,0 +1,16 @@
+.root-node{
+    margin: 110px 10px auto 10px;
+    position: relative;
+}
+
+nav{
+    margin: 0px 0px 0px 0px;
+}
+
+.fixed-header {
+    top: 0;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index:999;
+}
