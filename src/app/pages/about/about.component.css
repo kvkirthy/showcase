@@ -36,3 +36,8 @@ i{
 mat-grid-list.single-item{
   margin-bottom: 15px;
 }
+
+img#mediumLogo{
+  width: 120px;
+  height: auto;
+}

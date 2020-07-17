@@ -6,16 +6,13 @@
 
             <mat-card-header>
                 <mat-card-title>Venkata Keerti Kotaru</mat-card-title>
-                <mat-card-subtitle>Author, Three time Microsoft MVP and a blogger</mat-card-subtitle>
+                <mat-card-subtitle> <a routerLink="/books">Author</a>, <a routerLink="/blog">blogger</a> and a three-time Microsoft MVP. Masters in Software Systems from University of St.Thomas, Minneapolis/St.Paul.</mat-card-subtitle>
             </mat-card-header>
         </mat-card>
     </div>
     <div class="col-md-6 col-lg-8">
         <p class="d-none d-lg-block">
             <mat-grid-list cols="3" rowHeight="220px">
-                <mat-grid-tile colspan="2" [style.background]="color5">
-                    <span [innerHtml]="introParagraph"></span>
-                </mat-grid-tile>
                 <a href="https://www.linkedin.com/in/keertikotaru/" target="__blank">
                     <mat-grid-tile [style.background]="color1">
                         <img src="assets/Linkedin.png" class="img-logo" alt="LinkedIn logo">
@@ -49,15 +46,23 @@
                         </div>
                     </mat-grid-tile>
                 </a>
+                <a href="https://medium.com/@kvkirthy" target="__blank">
+                    <mat-grid-tile [style.background]="color5">
+                        <img src="assets/medium.png" id="mediumLogo" class="img-logo" alt="Medium logo">
+                    </mat-grid-tile>
+                </a>
+                <a href="http://fb.me/keertikotaru" target="__blank">
+                    <mat-grid-tile [style.background]="color1">
+                        <img src="assets/facebook.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            fb me
+                        </div>
+                    </mat-grid-tile>
+                </a>
 
             </mat-grid-list>
         </p>
         <p class="d-lg-none d-sm-block">
-            <mat-grid-list cols="1" rowHeight="240px" class="single-item">
-                <mat-grid-tile [style.background]="color5">
-                    <span [innerHtml]="introParagraph"></span>
-                </mat-grid-tile>
-            </mat-grid-list>
             <mat-grid-list cols="1" rowHeight="120px" gutterSize="5px">
                 <a href="https://www.linkedin.com/in/keertikotaru/" target="__blank">
                     <mat-grid-tile [style.background]="color1">
@@ -89,6 +94,19 @@
                         <img src="assets/stackoverflow.png" class="img-logo" alt="LinkedIn logo">
                         <div class="link">
                             Stackoverflow Profile
+                        </div>
+                    </mat-grid-tile>
+                </a>
+                <a href="https://medium.com/@kvkirthy" target="__blank">
+                    <mat-grid-tile [style.background]="color5">
+                        <img src="assets/medium.png" id="mediumLogo" class="img-logo" alt="Medium logo">
+                    </mat-grid-tile>
+                </a>
+                <a href="http://fb.me/keertikotaru" target="__blank">
+                    <mat-grid-tile [style.background]="color1">
+                        <img src="assets/facebook.png" class="img-logo" alt="LinkedIn logo">
+                        <div class="link">
+                            fb me
                         </div>
                     </mat-grid-tile>
                 </a>
