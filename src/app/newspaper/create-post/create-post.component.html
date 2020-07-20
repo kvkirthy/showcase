@@ -1,15 +1,28 @@
-<form class="row">
-    <span class="col-4"></span>
+<form formGroup="createPostFormGroup" class="row">
+    <span class="col-2"></span>
+    <span class="col-2">
+    </span>
     <div class="col-4">
+        <!-- <h1>Contribute a Post</h1> -->
         <div class="row">
-            <mat-form-field class="col-12">
+            <mat-form-field formControl="title" class="col-12">
                 <mat-label> Title</mat-label>
-                <input matInput>
+                <input type="text"  matInput>
             </mat-form-field>
+            <!-- <ng-container *ngIf="title.error.required"></ng-container> -->
             <mat-form-field class="col-12">
                 <mat-label> Describe</mat-label>
                 <textarea matInput rows="6"></textarea>
             </mat-form-field>
+        </div>
+        <div class="row image-list">
+            <mat-selection-list multiple="false">
+                <div class="col-12 image-item" *ngFor="let img of images">
+                    <mat-list-option checkboxPosition="after">
+                        <img [src]="img">
+                    </mat-list-option>
+                </div>
+            </mat-selection-list>
         </div>
         <div class="row">
             <button mat-button color="primary">Submit</button>
