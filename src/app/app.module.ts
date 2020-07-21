@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { AppRoutingModule } from './app-routing.module';
 import { ShowcaseModule } from './showcase/showcase.module';
 import { NewspaperModule } from './newspaper/newspaper.module';
@@ -24,6 +26,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NewspaperModule,
     HttpClientModule,
     AppRoutingModule,
+    MatSnackBarModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

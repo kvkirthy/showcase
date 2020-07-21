@@ -1,7 +1,7 @@
 h1 {
-    font-size: 18px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
+    font-size: 14px;
+     font-weight: bold;
+     font-family: Roboto, "Helvetica Neue", sans-serif; 
     /* border-width: 0px 0px 1px 0px;
     border-style: solid;
     padding-bottom: 10px; */
@@ -24,3 +24,4 @@ div.image-list {
 div.image-item {
     min-height: 100px;
 }
+
