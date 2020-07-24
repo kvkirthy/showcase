@@ -1,0 +1,114 @@
+<!-- <div>
+    <button mat-button (click)="goNext()">previous</button>
+    <button mat-button (click)="goNext()">Next</button>
+</div> -->
+
+<mat-horizontal-stepper (selectionChange)="clearPreview()" #stepper>
+    <!-- <form id="composeForm" name="composeForm" formGroup="composeFormGroup"> -->
+        <mat-step>
+            <ng-template matStepLabel>Choose top banner story</ng-template>
+            <div class="row">
+                <app-story-list [Stories]="allStories" 
+                    Title="Available Stories" 
+                    class="col-4" 
+                    (SelectedPost)="onSelectTopBanner($event)">
+                </app-story-list>
+                
+                <div class="col-6">
+                    <div *ngIf="selectedTitle">
+                        <app-story-card [title]="selectedTitle" 
+                            [description]="selectedDescription"
+                            [bannerImage]="selectedBannerImage"
+                            [postLink]="selectedPostLink"
+                            (OnImageClick)="imageClicked()"></app-story-card>
+                    </div>
+                </div>
+                <div class="col-2">
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Pick highlights</ng-template>
+            <div class="row">
+                <app-story-list [Stories]="allStories" 
+                    class="col-3" 
+                    Title="Available Stories"  
+                    (SelectedPost)="onSelectTopHighlight($event)">
+                </app-story-list>
+                
+                <app-story-list 
+                        [Stories]="selectedHighlightStory" 
+                        IsRemoveEnabled="true"
+                        Title="Selected Stories"  
+                        class="col-3" 
+                        (SelectedPost)="showPreview($event)"></app-story-list>
+
+                <div class="col-6" *ngIf="selectedTitle">
+                    <app-story-card [title]="selectedTitle" 
+                        [description]="selectedDescription"
+                        [bannerImage]="selectedBannerImage"
+                        [postLink]="selectedPostLink"
+                        (OnImageClick)="imageClicked()"></app-story-card>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Pick top news bits</ng-template>
+            <div class="row">
+                <app-story-list [Stories]="allStories" 
+                    class="col-3" 
+                    Title="Available Stories"  
+                    (SelectedPost)="onSelectNewsBits($event)">
+                </app-story-list>
+
+                <app-story-list 
+                        [Stories]="selectedNewsBits" 
+                        IsRemoveEnabled="true"
+                        Title="Selected Stories"  
+                        class="col-3" 
+                        (SelectedPost)="showPreview($event)"></app-story-list>
+
+                <div class="col-6" *ngIf="selectedTitle">
+                    <app-story-card [title]="selectedTitle" 
+                        [description]="selectedDescription"
+                        [bannerImage]="selectedBannerImage"
+                        [postLink]="selectedPostLink"
+                        ShouldUseImage=false
+                        (OnImageClick)="imageClicked()"></app-story-card>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Choose news feed</ng-template>
+            <div class="row">
+                <app-story-list [Stories]="allStories" 
+                    class="col-3" 
+                    Title="Available Stories"  
+                    (SelectedPost)="onSelectNewsFeed($event)">
+                </app-story-list>
+
+                <app-story-list 
+                        [Stories]="selectedNewsFeed" 
+                        IsRemoveEnabled="true"
+                        Title="Selected Stories"  
+                        class="col-3" 
+                        (SelectedPost)="showPreview($event)"></app-story-list>
+
+                <div class="col-6" *ngIf="selectedTitle">
+                    <app-story-card [title]="selectedTitle" 
+                        [description]="selectedDescription"
+                        [bannerImage]="selectedBannerImage"
+                        [postLink]="selectedPostLink"
+                        ShouldUseImage=false
+                        (OnImageClick)="imageClicked()"></app-story-card>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Review and confirm</ng-template>
+            <div>
+                Review and confirm
+            </div>
+        </mat-step>
+    <!-- </form> -->
+</mat-horizontal-stepper>

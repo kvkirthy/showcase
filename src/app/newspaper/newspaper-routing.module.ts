@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ComposeComponent } from './compose/compose.component';
 import { RegisterComponent } from './register/register.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 
@@ -22,6 +23,9 @@ const routes: Routes = [{
   },{
     path: 'admin/post',
     component: CreatePostComponent
+  },{
+    path: 'admin/compose',
+    component: ComposeComponent
   }]
 },];
 

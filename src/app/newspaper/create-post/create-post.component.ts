@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/newspaper/models/newspaper-post';
 import { AlertHelperService } from 'src/app/components/alert-helper.service';
 import { FormBuilder, FormGroup, Validators, Form, NgForm, FormGroupDirective } from '@angular/forms';
-import { CreatePostService } from 'src/app/newspaper/services/create-post.service';
+import { PostService } from 'src/app/newspaper/services/post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -11,26 +11,21 @@ import { CreatePostService } from 'src/app/newspaper/services/create-post.servic
 })
 export class CreatePostComponent implements OnInit {
 
-  images;
   createPostFormGroup: FormGroup;
   @ViewChild(FormGroupDirective) frm;
 
-  constructor(private createPostService: CreatePostService,
+  constructor(private postService: PostService,
     private formBuilder: FormBuilder,
     private alertHelper: AlertHelperService) { 
       this.createPostFormGroup = this.formBuilder.group({
         title: ['', Validators.required],
         description: ['', Validators.required],
-        bannerImage: ['']
+        bannerImage: [''],
+        linkToPost: ['', [Validators.required, Validators.pattern(/https?:\/\/(.*)/gi)] ]
       });
     }
 
   ngOnInit(): void {
-    this.createPostService.getBanners().subscribe(
-      (result) => {
-        this.images =result;
-      }
-    );
   }
 
   get title(){
@@ -45,6 +40,11 @@ export class CreatePostComponent implements OnInit {
     return this.createPostFormGroup.get('bannerImage');
   }
 
+  get linkToPostValue(){
+    let value:string = this.createPostFormGroup.get('linkToPost').value;
+    return value;
+  }
+
   get author(): User{
     return {
       fullname: 'Vencki',
@@ -53,16 +53,13 @@ export class CreatePostComponent implements OnInit {
     }
   }
 
-  
-
   submit(){
-    if(this.createPostFormGroup.errors?.length > 0){
-      this.alertHelper.showAlertWithClose("Please provide correct values for the post");
-    } else {
-      this.createPostService.createPost({
+    if(this.createPostFormGroup.valid){
+      this.postService.createPost({
         title: this.title.value,
         description: this.description.value,
         imageId: this.bannerImage?.value,
+        linkToPost: this.linkToPostValue,
         user: this.author
       }).subscribe((result) => {
         if(result['_id']){
@@ -72,6 +69,8 @@ export class CreatePostComponent implements OnInit {
           this.alertHelper.showAlertWithClose("Something wrong! Post not created");
         }
       }, error =>  this.alertHelper.showAlertWithClose(`Something wrong! ${JSON.stringify(error)}`));
+    } else {
+      this.alertHelper.showAlertWithClose("Please provide correct values for the post");
     }
   }
 
@@ -84,7 +83,6 @@ export class CreatePostComponent implements OnInit {
     Object.keys(this.createPostFormGroup.controls).forEach(key => {
       this.createPostFormGroup.controls[key].setErrors(null)
     });
-    // this.frm.resetForm();
   }
 
 }

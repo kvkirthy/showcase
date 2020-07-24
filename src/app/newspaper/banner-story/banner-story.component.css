@@ -1,0 +1,19 @@
+img {
+    max-width: 465px;
+    width: auto;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+mat-card {
+    max-width: 500px;
+    height: auto;
+}
+
+mat-card-content {
+    text-align: justify;
+}
+
+mat-card-title {
+    margin-left: -20px;
+}

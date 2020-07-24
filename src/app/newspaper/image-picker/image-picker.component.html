@@ -1,0 +1,12 @@
+
+<div class="row">
+    <h2 class="col-10" mat-dialog-title>Select Image</h2>
+    <mat-icon class="col-2" (click)="close()">close</mat-icon>
+</div>
+<div class="row center-aligned">
+    <div class="col-4" *ngFor="let img of images">
+        <a (click)="onImageClick(img)">
+            <img [src]="img">
+        </a>
+    </div>
+</div>

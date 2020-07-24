@@ -5,7 +5,7 @@ import { NewspaperPost } from 'src/app/newspaper/models/newspaper-post';
 @Injectable({
   providedIn: 'root'
 })
-export class CreatePostService {
+export class PostService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,5 +16,10 @@ export class CreatePostService {
   createPost(post: NewspaperPost){
     return this.httpClient
       .post<NewspaperPost>('/newspaper-post',post);
+  }
+
+  getActiveStories(){
+    return this.httpClient
+      .get<Array<NewspaperPost>>('/newspaper-post');
   }
 }

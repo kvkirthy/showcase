@@ -1,0 +1,13 @@
+img {
+    width: 240px;
+    height: auto;
+}
+
+div.center-aligned {
+    text-align: center;
+}
+
+mat-icon {
+    text-align: right;
+    cursor: pointer;
+}

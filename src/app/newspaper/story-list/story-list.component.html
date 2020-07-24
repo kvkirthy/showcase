@@ -1,0 +1,8 @@
+<h1>{{listTitle}}</h1>
+<mat-list>
+    <mat-list-item *ngFor="let post of stories"  class="row" (click)="onSelect(post)">
+        <strong class="col-10"> {{post.title}} </strong>
+        <mat-icon *ngIf="remove" class="col-2" (click)="removeItem(post)">close</mat-icon>
+        <mat-divider class="col-12"></mat-divider>
+    </mat-list-item>
+</mat-list>
