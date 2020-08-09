@@ -1,14 +1,23 @@
 {
-    "blogs": [ {
-        "title": "Private Members in JavaScript Classes",
-        "description": "ES6 / ES2015 introduced classes in JavaScript. It is an encapsulation of data (fields) and behavior (functions). With a new proposal currently in stage-3, a class can have private members, which are not accessible outside the scope of the class.",
-        "imageUrl": "assets/js.jpeg",
-        "linkToBlog": "https://medium.com/@kvkirthy/private-members-in-javascript-classes-cb04944f1ae2",
-        "isHighlighted": true
-    },{
+    "blogs": [
+        {
+            "title": "Angular Cheatsheet | Everything about Memoization",
+            "description": "My two cents to the eighth edition of DNC magazine. Happy to have contributed. 1. Angular 9 & 10 cheatsheet 2. Article on Memoziation with implementations in Angular and React",
+            "imageUrl": "assets/js.jpeg",
+            "linkToBlog": "http://www.dotnetcurry.net/s/dnc-mag-eighthanniv-single",
+            "isHighlighted": true
+        },
+        {
+            "title": "Private Members in JavaScript Classes",
+            "description": "ES6 / ES2015 introduced classes in JavaScript. It is an encapsulation of data (fields) and behavior (functions). With a new proposal currently in stage-3, a class can have private members, which are not accessible outside the scope of the class.",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            "linkToBlog": "https://medium.com/@kvkirthy/private-members-in-javascript-classes-cb04944f1ae2",
+            "isHighlighted": false
+        },
+        {
             "title": "Cumulative Layout Shift (CLS)",
             "description": "Visual Stability data point among Web Vitals. Identify and fix clumsy user experience with jumpy buttons, text and other controls on a web page.",
-            "imageUrl": "assets/ny.jpg",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Chromium_Logo.svg/512px-Chromium_Logo.svg.png",
             "linkToBlog": "https://medium.com/@kvkirthy/cumulative-layout-shifts-cls-ab3ef9b98b70",
             "isHighlighted": false
         },
