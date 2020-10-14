@@ -8,7 +8,7 @@
         <mat-step>
             <ng-template matStepLabel>Choose top banner story</ng-template>
             <div class="row">
-                <app-story-list [Stories]="allStories" 
+                <app-story-list [Stories]="availableStories.posts" 
                     Title="Available Stories" 
                     class="col-4" 
                     (SelectedPost)="onSelectTopBanner($event)">
@@ -30,7 +30,7 @@
         <mat-step>
             <ng-template matStepLabel>Pick highlights</ng-template>
             <div class="row">
-                <app-story-list [Stories]="allStories" 
+                <app-story-list [Stories]="availableStories.posts" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectTopHighlight($event)">
@@ -55,7 +55,7 @@
         <mat-step>
             <ng-template matStepLabel>Pick top news bits</ng-template>
             <div class="row">
-                <app-story-list [Stories]="allStories" 
+                <app-story-list [Stories]="availableStories.posts" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectNewsBits($event)">
@@ -81,7 +81,7 @@
         <mat-step>
             <ng-template matStepLabel>Choose news feed</ng-template>
             <div class="row">
-                <app-story-list [Stories]="allStories" 
+                <app-story-list [Stories]="availableStories.posts" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectNewsFeed($event)">

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Store, StoreModule } from '@ngrx/store';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Effect, EffectsModule } from '@ngrx/effects';
 
 import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon';
@@ -12,7 +14,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { StoryEffects } from './ngrx/story.effects';
 import { HomeComponent } from './home/home.component';
+import { getStoryReducer } from './ngrx/story.reducer';
 import { LoginComponent } from './login/login.component';
 import { ComposeComponent } from './compose/compose.component';
 import { RegisterComponent } from './register/register.component';
@@ -28,8 +32,10 @@ import { ImagePickerComponent } from './image-picker/image-picker.component';
     LoginComponent, 
     ComposeComponent, 
     RegisterComponent, 
+    StoryListComponent, 
     CreatePostComponent, 
-    BannerStoryComponent, StoryListComponent, ImagePickerComponent
+    ImagePickerComponent,
+    BannerStoryComponent, 
   ],
   imports: [
     CommonModule,
@@ -43,7 +49,9 @@ import { ImagePickerComponent } from './image-picker/image-picker.component';
     MatToolbarModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    NewspaperRoutingModule
+    NewspaperRoutingModule,
+    EffectsModule.forFeature([StoryEffects]),
+    StoreModule.forFeature( 'newspaperStories', {stories: getStoryReducer }),
   ]
 })
 export class NewspaperModule { }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -14,6 +15,7 @@ import { NewspaperModule } from './newspaper/newspaper.module';
 
 import { environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     HttpClientModule,
     AppRoutingModule,
     MatSnackBarModule,
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

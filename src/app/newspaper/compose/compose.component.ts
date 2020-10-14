@@ -1,8 +1,10 @@
+import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
+import { getAllStories } from '../ngrx/story.actions';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
-import { PostService } from 'src/app/newspaper/services/post.service';
-import { NewspaperPost } from 'src/app/newspaper/models/newspaper-post';
+import { getStories } from 'src/app/newspaper/ngrx/story.selectors';
+import { NewspaperPost, NewspaperPosts } from 'src/app/newspaper/models/newspaper-post';
 import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
 
 @Component({
@@ -12,7 +14,7 @@ import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picke
 })
 export class ComposeComponent implements OnInit {
 
-  allStories = new Array<NewspaperPost>();
+  availableStories = new NewspaperPosts();
   selectedHighlightStory = new Array<NewspaperPost>();
   selectedNewsBits = new Array<NewspaperPost>();
   selectedNewsFeed = new Array<NewspaperPost>();
@@ -23,12 +25,25 @@ export class ComposeComponent implements OnInit {
 
   @ViewChild("stepper") stepper: MatHorizontalStepper;
 
-  constructor(private dialog: MatDialog, private postService: PostService){ }
+  constructor(private dialog: MatDialog, 
+    private store: Store){ }
 
   ngOnInit(): void {
-    this.postService
-    .getActiveStories()
-    .subscribe( result => this.allStories = result);
+    this.store.select(getStories).subscribe( (data) => {
+      console.log("selector --> ", data);
+      this.availableStories = data;
+    });
+    // this.store.pipe(select(getStories)).subscribe( (data) => {
+    //   console.log("selector --> ", data);
+    //   this.availableStories = data;
+    // });
+    this.store.dispatch(getAllStories());
+    // this.postService
+    //   .getActiveStories()
+    //   .subscribe( result => {
+    //     console.log(result);
+    //     this.availableStories = result;
+    //   });
   }
 
   onSelectTopBanner(post: NewspaperPost){

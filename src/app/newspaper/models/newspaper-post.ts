@@ -11,3 +11,7 @@ export class NewspaperPost {
     linkToPost: string;
     user: User;
 }
+
+export class NewspaperPosts {
+    posts: NewspaperPost[]
+}
