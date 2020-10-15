@@ -1,5 +1,6 @@
 import { NewspaperPosts } from "../models/newspaper-post";
 
-export default class Stories {
-    allStories: NewspaperPosts
+export default interface Stories {
+    allStories: NewspaperPosts;
+    availableStories: NewspaperPosts;
 }

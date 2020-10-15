@@ -1,11 +1,11 @@
 import { createSelector } from "@ngrx/store";
-import Stories from "./models";
+import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
 
 const allStories = (state) => {
-    console.log("1", state);
-    return state.newspaperStories.stories.allStories;
+    return state.newspaperStories.stories.allStories.posts;
 }
-export const getStories = createSelector( allStories, stories => {
-    console.log("2", stories);
-    return stories;
- });
+export const getUnassignedStories = createSelector( allStories, (stories: NewspaperPost[]) => stories.filter(story => story.storyCategory === undefined || story.storyCategory === null));
+
+export const getStoryByCateory = createSelector( allStories, (stories: NewspaperPost[], props: StoryCategory) => {
+    return stories.find(story => story.storyCategory === props);
+});

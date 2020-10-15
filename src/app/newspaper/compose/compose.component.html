@@ -3,12 +3,12 @@
     <button mat-button (click)="goNext()">Next</button>
 </div> -->
 
-<mat-horizontal-stepper (selectionChange)="clearPreview()" #stepper>
+<mat-horizontal-stepper (selectionChange)="clearPreview($event)" #stepper>
     <!-- <form id="composeForm" name="composeForm" formGroup="composeFormGroup"> -->
-        <mat-step>
+        <mat-step >
             <ng-template matStepLabel>Choose top banner story</ng-template>
             <div class="row">
-                <app-story-list [Stories]="availableStories.posts" 
+                <app-story-list [Stories]="availableStories" 
                     Title="Available Stories" 
                     class="col-4" 
                     (SelectedPost)="onSelectTopBanner($event)">
@@ -20,7 +20,10 @@
                             [description]="selectedDescription"
                             [bannerImage]="selectedBannerImage"
                             [postLink]="selectedPostLink"
+                            customActionTitle = "Make it a Top Banner Story"
+                            (customActionEvent) = "saveSelected()"
                             (OnImageClick)="imageClicked()"></app-story-card>
+
                     </div>
                 </div>
                 <div class="col-2">
@@ -30,7 +33,7 @@
         <mat-step>
             <ng-template matStepLabel>Pick highlights</ng-template>
             <div class="row">
-                <app-story-list [Stories]="availableStories.posts" 
+                <app-story-list [Stories]="availableStories" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectTopHighlight($event)">
@@ -55,7 +58,7 @@
         <mat-step>
             <ng-template matStepLabel>Pick top news bits</ng-template>
             <div class="row">
-                <app-story-list [Stories]="availableStories.posts" 
+                <app-story-list [Stories]="availableStories" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectNewsBits($event)">
@@ -81,7 +84,7 @@
         <mat-step>
             <ng-template matStepLabel>Choose news feed</ng-template>
             <div class="row">
-                <app-story-list [Stories]="availableStories.posts" 
+                <app-story-list [Stories]="availableStories" 
                     class="col-3" 
                     Title="Available Stories"  
                     (SelectedPost)="onSelectNewsFeed($event)">

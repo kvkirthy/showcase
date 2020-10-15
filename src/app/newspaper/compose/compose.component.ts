@@ -1,11 +1,12 @@
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
-import { getAllStories } from '../ngrx/story.actions';
+import { categorizeStories, getAllStories } from '../ngrx/story.actions';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
-import { getStories } from 'src/app/newspaper/ngrx/story.selectors';
-import { NewspaperPost, NewspaperPosts } from 'src/app/newspaper/models/newspaper-post';
+import { getStoryByCateory, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
+import { NewspaperPost, NewspaperPosts, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
 import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
+import { CdkStep, StepperSelectionEvent, StepState } from '@angular/cdk/stepper';
 
 @Component({
   selector: 'app-compose',
@@ -14,14 +15,16 @@ import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picke
 })
 export class ComposeComponent implements OnInit {
 
-  availableStories = new NewspaperPosts();
+  availableStories: NewspaperPost[] =[];
   selectedHighlightStory = new Array<NewspaperPost>();
   selectedNewsBits = new Array<NewspaperPost>();
   selectedNewsFeed = new Array<NewspaperPost>();
+  bannerPost: NewspaperPost = new NewspaperPost();
   selectedTitle : string;
   selectedDescription : string;
   selectedBannerImage : string;
   selectedPostLink : string;
+  selectedStoryId : string;
 
   @ViewChild("stepper") stepper: MatHorizontalStepper;
 
@@ -29,21 +32,23 @@ export class ComposeComponent implements OnInit {
     private store: Store){ }
 
   ngOnInit(): void {
-    this.store.select(getStories).subscribe( (data) => {
-      console.log("selector --> ", data);
-      this.availableStories = data;
-    });
-    // this.store.pipe(select(getStories)).subscribe( (data) => {
-    //   console.log("selector --> ", data);
-    //   this.availableStories = data;
-    // });
+    this.store
+      .select(getUnassignedStories)
+      .subscribe( (data) => {
+        this.availableStories = data;
+      });
+
+      this.store
+      .select(getStoryByCateory,StoryCategory.Banner)
+      .subscribe( (data) => {
+        if(data){
+          this.bannerPost = data;
+          this.showPreview(this.bannerPost);
+        }
+      });
+
     this.store.dispatch(getAllStories());
-    // this.postService
-    //   .getActiveStories()
-    //   .subscribe( result => {
-    //     console.log(result);
-    //     this.availableStories = result;
-    //   });
+
   }
 
   onSelectTopBanner(post: NewspaperPost){
@@ -51,21 +56,28 @@ export class ComposeComponent implements OnInit {
   }
 
   showPreview(post: NewspaperPost){
+    this.selectedStoryId = post._id;
     this.selectedTitle = post.title;
     this.selectedBannerImage = post.imageId;
     this.selectedDescription = post.description;
     this.selectedPostLink = post.linkToPost;
   }
 
-  clearPreview(){
-    this.selectedTitle = '';
-    this.selectedBannerImage = '';
-    this.selectedDescription = '';
-    this.selectedPostLink = '';
+  clearPreview(evt: StepperSelectionEvent){
+    if(this.bannerPost && evt.selectedIndex === 0){
+      this.showPreview(this.bannerPost);
+    } else {
+      this.selectedTitle = '';
+      this.selectedBannerImage = '';
+      this.selectedDescription = '';
+      this.selectedPostLink = '';
+    }
   }
+
 
   onSelectTopHighlight(post: NewspaperPost){
     this.selectedHighlightStory.push({
+      _id: post._id,
       title : post.title,
       imageId : post.imageId,
       description : post.description,
@@ -76,6 +88,7 @@ export class ComposeComponent implements OnInit {
 
   onSelectNewsBits(post: NewspaperPost){
     this.selectedNewsBits.push({
+      _id: post._id,
       title : post.title,
       imageId : post.imageId,
       description : post.description,
@@ -86,6 +99,7 @@ export class ComposeComponent implements OnInit {
 
   onSelectNewsFeed(post: NewspaperPost){
     this.selectedNewsFeed.push({
+      _id: post._id,
       title : post.title,
       imageId : post.imageId,
       description : post.description,
@@ -102,6 +116,15 @@ export class ComposeComponent implements OnInit {
     dialogRef
       .afterClosed()
       .subscribe( data => this.selectedBannerImage=data);
+  }
+
+  saveSelected(){
+    console.log("button selected", this.selectedStoryId);
+    this.store.dispatch(categorizeStories({
+      newCategory: StoryCategory.Banner,
+      storyIds: [this.selectedStoryId]
+    }));
+
   }
 
 }
