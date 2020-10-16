@@ -26,6 +26,11 @@ export class ComposeComponent implements OnInit {
   selectedPostLink : string;
   selectedStoryId : string;
 
+  CategoryBanner = StoryCategory.Banner;
+  CategoryHighlights = StoryCategory.Highlight;
+  CategoryNewsBits = StoryCategory.NewsBit;
+  CategoryFeed = StoryCategory.Feed;
+
   @ViewChild("stepper") stepper: MatHorizontalStepper;
 
   constructor(private dialog: MatDialog, 
@@ -84,6 +89,7 @@ export class ComposeComponent implements OnInit {
       linkToPost : post.linkToPost,
       user: post.user
     });
+    this.saveSelected(this.CategoryHighlights, post._id)
   }
 
   onSelectNewsBits(post: NewspaperPost){
@@ -95,6 +101,7 @@ export class ComposeComponent implements OnInit {
       linkToPost : post.linkToPost,
       user: post.user
     });
+    this.saveSelected(this.CategoryNewsBits, post._id)
   }
 
   onSelectNewsFeed(post: NewspaperPost){
@@ -106,6 +113,14 @@ export class ComposeComponent implements OnInit {
       linkToPost : post.linkToPost,
       user: post.user
     });
+    this.saveSelected(this.CategoryFeed, post._id)
+  }
+
+  handleRemovedPost(post: NewspaperPost){
+    this.store.dispatch(categorizeStories({
+      newCategory: StoryCategory.None,
+      storyIds: [post._id]
+    }));
   }
 
   imageClicked(){
@@ -118,11 +133,11 @@ export class ComposeComponent implements OnInit {
       .subscribe( data => this.selectedBannerImage=data);
   }
 
-  saveSelected(){
-    console.log("button selected", this.selectedStoryId);
+  saveSelected(category: StoryCategory, selectedStoryId:string = this.selectedStoryId){
+    // console.log("button selected", this.selectedStoryId);
     this.store.dispatch(categorizeStories({
-      newCategory: StoryCategory.Banner,
-      storyIds: [this.selectedStoryId]
+      newCategory: category,
+      storyIds: [selectedStoryId]
     }));
 
   }

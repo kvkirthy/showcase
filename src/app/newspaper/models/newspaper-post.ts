@@ -5,6 +5,7 @@ export class User {
 }
 
 export enum StoryCategory{
+    None,
     Banner,
     Highlight,
     NewsBit,

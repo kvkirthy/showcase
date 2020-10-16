@@ -21,7 +21,7 @@
                             [bannerImage]="selectedBannerImage"
                             [postLink]="selectedPostLink"
                             customActionTitle = "Make it a Top Banner Story"
-                            (customActionEvent) = "saveSelected()"
+                            (customActionEvent) = "saveSelected(CategoryBanner)"
                             (OnImageClick)="imageClicked()"></app-story-card>
 
                     </div>
@@ -44,6 +44,7 @@
                         IsRemoveEnabled="true"
                         Title="Selected Stories"  
                         class="col-3" 
+                        (RemovedPost)="handleRemovedPost($event)"
                         (SelectedPost)="showPreview($event)"></app-story-list>
 
                 <div class="col-6" *ngIf="selectedTitle">
@@ -61,6 +62,7 @@
                 <app-story-list [Stories]="availableStories" 
                     class="col-3" 
                     Title="Available Stories"  
+                    (RemovedPost)="handleRemovedPost($event)"
                     (SelectedPost)="onSelectNewsBits($event)">
                 </app-story-list>
 
@@ -69,6 +71,7 @@
                         IsRemoveEnabled="true"
                         Title="Selected Stories"  
                         class="col-3" 
+                        (RemovedPost)="handleRemovedPost($event)"
                         (SelectedPost)="showPreview($event)"></app-story-list>
 
                 <div class="col-6" *ngIf="selectedTitle">
@@ -95,6 +98,7 @@
                         IsRemoveEnabled="true"
                         Title="Selected Stories"  
                         class="col-3" 
+                        (RemovedPost)="handleRemovedPost($event)"
                         (SelectedPost)="showPreview($event)"></app-story-list>
 
                 <div class="col-6" *ngIf="selectedTitle">

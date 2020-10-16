@@ -12,6 +12,8 @@ export class StoryListComponent implements OnInit {
   @Input("Stories") stories: Array<NewspaperPost>;
   @Input("IsRemoveEnabled") remove: boolean = false;
   @Output("SelectedPost") selectedPost = new EventEmitter<NewspaperPost>();
+  @Output("RemovedPost") removedPost = new EventEmitter<NewspaperPost>();
+
 
   constructor() { }
   ngOnInit(): void { }
@@ -21,8 +23,8 @@ export class StoryListComponent implements OnInit {
   }
 
   removeItem(item: NewspaperPost){
-    // console.log();
     this.stories.splice(this.stories.indexOf(item),1);
+    this.removedPost.emit(item);
   }
 
 }
