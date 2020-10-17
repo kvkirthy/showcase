@@ -1,0 +1,49 @@
+<form [formGroup]="createNpeFormGroup" class="row">
+    <span class="col-sm-1 col-md-1"></span>
+
+    <div class="col-sm-12 col-md-4 right-border-line">
+        <h5>Select an existing edition</h5>
+        <mat-form-field appearance="fill" >
+            <mat-label>Select Newspaper Editions</mat-label>
+            <mat-select (selectionChange)="showSelectedEdition($event)" >
+                <mat-option *ngFor="let edition of editionsList" [value]="edition._id">
+                    {{edition.title}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div *ngIf="selectedEdition" class="edition-details">
+            <strong>{{selectedEdition.title}}</strong>
+            <div>{{selectedEdition.description}}</div>
+            <div>{{selectedEdition.dateCreated | date:'dd-MMM-yyyy hh:mm'}}</div>
+            <div>{{selectedEdition.isPublished?'Published':'Draft'}}</div>
+        </div>
+        <button *ngIf="selectedEdition" type="button" mat-button color="primary">Continue</button>
+
+    </div>
+
+    <span class="col-sm-1 col-md-1"></span>
+
+    <div class="col-xs-12 col-sm-10 col-md-6">
+        <div class="row">
+            <h5>Create a new edition</h5>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-12" id="title" name="title" >
+                <mat-label> Title</mat-label>
+                <input type="text" formControlName="title" matInput>
+                <mat-hint>  Provide a title </mat-hint> 
+            </mat-form-field>
+            <mat-form-field id="description" name="description"  class="col-12">
+                <mat-label> Description</mat-label>
+                <textarea matInput formControlName="description" rows="3"></textarea>
+                <mat-hint>  Describe the news edition </mat-hint> 
+            </mat-form-field>
+        </div>
+        <div class="row actions-row">
+            <button type="submit" mat-button (click)="submit()" color="primary">Submit</button>
+            <button mat-button (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+
+    <span class="col-sm-1"></span>
+</form>

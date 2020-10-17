@@ -1,12 +1,15 @@
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
-import { categorizeStories, getAllStories } from '../ngrx/story.actions';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
-import { getStoryByCateory, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
-import { NewspaperPost, NewspaperPosts, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
-import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
+import editorSelector from 'src/app/newspaper/ngrx/edition.selectors';
+import { categorizeStories, getAllStories } from '../ngrx/story.actions';
 import { CdkStep, StepperSelectionEvent, StepState } from '@angular/cdk/stepper';
+import { getAllNewspaperEditions } from 'src/app/newspaper/ngrx/edition.actions';
+import { NewspaperPost, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
+import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
+import { getStoryByCateory, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
+import { NewspaperEdition } from '../models/editions';
 
 @Component({
   selector: 'app-compose',
@@ -25,6 +28,7 @@ export class ComposeComponent implements OnInit {
   selectedBannerImage : string;
   selectedPostLink : string;
   selectedStoryId : string;
+  editions: NewspaperEdition[];
 
   CategoryBanner = StoryCategory.Banner;
   CategoryHighlights = StoryCategory.Highlight;
@@ -44,6 +48,13 @@ export class ComposeComponent implements OnInit {
       });
 
       this.store
+      .select(editorSelector)
+      .subscribe( (data) => {
+        console.log("editors -->", data);
+        this.editions = data;
+      });
+
+      this.store
       .select(getStoryByCateory,StoryCategory.Banner)
       .subscribe( (data) => {
         if(data){
@@ -52,7 +63,8 @@ export class ComposeComponent implements OnInit {
         }
       });
 
-    this.store.dispatch(getAllStories());
+      this.store.dispatch(getAllNewspaperEditions());
+      this.store.dispatch(getAllStories());
 
   }
 
@@ -69,7 +81,7 @@ export class ComposeComponent implements OnInit {
   }
 
   clearPreview(evt: StepperSelectionEvent){
-    if(this.bannerPost && evt.selectedIndex === 0){
+    if(this.bannerPost && evt.selectedIndex === 1){
       this.showPreview(this.bannerPost);
     } else {
       this.selectedTitle = '';

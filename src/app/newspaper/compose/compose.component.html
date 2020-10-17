@@ -6,6 +6,13 @@
 <mat-horizontal-stepper (selectionChange)="clearPreview($event)" #stepper>
     <!-- <form id="composeForm" name="composeForm" formGroup="composeFormGroup"> -->
         <mat-step >
+            <ng-template matStepLabel>Select / Create Newspaper Edition</ng-template>
+            <div class="row">
+                <app-create-newspaper-edition class="col-8" [editions]="editions">
+                </app-create-newspaper-edition>
+            </div>
+        </mat-step>
+        <mat-step >
             <ng-template matStepLabel>Choose top banner story</ng-template>
             <div class="row">
                 <app-story-list [Stories]="availableStories" 

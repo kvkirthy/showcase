@@ -55,7 +55,7 @@ export class CreatePostComponent implements OnInit {
 
   submit(){
     if(this.createPostFormGroup.valid){
-      this.postService.createPost({
+      this.postService.create({
         title: this.title.value,
         description: this.description.value,
         imageId: this.bannerImage?.value,
