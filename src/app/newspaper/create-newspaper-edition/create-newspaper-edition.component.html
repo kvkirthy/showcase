@@ -17,7 +17,7 @@
             <div>{{selectedEdition.dateCreated | date:'dd-MMM-yyyy hh:mm'}}</div>
             <div>{{selectedEdition.isPublished?'Published':'Draft'}}</div>
         </div>
-        <button *ngIf="selectedEdition" type="button" mat-button color="primary">Continue</button>
+        <button *ngIf="selectedEdition" type="button" mat-button color="primary" (click)="continueWithEdition(selectedEdition)">Continue</button>
 
     </div>
 

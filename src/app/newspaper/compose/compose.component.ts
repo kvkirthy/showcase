@@ -2,7 +2,7 @@ import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
-import editorSelector from 'src/app/newspaper/ngrx/edition.selectors';
+import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
 import { categorizeStories, getAllStories } from '../ngrx/story.actions';
 import { CdkStep, StepperSelectionEvent, StepState } from '@angular/cdk/stepper';
 import { getAllNewspaperEditions } from 'src/app/newspaper/ngrx/edition.actions';
@@ -41,7 +41,7 @@ export class ComposeComponent implements OnInit {
     private store: Store){ }
 
   ngOnInit(): void {
-    this.store
+      this.store
       .select(getUnassignedStories)
       .subscribe( (data) => {
         this.availableStories = data;
@@ -50,9 +50,16 @@ export class ComposeComponent implements OnInit {
       this.store
       .select(editorSelector)
       .subscribe( (data) => {
-        console.log("editors -->", data);
         this.editions = data;
       });
+
+      this.store
+        .select(selectedEdition)
+        .subscribe( (data) => {
+          if(data){
+            this.stepper.next();
+          }
+        });
 
       this.store
       .select(getStoryByCateory,StoryCategory.Banner)

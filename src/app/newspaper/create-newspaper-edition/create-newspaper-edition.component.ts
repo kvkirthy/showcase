@@ -1,8 +1,10 @@
+import { Store } from '@ngrx/store';
+import * as actions from '../ngrx/edition.actions';
+import { NewspaperEdition } from '../models/editions';
 import { Component, Input, OnInit } from '@angular/core';
+import { EditionService } from '../services/edition.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertHelperService } from 'src/app/components/alert-helper.service';
-import { NewspaperEdition } from '../models/editions';
-import { EditionService } from '../services/edition.service';
 
 @Component({
   selector: 'app-create-newspaper-edition',
@@ -18,7 +20,8 @@ export class CreateNewspaperEditionComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private editionService: EditionService,
-    private alertHelper: AlertHelperService
+    private alertHelper: AlertHelperService,
+    private store: Store
   ) { }
 
   ngOnInit(): void {
@@ -46,6 +49,10 @@ export class CreateNewspaperEditionComponent implements OnInit {
 
   showSelectedEdition($event){
     this.selectedEdition = this.editionsList.find(i => i._id === $event.value);
+  }
+
+  continueWithEdition(selectedEdition){
+    this.store.dispatch(actions.setEdition(selectedEdition))
   }
 
   submit(){
