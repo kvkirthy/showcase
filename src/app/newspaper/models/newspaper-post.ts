@@ -1,3 +1,5 @@
+import { NewspaperEdition } from './editions';
+
 export class User {
     fullname: string;
     twitterHandle: string;
@@ -20,11 +22,13 @@ export class NewspaperPost {
     linkToPost: string;
     user: User;
     storyCategory?: StoryCategory;
+    edition?: NewspaperEdition;
 }
 
 export class StoryCategoryMap {
     storyIds: string[];
     newCategory: StoryCategory;
+    edition?: NewspaperEdition;
 }
 
 export class NewspaperPosts {

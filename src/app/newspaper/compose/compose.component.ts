@@ -29,6 +29,7 @@ export class ComposeComponent implements OnInit {
   selectedPostLink : string;
   selectedStoryId : string;
   editions: NewspaperEdition[];
+  currentEdition: NewspaperEdition;
 
   CategoryBanner = StoryCategory.Banner;
   CategoryHighlights = StoryCategory.Highlight;
@@ -55,8 +56,9 @@ export class ComposeComponent implements OnInit {
 
       this.store
         .select(selectedEdition)
-        .subscribe( (data) => {
+        .subscribe( (data: NewspaperEdition) => {
           if(data){
+            this.currentEdition = data;
             this.stepper.next();
           }
         });
@@ -106,7 +108,7 @@ export class ComposeComponent implements OnInit {
       imageId : post.imageId,
       description : post.description,
       linkToPost : post.linkToPost,
-      user: post.user
+      user: post.user,
     });
     this.saveSelected(this.CategoryHighlights, post._id)
   }
@@ -118,7 +120,7 @@ export class ComposeComponent implements OnInit {
       imageId : post.imageId,
       description : post.description,
       linkToPost : post.linkToPost,
-      user: post.user
+      user: post.user,
     });
     this.saveSelected(this.CategoryNewsBits, post._id)
   }
@@ -130,7 +132,7 @@ export class ComposeComponent implements OnInit {
       imageId : post.imageId,
       description : post.description,
       linkToPost : post.linkToPost,
-      user: post.user
+      user: post.user,
     });
     this.saveSelected(this.CategoryFeed, post._id)
   }
@@ -156,7 +158,8 @@ export class ComposeComponent implements OnInit {
     // console.log("button selected", this.selectedStoryId);
     this.store.dispatch(categorizeStories({
       newCategory: category,
-      storyIds: [selectedStoryId]
+      storyIds: [selectedStoryId],
+      edition: this.currentEdition
     }));
 
   }

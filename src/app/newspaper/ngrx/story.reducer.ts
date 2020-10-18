@@ -1,7 +1,7 @@
-import * as actions from './story.actions';
 import Stories from './models';
+import * as actions from './story.actions';
 import { createReducer, on } from "@ngrx/store"
-import { NewspaperPosts, StoryCategory, StoryCategoryMap } from '../models/newspaper-post';
+import { NewspaperPost, NewspaperPosts, StoryCategory, StoryCategoryMap } from '../models/newspaper-post';
 
 export const initialState: Stories = {
     allStories: {
@@ -29,12 +29,13 @@ const getAvailableStories = (state: Stories) => ({ ...state, availableStories: s
 const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
     let newState = [];
     state.allStories.posts.map( story => {
-        let updatedStory;
+        let updatedStory: NewspaperPost;
         if( props.storyIds.find( p => p === story._id)){
             if(props.newCategory === StoryCategory.None){
                 updatedStory = {...story, storyCategory: null};
             } else{
                 updatedStory = {...story, storyCategory: props.newCategory};
+                updatedStory.edition = props.edition;
             }
             newState.push(updatedStory);
         } else if(props.newCategory === StoryCategory.Banner){ // override existing banner
