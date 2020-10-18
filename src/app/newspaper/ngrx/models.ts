@@ -8,5 +8,4 @@ export interface Editions {
 
 export default interface Stories {
     allStories: NewspaperPosts;
-    availableStories: NewspaperPosts;
 }

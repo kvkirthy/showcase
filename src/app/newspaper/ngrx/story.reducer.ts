@@ -6,9 +6,6 @@ import { NewspaperPost, NewspaperPosts, StoryCategory, StoryCategoryMap } from '
 export const initialState: Stories = {
     allStories: {
         posts: []
-    },
-    availableStories: {
-        posts: []
     }
 };
 
@@ -18,14 +15,10 @@ const getStateOnStoriesApiSuccess = (state: Stories, props: NewspaperPosts ) => 
         ...state,
         allStories: {
             posts
-        },
-        availableStories: {
-            posts
         }
     };
 };
 
-const getAvailableStories = (state: Stories) => ({ ...state, availableStories: state.availableStories});
 const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
     let newState = [];
     state.allStories.posts.map( story => {
@@ -51,7 +44,6 @@ const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
 const _storyReducer = createReducer(
         initialState,
         on(actions.getAllStoriesSuccess, getStateOnStoriesApiSuccess),
-        on(actions.getAvailableStories, getAvailableStories),
         on(actions.categorizeStories, categorizeStories)
     );
 
