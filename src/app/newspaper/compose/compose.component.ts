@@ -1,15 +1,15 @@
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
+import { NewspaperEdition } from '../models/editions';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
-import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
-import { categorizeStories, getAllStories } from '../ngrx/story.actions';
-import { CdkStep, StepperSelectionEvent, StepState } from '@angular/cdk/stepper';
 import { getAllNewspaperEditions } from 'src/app/newspaper/ngrx/edition.actions';
 import { NewspaperPost, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
+import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
 import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
-import { getStoryByCateory, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
-import { NewspaperEdition } from '../models/editions';
+import { categorizeStories, getAllStories, updateStoriesForEdition } from '../ngrx/story.actions';
+import { getStoryByCateory, getAssignedStories, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
 
 @Component({
   selector: 'app-compose',
@@ -19,6 +19,7 @@ import { NewspaperEdition } from '../models/editions';
 export class ComposeComponent implements OnInit {
 
   availableStories: NewspaperPost[] =[];
+  assignedStories: NewspaperPost[] =[];
   selectedHighlightStory = new Array<NewspaperPost>();
   selectedNewsBits = new Array<NewspaperPost>();
   selectedNewsFeed = new Array<NewspaperPost>();
@@ -42,10 +43,17 @@ export class ComposeComponent implements OnInit {
     private store: Store){ }
 
   ngOnInit(): void {
-      this.store
+
+    this.store
       .select(getUnassignedStories)
-      .subscribe( (data) => {
+      .subscribe((data) => {
         this.availableStories = data;
+      });
+
+      this.store
+      .select(getAssignedStories)
+      .subscribe((data) => {
+        this.assignedStories = data;
       });
 
       this.store
@@ -111,6 +119,12 @@ export class ComposeComponent implements OnInit {
       user: post.user,
     });
     this.saveSelected(this.CategoryHighlights, post._id)
+  }
+
+  submitEdition(){
+    this.store.dispatch(updateStoriesForEdition({
+     posts: this.assignedStories.filter(i => i.edition === this.currentEdition)
+    }));
   }
 
   onSelectNewsBits(post: NewspaperPost){

@@ -18,6 +18,16 @@ export class StoryEffects {
         )
     );
 
+    updateStoriesForEdition$ = createEffect(() => this.actions$.pipe(
+        ofType(actions.updateStoriesForEdition),
+        mergeMap((req) => this.postService.updateStoriesForEdition(req)
+            .pipe(
+                map(() => (actions.updateStoriesForEditionSuccess(true))),
+                catchError(() => EMPTY),
+            ))
+        )
+    );
+
     constructor(
         private actions$: Actions,
         private postService: PostService

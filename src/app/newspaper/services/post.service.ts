@@ -1,8 +1,8 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NewspaperPost } from 'src/app/newspaper/models/newspaper-post';
+import { NewspaperPost, NewspaperPosts } from 'src/app/newspaper/models/newspaper-post';
 
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,4 +24,10 @@ export class PostService {
     return this.httpClient
       .get<NewspaperPost[]>('/newspaper-post');
   }
+
+  updateStoriesForEdition(posts: NewspaperPosts){
+    return this.httpClient
+      .post('/newspaper-post/update-list',posts.posts);
+  }
+
 }
