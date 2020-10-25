@@ -1,8 +1,17 @@
 img {
+    position: absolute;
     max-width: 465px;
     width: auto;
     height: auto;
     margin-bottom: 15px;
+    top: -60px;
+}
+
+div.storyImage {
+    height: 150px;
+    width: 465px;
+    position: relative;
+    overflow: hidden;
 }
 
 mat-card {

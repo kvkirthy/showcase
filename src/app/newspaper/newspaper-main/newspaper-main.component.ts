@@ -53,9 +53,7 @@ export class NewspaperMainComponent implements OnInit {
                 }
               }
             });
-
         }
-
       });
   }
 

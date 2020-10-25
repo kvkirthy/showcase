@@ -1,7 +1,7 @@
 <mat-card class="mat-elevation-z0">
-    <span *ngIf="shouldUseImage === true" >
+    <div class="storyImage" *ngIf="shouldUseImage === true" >
         <a (click)="imageClicked()"><img [src]="bannerImage"  /></a>
-    </span>
+    </div>
     <mat-card-header>
         <mat-card-title>{{title}}</mat-card-title>
     </mat-card-header>
