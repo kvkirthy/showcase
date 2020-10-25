@@ -51,12 +51,6 @@ export class ComposeComponent implements OnInit {
       });
 
       this.store
-      .select(getAssignedStories)
-      .subscribe((data) => {
-        this.assignedStories = data;
-      });
-
-      this.store
       .select(editorSelector)
       .subscribe( (data) => {
         this.editions = data;
@@ -67,21 +61,57 @@ export class ComposeComponent implements OnInit {
         .subscribe( (data: NewspaperEdition) => {
           if(data){
             this.currentEdition = data;
+            this.queryStoreByEdition(this.currentEdition._id);
             this.stepper.next();
           }
         });
 
-      this.store
-      .select(getStoryByCateory,StoryCategory.Banner)
-      .subscribe( (data) => {
-        if(data){
-          this.bannerPost = data;
-          this.showPreview(this.bannerPost);
-        }
-      });
-
       this.store.dispatch(getAllNewspaperEditions());
       this.store.dispatch(getAllStories());
+
+  }
+
+  private queryStoreByEdition(editionId: string){
+    this.store
+    .select(getAssignedStories, {editionId: editionId})
+    .subscribe((data) => {
+      this.assignedStories = data;
+    });
+    
+    this.store
+    .select(getStoryByCateory, {category: StoryCategory.Banner, editionId: editionId})
+    .subscribe( (data) => {
+      if(data){
+        if(data && data.length > 0){
+          this.bannerPost = data[0];
+          this.showPreview(this.bannerPost);
+        }
+      }
+    });
+
+    this.store
+    .select(getStoryByCateory, {category: StoryCategory.Highlight, editionId: editionId})
+    .subscribe( (data) => {
+      if(data){
+        this.selectedHighlightStory = data;
+      }
+    });
+
+    this.store
+    .select(getStoryByCateory,{category: StoryCategory.Feed, editionId: editionId})
+    .subscribe( (data) => {
+      if(data){
+        this.selectedNewsFeed = data;
+      }
+    });
+
+    this.store
+    .select(getStoryByCateory,{category: StoryCategory.NewsBit, editionId: editionId})
+    .subscribe( (data) => {
+      if(data){
+        this.selectedNewsBits = data;
+      }
+    });
 
   }
 
@@ -123,7 +153,7 @@ export class ComposeComponent implements OnInit {
 
   submitEdition(){
     this.store.dispatch(updateStoriesForEdition({
-     posts: this.assignedStories.filter(i => i.edition === this.currentEdition)
+     posts: this.assignedStories.filter(i => i.edition._id === this.currentEdition._id)
     }));
   }
 

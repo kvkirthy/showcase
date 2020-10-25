@@ -1,7 +1,7 @@
 import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-story-card',
+  selector: 'app-banner-story-card',
   templateUrl: './banner-story.component.html',
   styleUrls: ['./banner-story.component.css']
 })
