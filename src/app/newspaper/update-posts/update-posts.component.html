@@ -1,0 +1,11 @@
+<div class="row">
+    <app-story-list [Stories]="stories" 
+        Title="Available Stories" 
+        class="col-4"
+        (SelectedPost)="onSelectTopBanner($event)">
+    </app-story-list>
+    
+    <textarea class="col-6" (change)="updateJsonText($event)" rows="20" [value]="story"></textarea>
+
+    <button mat-button (click)="savePost()"> Go </button>
+</div>

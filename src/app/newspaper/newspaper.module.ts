@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { StoryEffects } from './ngrx/story.effects';
@@ -32,6 +33,7 @@ import { ImagePickerComponent } from './image-picker/image-picker.component';
 import { CreateNewspaperEditionComponent } from './create-newspaper-edition/create-newspaper-edition.component';
 import { StoryCardComponent } from './story-card/story-card.component';
 import { NewspaperMainComponent } from './newspaper-main/newspaper-main.component';
+import { UpdatePostsComponent } from './update-posts/update-posts.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { NewspaperMainComponent } from './newspaper-main/newspaper-main.componen
     BannerStoryComponent,
     CreateNewspaperEditionComponent,
     StoryCardComponent,
-    NewspaperMainComponent, 
+    NewspaperMainComponent,
+    UpdatePostsComponent, 
   ],
   imports: [
     CommonModule,
@@ -58,6 +61,7 @@ import { NewspaperMainComponent } from './newspaper-main/newspaper-main.componen
     MatButtonModule,
     MatStepperModule,
     MatToolbarModule,
+    MatGridListModule,
     MatCheckboxModule,
     ReactiveFormsModule,
     NewspaperRoutingModule,

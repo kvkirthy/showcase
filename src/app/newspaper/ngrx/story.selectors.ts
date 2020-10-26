@@ -7,8 +7,8 @@ const allStories = (state) => {
 
 export const getAssignedStories 
     = createSelector( allStories, 
-        (stories: NewspaperPost[], props) => {
-            if(props.editionId){
+        (stories: NewspaperPost[], props?) => {
+            if(props?.editionId){
                 return stories.filter(story => story.storyCategory !== undefined 
                     && story.storyCategory !== null
                     && story.edition && story.edition._id === props.editionId);

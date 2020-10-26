@@ -1,4 +1,20 @@
-<div class="row" *ngIf="bannerStory">
+
+<mat-grid-list cols="6" rowHeight="220px">
+    <mat-grid-tile *ngIf="bannerStory" rowspan="2" colspan="2">
+        <app-banner-story-card [title]="bannerStory.title" 
+        [description]="bannerStory.description"
+        [bannerImage]="bannerStory.imageId"
+        [postLink]="bannerStory.linkToPost"
+        ></app-banner-story-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let story of stories">
+        <app-story-card [title]="story.title" 
+        [description]="story.description"></app-story-card>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<!-- <div class="row" *ngIf="bannerStory">
     <div class="col-4">
         <app-banner-story-card [title]="bannerStory.title" 
         [description]="bannerStory.description"
@@ -18,4 +34,4 @@
 
     </div>
 
-</div>
+</div> -->

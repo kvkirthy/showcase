@@ -27,7 +27,12 @@ export class PostService {
 
   updateStoriesForEdition(posts: NewspaperPosts){
     return this.httpClient
-      .post('/newspaper-post/update-list',posts.posts);
+      .post('/newspaper-post/add-posts-to-edition',posts.posts);
+  }
+
+  updatePost(post: NewspaperPost){
+    return this.httpClient
+      .post<NewspaperPost>('/newspaper-post/update-post',post);
   }
 
 }

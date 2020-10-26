@@ -1,8 +1,8 @@
 import { EMPTY } from 'rxjs';
 import { Injectable } from '@angular/core';
 import * as actions from './story.actions';
-import { map, mergeMap, catchError } from 'rxjs/operators';
 import { PostService } from '../services/post.service';
+import { map, mergeMap, catchError } from 'rxjs/operators';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
 @Injectable()
@@ -23,6 +23,16 @@ export class StoryEffects {
         mergeMap((req) => this.postService.updateStoriesForEdition(req)
             .pipe(
                 map(() => (actions.updateStoriesForEditionSuccess(true))),
+                catchError(() => EMPTY),
+            ))
+        )
+    );
+
+    updateStoryJson$ = createEffect(() => this.actions$.pipe(
+        ofType(actions.updateStoryJson),
+        mergeMap((req) => this.postService.updatePost(req)
+            .pipe(
+                map(() => (actions.updateStoryJsonSuccess(true))),
                 catchError(() => EMPTY),
             ))
         )
