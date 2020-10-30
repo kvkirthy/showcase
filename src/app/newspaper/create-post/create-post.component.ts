@@ -20,6 +20,7 @@ export class CreatePostComponent implements OnInit {
       this.createPostFormGroup = this.formBuilder.group({
         title: ['', Validators.required],
         description: ['', Validators.required],
+        story: ['', Validators.required],
         bannerImage: [''],
         linkToPost: ['', [Validators.required, Validators.pattern(/https?:\/\/(.*)/gi)] ]
       });
@@ -34,6 +35,10 @@ export class CreatePostComponent implements OnInit {
   
   get description(){
     return this.createPostFormGroup.get('description');
+  }
+
+  get story(){
+    return this.createPostFormGroup.get('story');
   }
 
   get bannerImage(){
@@ -58,6 +63,7 @@ export class CreatePostComponent implements OnInit {
       this.postService.create({
         title: this.title.value,
         description: this.description.value,
+        story: this.story.value,
         imageId: this.bannerImage?.value,
         linkToPost: this.linkToPostValue,
         user: this.author

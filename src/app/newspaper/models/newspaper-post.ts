@@ -18,6 +18,7 @@ export class NewspaperPost {
     _id?: string;
     title: string;
     description: string;
+    story: string;
     imageId: string;
     linkToPost: string;
     user: User;

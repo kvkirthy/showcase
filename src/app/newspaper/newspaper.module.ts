@@ -3,6 +3,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +14,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { StoryEffects } from './ngrx/story.effects';
@@ -26,14 +26,14 @@ import { LoginComponent } from './login/login.component';
 import { ComposeComponent } from './compose/compose.component';
 import { RegisterComponent } from './register/register.component';
 import { NewspaperRoutingModule } from './newspaper-routing.module';
+import { StoryCardComponent } from './story-card/story-card.component';
 import { StoryListComponent } from './story-list/story-list.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { UpdatePostsComponent } from './update-posts/update-posts.component';
 import { BannerStoryComponent } from './banner-story/banner-story.component';
 import { ImagePickerComponent } from './image-picker/image-picker.component';
-import { CreateNewspaperEditionComponent } from './create-newspaper-edition/create-newspaper-edition.component';
-import { StoryCardComponent } from './story-card/story-card.component';
 import { NewspaperMainComponent } from './newspaper-main/newspaper-main.component';
-import { UpdatePostsComponent } from './update-posts/update-posts.component';
+import { CreateNewspaperEditionComponent } from './create-newspaper-edition/create-newspaper-edition.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +61,7 @@ import { UpdatePostsComponent } from './update-posts/update-posts.component';
     MatButtonModule,
     MatStepperModule,
     MatToolbarModule,
-    MatGridListModule,
+    FlexLayoutModule,
     MatCheckboxModule,
     ReactiveFormsModule,
     NewspaperRoutingModule,

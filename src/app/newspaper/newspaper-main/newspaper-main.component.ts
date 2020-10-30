@@ -57,4 +57,12 @@ export class NewspaperMainComponent implements OnInit {
       });
   }
 
+  formatDescription(str:string, length:number): string{
+    if(str.length > length){
+      return str.substring(0, length) + "...";
+    } else {
+      return str;
+    }
+  }
+
 }

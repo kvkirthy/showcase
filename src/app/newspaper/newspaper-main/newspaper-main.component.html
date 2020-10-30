@@ -1,37 +1,43 @@
+<div class="row">
 
-<mat-grid-list cols="6" rowHeight="220px">
-    <mat-grid-tile *ngIf="bannerStory" rowspan="2" colspan="2">
+    <div class="col-2">
+        <div class="row">
+            <div class="col-12" *ngFor="let story of stories; let i= index">
+                <app-story-card *ngIf="i < 2" [title]="story.title" 
+                [description]="formatDescription(story.description, 227)"></app-story-card>
+            </div>  
+        </div>
+    </div>
+
+    
+    <div class="col-4" *ngIf="bannerStory">
         <app-banner-story-card [title]="bannerStory.title" 
-        [description]="bannerStory.description"
-        [bannerImage]="bannerStory.imageId"
-        [postLink]="bannerStory.linkToPost"
-        ></app-banner-story-card>
-    </mat-grid-tile>
-    <mat-grid-tile *ngFor="let story of stories">
-        <app-story-card [title]="story.title" 
-        [description]="story.description"></app-story-card>
-    </mat-grid-tile>
-</mat-grid-list>
-
-
-<!-- <div class="row" *ngIf="bannerStory">
-    <div class="col-4">
-        <app-banner-story-card [title]="bannerStory.title" 
-        [description]="bannerStory.description"
+        [description]="formatDescription(bannerStory.description + bannerStory.story,1140)"
         [bannerImage]="bannerStory.imageId"
         [postLink]="bannerStory.linkToPost"
         ></app-banner-story-card>
     </div>
 
-    <div class="col-8">
+    <div class="col-6">
         <div class="row">
-            <div *ngFor="let story of stories">
-                <app-story-card [title]="story.title" 
+            <div class="col-6" *ngFor="let story of stories; let i= index">
+                <app-story-card *ngIf="i >= 2 && i< 8" [title]="story.title" 
+                [description]="formatDescription(story.description, 227)"></app-story-card>
+            </div>  
+        </div>
+    </div>
+
+    <!-- <div class="col-4" *ngFor="let story of stories; let i= index">
+        <app-story-card *ngIf="i >= 2 && i< 4" [title]="story.title" 
+        [description]="story.description"></app-story-card>
+    </div> -->
+
+    <!-- <div class="col-8">
+        <div class="row">
+            <div class="col-6" *ngFor="let story of stories; let i= index">
+                <app-story-card *ngIf="i < 4" [title]="story.title" 
                 [description]="story.description"></app-story-card>
             </div>
-
         </div>
-
-    </div>
-
-</div> -->
+    </div> -->
+</div>

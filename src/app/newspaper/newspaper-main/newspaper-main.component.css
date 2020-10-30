@@ -1,4 +1,9 @@
-/* mat-grid-tile{
+mat-grid-tile{
     border-width: 1px;
     border-style: solid;
-} */
+}
+
+.gridListCustom {
+    min-height: 680px;
+    height: 100%;
+}

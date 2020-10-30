@@ -145,6 +145,7 @@ export class ComposeComponent implements OnInit {
       title : post.title,
       imageId : post.imageId,
       description : post.description,
+      story: post.story,
       linkToPost : post.linkToPost,
       user: post.user,
     });
@@ -163,6 +164,7 @@ export class ComposeComponent implements OnInit {
       title : post.title,
       imageId : post.imageId,
       description : post.description,
+      story: post.story,
       linkToPost : post.linkToPost,
       user: post.user,
     });
@@ -175,6 +177,7 @@ export class ComposeComponent implements OnInit {
       title : post.title,
       imageId : post.imageId,
       description : post.description,
+      story: post.story,
       linkToPost : post.linkToPost,
       user: post.user,
     });

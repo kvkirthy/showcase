@@ -1,3 +1,22 @@
+<!-- <div fxLayout='row' class="zero">
+
+    <div fxFlex class="one">1</div>
+    <div fxFlex="33%" fxLayout='column' class="two">
+
+        <div fxFlex class="two_one">2.1</div>
+        <div fxFlex class="two_two">2.2</div>
+        <div fxFlex class="two_three">2.3</div>
+
+    </div>
+    <div fxFlex class="three">3</div>
+
+</div> -->
+<div class="row">
+    <div class="col-8"></div>
+    <button class="col-2" mat-button (click)="savePost()"> Save </button>
+    <div class="col-2"></div>
+</div>
+
 <div class="row">
     <app-story-list [Stories]="stories" 
         Title="Available Stories" 
@@ -6,6 +25,5 @@
     </app-story-list>
     
     <textarea class="col-6" (change)="updateJsonText($event)" rows="20" [value]="story"></textarea>
-
-    <button mat-button (click)="savePost()"> Go </button>
+    
 </div>
