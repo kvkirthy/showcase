@@ -7,3 +7,23 @@ mat-grid-tile{
     min-height: 680px;
     height: 100%;
 }
+
+.col-4 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-2 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-3 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+}

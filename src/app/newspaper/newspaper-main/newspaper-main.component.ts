@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Component, OnInit } from '@angular/core';
 import { NewspaperEdition } from '../models/editions';
-import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
 import { selectedEdition } from '../ngrx/edition.selectors';
-import { getAssignedStories, getStoryByCateory } from '../ngrx/story.selectors';
+import { getStoryByCateory } from '../ngrx/story.selectors';
+import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
 
 @Component({
   selector: 'app-newspaper-main',
@@ -12,8 +12,9 @@ import { getAssignedStories, getStoryByCateory } from '../ngrx/story.selectors';
 })
 export class NewspaperMainComponent implements OnInit {
 
-  stories: NewspaperPost[] = [];
-  bannerStory: NewspaperPost;
+  storyGroups: Array<Array<NewspaperPost>>;
+
+  bannerStories: NewspaperPost[] = [];
   currentEdition: NewspaperEdition;
 
   constructor(private store: Store) { }
@@ -29,7 +30,7 @@ export class NewspaperMainComponent implements OnInit {
             .subscribe((data) => {
               if (data) {
                 if (data && data.length > 0) {
-                  this.bannerStory = data[0];
+                  this.bannerStories = this.bannerStories.concat(data);
                 }
               }
             });
@@ -39,7 +40,7 @@ export class NewspaperMainComponent implements OnInit {
             .subscribe((data) => {
               if (data) {
                 if (data && data.length > 0) {
-                  this.stories = data;
+                  this.groupStories(data);
                 }
               }
             });
@@ -49,12 +50,23 @@ export class NewspaperMainComponent implements OnInit {
             .subscribe((data) => {
               if (data) {
                 if (data && data.length > 0) {
-                  this.stories = this.stories.concat(data);
+                  this.groupStories(data);
                 }
               }
             });
         }
       });
+  }
+
+  groupStories(availableStories: NewspaperPost[]){
+    if(!this.storyGroups){
+      this.storyGroups = new Array<Array<NewspaperPost>>();
+    }
+
+    for(let i=0; availableStories.length > 0; i++){
+      let tStories: Array<NewspaperPost> = availableStories.splice(0,9);
+      this.storyGroups[i] = tStories;
+    }
   }
 
   formatDescription(str:string, length:number): string{
