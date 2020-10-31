@@ -1,10 +1,9 @@
 <div class="row" *ngFor="let stories of storyGroups; let i=index">
-
     <ng-container *ngIf="bannerStories[i]; else secondaryLayout">
-        <div class="col-2">
+        <div [ngClass]="getSectionCssClassByRow(i,1)">
             <div class="row">
-                <div class="col-12" *ngFor="let story of stories; let i= index">
-                    <app-story-card *ngIf="i < 2" [title]="story.title" 
+                <div [ngClass]="getStoryCssClassByRow(i,1)" *ngFor="let story of stories; let storyIndex= index">
+                    <app-story-card *ngIf="isValidForLeftSet(i, storyIndex)" [title]="story.title" 
                     [description]="formatDescription(story.description, 227)"></app-story-card>
                 </div>  
             </div>
@@ -18,10 +17,10 @@
             ></app-banner-story-card>
         </div>
     
-        <div class="col-6">
+        <div [ngClass]="getSectionCssClassByRow(i,2)">
             <div class="row">
-                <div class="col-6" *ngFor="let story of stories; let i= index">
-                    <app-story-card *ngIf="i >= 2 && i< 8" [title]="story.title" 
+                <div [ngClass]="getStoryCssClassByRow(i,2)" *ngFor="let story of stories; let storyIndex= index">
+                    <app-story-card *ngIf="isValidForRightSet(i, storyIndex)" [title]="story.title" 
                     [description]="formatDescription(story.description, 227)"></app-story-card>
                 </div>  
             </div>
@@ -29,12 +28,15 @@
     </ng-container>
 
     <ng-template #secondaryLayout>
-        <div class="col-4" *ngFor="let story of stories; let i= index">
+        <div class="col-4" *ngFor="let story of stories">
             <app-story-card [title]="story.title" 
             [description]="formatDescription(story.description, 227)"></app-story-card>
         </div>  
     </ng-template>
 
+    <div class="col-2"></div>
+    <hr class="col-10" />
+    <div class="col-2"></div>
 
     <!-- <div class="col-4" *ngFor="let story of stories; let i= index">
         <app-story-card *ngIf="i >= 2 && i< 4" [title]="story.title" 

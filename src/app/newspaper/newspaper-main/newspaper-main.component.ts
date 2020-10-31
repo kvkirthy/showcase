@@ -31,6 +31,7 @@ export class NewspaperMainComponent implements OnInit {
               if (data) {
                 if (data && data.length > 0) {
                   this.bannerStories = this.bannerStories.concat(data);
+                  this.bannerStories = this.bannerStories.concat(data);
                 }
               }
             });
@@ -58,14 +59,53 @@ export class NewspaperMainComponent implements OnInit {
       });
   }
 
+  getSectionCssClassByRow(rowIndex: number, set: number):string{
+    if( (rowIndex % 2 === 0 && set === 1) || (rowIndex % 2 !== 0 && set === 2) ){
+      return "col-2";
+    } else {
+      return "col-6";
+    }
+  }
+
+  getStoryCssClassByRow(rowIndex: number, set: number):string{
+    if( (rowIndex % 2 === 0 && set === 1) || (rowIndex % 2 !== 0 && set === 2) ){
+      return "col-12";
+    } else {
+      return "col-6";
+    }
+  }
+
+  isValidForLeftSet(rowIndex: number, storyIndex: number):boolean{
+    if( (rowIndex % 2 === 0 && storyIndex < 2) || (rowIndex % 2 !== 0 && storyIndex < 6) ){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  isValidForRightSet(rowIndex: number, storyIndex: number):boolean{
+    if( (rowIndex % 2 === 0 && storyIndex >= 2 && storyIndex < 8) || (rowIndex % 2 !== 0 && storyIndex >= 6 && storyIndex < 8) ){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   groupStories(availableStories: NewspaperPost[]){
     if(!this.storyGroups){
       this.storyGroups = new Array<Array<NewspaperPost>>();
     }
 
-    for(let i=0; availableStories.length > 0; i++){
-      let tStories: Array<NewspaperPost> = availableStories.splice(0,9);
-      this.storyGroups[i] = tStories;
+    for(let i=this.storyGroups.length; availableStories.length > 0; i++){
+      if(this.storyGroups[i-1] && this.storyGroups[i-1].length < 9){
+        // there is a deficit in the previous count of story groups. 
+        // add stories to fill up the length to 9
+        let remainingStories = availableStories.splice(0,9-this.storyGroups[i-1].length); 
+        this.storyGroups[i-1] = this.storyGroups[i-1].concat(remainingStories);
+      }
+
+      this.storyGroups[i] = availableStories.splice(0,9);
+      
     }
   }
 
