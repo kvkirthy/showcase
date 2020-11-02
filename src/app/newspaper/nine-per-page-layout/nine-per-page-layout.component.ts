@@ -92,21 +92,43 @@ export class NewspaperMainComponent implements OnInit {
   }
 
   groupStories(availableStories: NewspaperPost[]){
+
     if(!this.storyGroups){
       this.storyGroups = new Array<Array<NewspaperPost>>();
     }
+    let uniqueStories: NewspaperPost[] = this.getUniqueStories(availableStories);
 
-    for(let i=this.storyGroups.length; availableStories.length > 0; i++){
+    for(let i=this.storyGroups.length; uniqueStories.length > 0; i++){
       if(this.storyGroups[i-1] && this.storyGroups[i-1].length < 9){
         // there is a deficit in the previous count of story groups. 
         // add stories to fill up the length to 9
-        let remainingStories = availableStories.splice(0,9-this.storyGroups[i-1].length); 
+        let remainingStories = uniqueStories.splice(0,9-this.storyGroups[i-1].length); 
         this.storyGroups[i-1] = this.storyGroups[i-1].concat(remainingStories);
       }
 
-      this.storyGroups[i] = availableStories.splice(0,9);
+      this.storyGroups[i] = uniqueStories.splice(0,9);
       
     }
+  }
+
+  private getUniqueStories(availableStories: NewspaperPost[]){
+    let uniqueStories: NewspaperPost[] = [];
+    let allStories: NewspaperPost[] = [];
+    if(this.storyGroups ){
+      this.storyGroups.map( (sg) => {
+        allStories = allStories.concat(sg);
+      });
+  
+      availableStories.map(s => {
+        let x = allStories.find(as => as._id === s._id);
+        if(!!! x){
+          uniqueStories.push(s);
+        }
+      });
+    }
+
+    return uniqueStories;
+
   }
 
   formatDescription(str:string, length:number): string{
