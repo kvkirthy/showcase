@@ -2,7 +2,6 @@ import { Editions } from './models';
 import * as actions from './edition.actions';
 import { createReducer, on } from "@ngrx/store";
 import { NewspaperEdition, NewspaperEditions } from '../models/editions';
-import { state } from '@angular/animations';
 
 const initialState: Editions = {
     allEditions: {
@@ -10,10 +9,20 @@ const initialState: Editions = {
     }
 }
 
-const getAllEditions = (state: Editions, props: NewspaperEditions) => ({
-    ...state,
-    allEditions: props
-});
+const getAllEditions = (state: Editions, props: NewspaperEditions) => {
+    let sortedEditions = [...props.editions];
+    sortedEditions.sort((current, prev) => {
+        return new Date(current.dateCreated).getTime() - new Date(prev.dateCreated).getTime()
+    })
+    .reverse();
+
+    return {
+        ...state,
+        allEditions: {
+            editions: sortedEditions
+        }
+    };
+};
 
 const _storyReducer = createReducer(
     initialState,
