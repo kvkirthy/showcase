@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NewspaperEditinListComponent } from './newspaper-editin-list.component';
+import { NewspaperEditinListComponent } from './newspaper-edition-list.component';
 
 describe('NewspaperEditinListComponent', () => {
   let component: NewspaperEditinListComponent;

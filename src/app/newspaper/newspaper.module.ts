@@ -35,7 +35,7 @@ import { ImagePickerComponent } from './image-picker/image-picker.component';
 import { NewspaperMainComponent } from './nine-per-page-layout/nine-per-page-layout.component';
 import { CreateNewspaperEditionComponent } from './create-newspaper-edition/create-newspaper-edition.component';
 import { MainComponent } from './main/main.component';
-import { NewspaperEditinListComponent } from './newspaper-editin-list/newspaper-editin-list.component';
+import { NewspaperEditionListComponent } from './newspaper-edition-list/newspaper-edition-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { NewspaperEditinListComponent } from './newspaper-editin-list/newspaper-
     NewspaperMainComponent,
     UpdatePostsComponent,
     MainComponent,
-    NewspaperEditinListComponent, 
+    NewspaperEditionListComponent, 
   ],
   imports: [
     CommonModule,

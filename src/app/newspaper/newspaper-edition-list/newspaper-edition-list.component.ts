@@ -4,11 +4,11 @@ import { NewspaperEdition } from '../models/editions';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-newspaper-editin-list',
-  styleUrls: ['./newspaper-editin-list.component.css'],
-  templateUrl: './newspaper-editin-list.component.html'
+  selector: 'app-newspaper-edition-list',
+  styleUrls: ['./newspaper-edition-list.component.css'],
+  templateUrl: './newspaper-edition-list.component.html'
 })
-export class NewspaperEditinListComponent implements OnInit {
+export class NewspaperEditionListComponent implements OnInit {
 
   selectedEdition: NewspaperEdition;
   @Input('editions') editionsList: NewspaperEdition[];
