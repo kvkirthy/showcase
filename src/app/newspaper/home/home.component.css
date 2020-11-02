@@ -2,6 +2,10 @@ body {
     overflow-x: hidden;
 }
 
+mat-toolbar {
+    height: 110px;
+}
+
 mat-toolbar-row {
     margin: 10px;
 }
@@ -33,14 +37,13 @@ mat-toolbar-row h6{
 
 .fixed-header {
     top: 0;
-    background-color: white;
+    /* background-color: white; */
     position: fixed;
     width: 100%;
     z-index:999;
 }
 
 app-newspaper-editin-list {
-    width: 260px;
+    max-width: 160px;
     font-size: 9pt;
-    margin:-25px;
 }
