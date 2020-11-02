@@ -1,8 +1,17 @@
-<mat-toolbar>
+<mat-toolbar class="fixed-header">
     <mat-toolbar-row class="row">
       <span class="col-4"></span>
-      <h1 class="col-4 center-align"> JavaScript Times</h1>
-      <span class="col-4"></span>
+      <div class="col-4 center-align">
+        <h1 > JS Times</h1>
+        <h6> Sunday Edition | 6th Nov 2020</h6> <!--todo: provide a title and date for the edition-->
+        <app-newspaper-editin-list class="col-8" [editions]="editions">
+        </app-newspaper-editin-list>
+      </div>
+      <span class="col-4">
+
+      </span>
     </mat-toolbar-row>
 </mat-toolbar>
-<router-outlet class="col-10"></router-outlet>
+<div class="root-node">
+  <router-outlet></router-outlet>
+</div>

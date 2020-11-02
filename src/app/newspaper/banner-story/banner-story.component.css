@@ -26,3 +26,8 @@ mat-card-content {
 mat-card-title {
     margin: 10px auto auto -20px;
 }
+
+mat-card-actions {
+    margin-top: -25px;
+    text-align: right;
+}

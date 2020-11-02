@@ -1,14 +1,13 @@
 import { Store } from '@ngrx/store';
 import { MatDialog } from '@angular/material/dialog';
 import { NewspaperEdition } from '../models/editions';
-import { StepperSelectionEvent } from '@angular/cdk/stepper';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
 import { getAllNewspaperEditions } from 'src/app/newspaper/ngrx/edition.actions';
 import { NewspaperPost, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
 import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
 import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
-import { categorizeStories, getAllStories, updateStoriesForEdition } from '../ngrx/story.actions';
+import { categorizeStories, getAllStories, updateStoriesForEdition, updateStory, updateStoryJson } from '../ngrx/story.actions';
 import { getStoryByCateory, getAssignedStories, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
 
 @Component({
@@ -23,7 +22,7 @@ export class ComposeComponent implements OnInit {
   selectedHighlightStory = new Array<NewspaperPost>();
   selectedNewsBits = new Array<NewspaperPost>();
   selectedNewsFeed = new Array<NewspaperPost>();
-  bannerPost: NewspaperPost = new NewspaperPost();
+  selectedBannerStory = new Array<NewspaperPost>();
   selectedTitle : string;
   selectedDescription : string;
   selectedBannerImage : string;
@@ -83,8 +82,7 @@ export class ComposeComponent implements OnInit {
     .subscribe( (data) => {
       if(data){
         if(data && data.length > 0){
-          this.bannerPost = data[0];
-          this.showPreview(this.bannerPost);
+          this.selectedBannerStory = data;
         }
       }
     });
@@ -116,7 +114,17 @@ export class ComposeComponent implements OnInit {
   }
 
   onSelectTopBanner(post: NewspaperPost){
-    this.showPreview(post);
+    this.selectedBannerStory.push({
+      _id: post._id,
+      title : post.title,
+      imageId : post.imageId,
+      description : post.description,
+      story: post.story,
+      linkToPost : post.linkToPost,
+      user: post.user,
+    });
+    this.saveSelected(this.CategoryBanner, post._id)
+    // this.showPreview(post);
   }
 
   showPreview(post: NewspaperPost){
@@ -127,15 +135,11 @@ export class ComposeComponent implements OnInit {
     this.selectedPostLink = post.linkToPost;
   }
 
-  clearPreview(evt: StepperSelectionEvent){
-    if(this.bannerPost && evt.selectedIndex === 1){
-      this.showPreview(this.bannerPost);
-    } else {
+  clearPreview(){
       this.selectedTitle = '';
       this.selectedBannerImage = '';
       this.selectedDescription = '';
       this.selectedPostLink = '';
-    }
   }
 
 
@@ -198,7 +202,17 @@ export class ComposeComponent implements OnInit {
     });
     dialogRef
       .afterClosed()
-      .subscribe( data => this.selectedBannerImage=data);
+      .subscribe( data => {
+        this.selectedBannerImage=data;
+        let story = this.selectedBannerStory.find( story => story._id === this.selectedStoryId);
+        let newStory: NewspaperPost;
+        if(story){
+          newStory = Object.assign({}, story);
+          newStory.imageId = this.selectedBannerImage;
+          this.store.dispatch(updateStory(newStory));
+        }
+
+      });
   }
 
   saveSelected(category: StoryCategory, selectedStoryId:string = this.selectedStoryId){

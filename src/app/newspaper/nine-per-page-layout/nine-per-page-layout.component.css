@@ -27,3 +27,12 @@ mat-grid-tile{
     padding-left: 0px;
     padding-right: 0px;
 }
+.col-12 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.row {
+    margin-right: 5px;
+    margin-left: 5px;
+}

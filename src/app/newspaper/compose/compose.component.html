@@ -3,7 +3,7 @@
     <button mat-button (click)="goNext()">Next</button>
 </div> -->
 
-<mat-horizontal-stepper (selectionChange)="clearPreview($event)" #stepper>
+<mat-horizontal-stepper (selectionChange)="clearPreview()" #stepper>
     <!-- <form id="composeForm" name="composeForm" formGroup="composeFormGroup"> -->
         <mat-step >
             <ng-template matStepLabel>Select / Create Newspaper Edition</ng-template>
@@ -12,28 +12,23 @@
                 </app-create-newspaper-edition>
             </div>
         </mat-step>
-        <mat-step >
+        <mat-step>
             <ng-template matStepLabel>Choose top banner story</ng-template>
             <div class="row">
-                <app-story-list [Stories]="availableStories" 
-                    Title="Available Stories" 
-                    class="col-4" 
+                <app-story-list [Stories]="availableStories" Title="Available Stories" class="col-3"
                     (SelectedPost)="onSelectTopBanner($event)">
                 </app-story-list>
-                
+        
+                <app-story-list [Stories]="selectedBannerStory" IsRemoveEnabled="true" Title="Selected Stories" class="col-3"
+                    (RemovedPost)="handleRemovedPost($event)" (SelectedPost)="showPreview($event)"></app-story-list>
+        
                 <div class="col-6">
                     <div *ngIf="selectedTitle">
-                        <app-banner-story-card [title]="selectedTitle" 
-                            [description]="selectedDescription"
-                            [bannerImage]="selectedBannerImage"
-                            [postLink]="selectedPostLink"
-                            customActionTitle = "Make it a Top Banner Story"
-                            (customActionEvent) = "saveSelected(CategoryBanner)"
+                        <app-banner-story-card [title]="selectedTitle" [description]="selectedDescription"
+                            [bannerImage]="selectedBannerImage" [postLink]="selectedPostLink"
                             (OnImageClick)="imageClicked()"></app-banner-story-card>
-
+        
                     </div>
-                </div>
-                <div class="col-2">
                 </div>
             </div>
         </mat-step>
@@ -114,7 +109,7 @@
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Review and confirm</ng-template>
-            <app-newspaper-main></app-newspaper-main>  
+            <app-nine-per-page-layout></app-nine-per-page-layout>  
             <div>
                 Review and confirm
                 <button (click)="submitEdition()" mat-button >Go</button>

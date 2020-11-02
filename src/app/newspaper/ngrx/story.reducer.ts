@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import Stories from './models';
 import * as actions from './story.actions';
 import { createReducer, on } from "@ngrx/store"
@@ -31,9 +32,6 @@ const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
                 updatedStory.edition = props.edition;
             }
             newState.push(updatedStory);
-        } else if(props.newCategory === StoryCategory.Banner){ // override existing banner
-            updatedStory = {...story, storyCategory: null};
-            newState.push(updatedStory);
         } else {
             newState.push(story);
         }
@@ -41,10 +39,22 @@ const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
     return {...state, allStories: {posts: newState}};
 }
 
+const updateStory = (state:Stories, props: NewspaperPost) => {
+    debugger;
+    let newAllStories = _.cloneDeep(state.allStories);
+    let selectedStory = newAllStories.posts.find(story => story._id === props._id);
+    if(selectedStory){
+        let index = newAllStories.posts.indexOf(selectedStory);
+        newAllStories.posts.splice(index, 1, props);
+    }
+    return {allStories: newAllStories};
+}
+
 const _storyReducer = createReducer(
         initialState,
         on(actions.getAllStoriesSuccess, getStateOnStoriesApiSuccess),
-        on(actions.categorizeStories, categorizeStories)
+        on(actions.categorizeStories, categorizeStories),
+        on(actions.updateStory, updateStory)
     );
 
 export function getStoryReducer(state: Stories, action) {

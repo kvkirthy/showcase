@@ -6,9 +6,9 @@ import { getStoryByCateory } from '../ngrx/story.selectors';
 import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
 
 @Component({
-  selector: 'app-newspaper-main',
-  templateUrl: './newspaper-main.component.html',
-  styleUrls: ['./newspaper-main.component.css']
+  selector: 'app-nine-per-page-layout',
+  templateUrl: './nine-per-page-layout.component.html',
+  styleUrls: ['./nine-per-page-layout.component.css']
 })
 export class NewspaperMainComponent implements OnInit {
 
@@ -31,7 +31,7 @@ export class NewspaperMainComponent implements OnInit {
               if (data) {
                 if (data && data.length > 0) {
                   this.bannerStories = this.bannerStories.concat(data);
-                  this.bannerStories = this.bannerStories.concat(data);
+                  // this.bannerStories = this.bannerStories.concat(data);
                 }
               }
             });

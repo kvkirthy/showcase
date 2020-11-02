@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ComposeComponent } from './compose/compose.component';
 import { RegisterComponent } from './register/register.component';
@@ -16,6 +17,9 @@ const routes: Routes = [{
   path: 'newspaper',
   component: HomeComponent,
   children: [{
+    path: 'main',
+    component: MainComponent
+  },{
     path: 'admin/register',
     component: RegisterComponent
   }, {

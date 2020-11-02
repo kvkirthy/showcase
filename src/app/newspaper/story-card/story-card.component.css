@@ -13,5 +13,6 @@ mat-card-content {
 }
 
 mat-card-actions {
+    margin-top: -25px;
     text-align: right;
 }
