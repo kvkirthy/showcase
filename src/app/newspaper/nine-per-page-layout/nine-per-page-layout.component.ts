@@ -4,6 +4,8 @@ import { NewspaperEdition } from '../models/editions';
 import { selectedEdition } from '../ngrx/edition.selectors';
 import { getStoryByCateory } from '../ngrx/story.selectors';
 import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
+import { MatDialog } from '@angular/material/dialog';
+import { PostDetailsComponent } from '../post-details/post-details.component';
 
 @Component({
   selector: 'app-nine-per-page-layout',
@@ -17,7 +19,7 @@ export class NewspaperMainComponent implements OnInit {
   bannerStories: NewspaperPost[] = [];
   currentEdition: NewspaperEdition;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private dialog: MatDialog) { }
 
   ngOnInit(): void {
 
@@ -89,6 +91,14 @@ export class NewspaperMainComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  storySelected(story: NewspaperPost){
+    this.dialog.open(PostDetailsComponent, {
+      data: story,
+      height: '100%',
+      width: '100%'
+    });
   }
 
   groupStories(availableStories: NewspaperPost[]){

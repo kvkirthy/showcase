@@ -3,14 +3,19 @@
         <div [ngClass]="getSectionCssClassByRow(i,1)">
             <div class="row">
                 <div [ngClass]="getStoryCssClassByRow(i,1)" *ngFor="let story of stories; let storyIndex= index">
-                    <app-story-card *ngIf="isValidForLeftSet(i, storyIndex)" [title]="story.title" 
-                    [description]="formatDescription(story.description, 227)"></app-story-card>
+                    <app-story-card *ngIf="isValidForLeftSet(i, storyIndex)" 
+                        [story]="story"
+                        [title]="story.title" 
+                        [description]="formatDescription(story.description, 227)"
+                        (OnStorySelected) = "storySelected($event)"
+                    ></app-story-card>
                 </div>  
             </div>
         </div>
         
         <div class="col-4" *ngIf="bannerStories[i]" >
-            <app-banner-story-card [title]="bannerStories[i].title" 
+            <app-banner-story-card 
+            [title]="bannerStories[i].title" 
             [description]="formatDescription(bannerStories[i].description + bannerStories[i].story,1100)"
             [bannerImage]="bannerStories[i].imageId"
             [postLink]="bannerStories[i].linkToPost"
@@ -21,7 +26,10 @@
             <div class="row">
                 <div [ngClass]="getStoryCssClassByRow(i,2)" *ngFor="let story of stories; let storyIndex= index">
                     <app-story-card *ngIf="isValidForRightSet(i, storyIndex)" [title]="story.title" 
-                    [description]="formatDescription(story.description, 227)"></app-story-card>
+                    [description]="formatDescription(story.description, 227)"
+                    [story]="story"
+                    (OnStorySelected) = "storySelected($event)"
+                    ></app-story-card>
                 </div>  
             </div>
         </div>
@@ -30,7 +38,9 @@
     <ng-template #secondaryLayout>
         <div class="col-4" *ngFor="let story of stories">
             <app-story-card [title]="story.title" 
-            [description]="formatDescription(story.description, 227)"></app-story-card>
+            [description]="formatDescription(story.description, 227)"
+            [story]="story"
+            (OnStorySelected) = "storySelected($event)"></app-story-card>
         </div>  
     </ng-template>
 

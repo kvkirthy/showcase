@@ -36,6 +36,7 @@ import { NewspaperMainComponent } from './nine-per-page-layout/nine-per-page-lay
 import { CreateNewspaperEditionComponent } from './create-newspaper-edition/create-newspaper-edition.component';
 import { MainComponent } from './main/main.component';
 import { NewspaperEditionListComponent } from './newspaper-edition-list/newspaper-edition-list.component';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { NewspaperEditionListComponent } from './newspaper-edition-list/newspape
     NewspaperMainComponent,
     UpdatePostsComponent,
     MainComponent,
-    NewspaperEditionListComponent, 
+    NewspaperEditionListComponent,
+    PostDetailsComponent, 
   ],
   imports: [
     CommonModule,

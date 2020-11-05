@@ -38,9 +38,11 @@ export class HomeComponent implements OnInit {
     this.store
     .select(selectedEdition)
     .subscribe( (selectedEdition: NewspaperEdition) => {
-      this.selectedEditionTitle = selectedEdition.title;
-      this.selectedEditionDateCreated = selectedEdition.dateCreated;
-      // this.store.dispatch(actions.setEdition(selectedEdition));
+      if(selectedEdition){
+        this.selectedEditionTitle = selectedEdition.title;
+        this.selectedEditionDateCreated = selectedEdition.dateCreated;
+        // this.store.dispatch(actions.setEdition(selectedEdition));
+      }
     });
   }
 
