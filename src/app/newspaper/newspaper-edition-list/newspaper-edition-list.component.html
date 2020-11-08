@@ -1,5 +1,5 @@
-    <mat-select (selectionChange)="showSelectedEdition($event)">
-        <mat-option *ngFor="let edition of editionsList" [value]="edition._id">
+    <mat-select *ngIf="editionsList.length" (selectionChange)="showSelectedEdition($event)" [(value)]="editionsList[0]._id">
+        <mat-option *ngFor="let edition of editionsList;" [value]="edition._id">
             {{edition.title}}
         </mat-option>
     </mat-select>

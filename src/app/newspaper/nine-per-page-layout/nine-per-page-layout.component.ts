@@ -97,7 +97,8 @@ export class NewspaperMainComponent implements OnInit {
     this.dialog.open(PostDetailsComponent, {
       data: story,
       height: '100%',
-      width: '100%'
+      width: '100%',
+      panelClass: 'no-margin-padding'
     });
   }
 

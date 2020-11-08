@@ -4,7 +4,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* width */
 ::-webkit-scrollbar {
-    width: 3px;
+    height: 1px;
+    width: 1px;
   }
   
   /* Track */
@@ -15,8 +16,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: darkblue; 
+    background: lightgray; 
     border-radius: 10px;
+
   }
   
   /* Handle on hover */

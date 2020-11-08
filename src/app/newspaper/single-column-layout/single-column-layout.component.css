@@ -1,0 +1,13 @@
+.horizontal-scroll-container {
+    max-height: auto;
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: row;
+}
+
+.card-container {
+    min-width: 310px;
+}

@@ -3,13 +3,13 @@ img {
     max-width: 100%;
     width: auto;
     height: auto;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     top: -60px;
 }
 
 div.storyImage {
-    height: 150px;
-    width: 465px;
+    height: 123px;
+    width: 100%;
     position: relative;
     overflow: hidden;
 }

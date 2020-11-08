@@ -8,3 +8,35 @@ strong {
     margin-bottom: 25px;
 }
 
+mat-toolbar {
+    height: 60px;
+    width: 100%;
+    border-bottom: lightgrey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+mat-toolbar img {
+    height: 40px;
+}
+
+mat-toolbar-row {
+    margin: 10px;
+}
+
+mat-toolbar-row h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24pt;
+    text-align: center;
+}
+
+mat-toolbar-row h6{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 9pt;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.center-align {
+    text-align: center;
+}
