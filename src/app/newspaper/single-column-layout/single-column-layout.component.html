@@ -8,8 +8,12 @@
 
     <div *ngIf="i === 0 || i === 3" class="horizontal-scroll-container">
         <div class="card-container" *ngFor="let story of highlightStories">
-            <app-story-card [story]="story" [title]="story.title" [description]="story.description"></app-story-card>
+            <app-story-card [story]="story" [title]="story.title" [description]="formatDescription(story.description, 300)"></app-story-card>
         </div>
     </div>
     
+</div>
+
+<div *ngFor="let story of newsbitStories">
+    <app-story-card [story]="story" [title]="story.title" [description]="formatDescription(story.description, 300)"></app-story-card>
 </div>
