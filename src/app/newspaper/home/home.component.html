@@ -1,6 +1,6 @@
-<mat-toolbar class="fixed-header">
+<mat-toolbar class="fixed-header d-none d-md-block md-and-above">
     <mat-toolbar-row class="row">
-        <span class="col-4 d-none d-md-block"></span>
+        <span class="col-4"></span>
         <div class="col-4 center-align">
             <img src="assets/jstimes2.png" alt="">
             <div>
@@ -12,6 +12,21 @@
         <span class="col-4"></span>
     </mat-toolbar-row>
 </mat-toolbar>
+
+<mat-toolbar class="fixed-header d-xs-block d-md-none sm-and-below">
+    <mat-toolbar-row>
+        <div class="row">
+            <img class="col-3" src="assets/jstimes2.png" alt="">
+            <div class="col-9" >
+                <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
+                <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
+            </div>
+            <!--todo: provide a title and date for the edition-->
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="d-xs-block d-md-none sm-and-below intermediate"></div>
+<div class="d-none d-md-block md-and-above intermediate"></div>
 <div class="root-node">
     <router-outlet></router-outlet>
 </div>

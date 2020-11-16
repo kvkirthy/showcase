@@ -2,8 +2,29 @@ body {
     overflow-x: hidden;
 }
 
-mat-toolbar {
-    height: 110px;
+mat-toolbar.md-and-above {
+    height: 86px;
+}
+
+mat-toolbar.sm-and-below {
+    height: 55px;
+    margin-bottom: 45px;
+}
+
+div.intermediate.md-and-above {
+    margin-bottom: 80px;
+}
+
+div.intermediate.sm-and-below {
+    margin-bottom: 48px;
+}
+
+.sm-and-below img {
+    height: 35px;
+}
+
+.md-and-above img {
+    height: 42px;
 }
 
 mat-toolbar-row {
@@ -27,12 +48,8 @@ mat-toolbar-row strong{
     text-align: center;
 }
 
-.main-content{
-    margin: 5px 10px 5px 10px;
-}
-
 .root-node{
-    margin: 110px 10px auto 10px;
+    margin: inherit 10px auto 10px;
     position: relative;
 }
 

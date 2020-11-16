@@ -16,3 +16,8 @@ mat-card-actions {
     margin-top: -25px;
     text-align: right;
 }
+
+mat-card {
+    padding-left: 8px;
+    padding-right: 8px;
+}

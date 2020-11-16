@@ -20,6 +20,10 @@ const getStateOnStoriesApiSuccess = (state: Stories, props: NewspaperPosts ) => 
     };
 };
 
+// const getStoryById = (state: Stories, props: String ) => {
+//     return state.allStories.posts.find( story => story._id === props);
+// }
+
 const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
     let newState = [];
     state.allStories.posts.map( story => {
@@ -40,7 +44,6 @@ const categorizeStories = (state: Stories, props: StoryCategoryMap) => {
 }
 
 const updateStory = (state:Stories, props: NewspaperPost) => {
-    debugger;
     let newAllStories = _.cloneDeep(state.allStories);
     let selectedStory = newAllStories.posts.find(story => story._id === props._id);
     if(selectedStory){
@@ -52,6 +55,7 @@ const updateStory = (state:Stories, props: NewspaperPost) => {
 
 const _storyReducer = createReducer(
         initialState,
+        // on(actions.getStoryById, getStoryById),
         on(actions.getAllStoriesSuccess, getStateOnStoriesApiSuccess),
         on(actions.categorizeStories, categorizeStories),
         on(actions.updateStory, updateStory)

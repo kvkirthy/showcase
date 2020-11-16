@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { NewspaperEdition } from '../models/editions';
 
 import { getAllNewspaperEditions } from '../ngrx/edition.actions';
-import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
+import { publishedNewspaperEditions, selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
 
 @Component({
   selector: 'app-home',
@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(getAllNewspaperEditions());
 
     this.store
-    .select(editorSelector)
+    .select(publishedNewspaperEditions)
     .subscribe( (data) => {
       this.editions = data;
-      if(data[0]){
+      if(data && data[0]){
         this.selectedEditionTitle = data[0].title;
         this.selectedEditionDateCreated = data[0].dateCreated;
-        this.store.dispatch(actions.setEdition(data[0]));
+        // this.store.dispatch(actions.setEdition(data[0]));
       }
     });
 

@@ -5,10 +5,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatHorizontalStepper } from '@angular/material/stepper';
 import { getAllNewspaperEditions } from 'src/app/newspaper/ngrx/edition.actions';
 import { NewspaperPost, StoryCategory } from 'src/app/newspaper/models/newspaper-post';
-import editorSelector, { selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
+import { allNewspaperEditions, selectedEdition } from 'src/app/newspaper/ngrx/edition.selectors';
 import { ImagePickerComponent } from 'src/app/newspaper/image-picker/image-picker.component';
 import { categorizeStories, getAllStories, updateStoriesForEdition, updateStory, updateStoryJson } from '../ngrx/story.actions';
-import { getStoryByCateory, getAssignedStories, getUnassignedStories } from 'src/app/newspaper/ngrx/story.selectors';
+import { getStoryByCateory, getAssignedStories, getUnassignedStories, getUnassignedToCurrentEdition } from 'src/app/newspaper/ngrx/story.selectors';
 
 @Component({
   selector: 'app-compose',
@@ -43,14 +43,8 @@ export class ComposeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.store
-      .select(getUnassignedStories)
-      .subscribe((data) => {
-        this.availableStories = data;
-      });
-
       this.store
-      .select(editorSelector)
+      .select(allNewspaperEditions)
       .subscribe( (data) => {
         this.editions = data;
       });
@@ -81,7 +75,7 @@ export class ComposeComponent implements OnInit {
     .select(getStoryByCateory, {category: StoryCategory.Banner, editionId: editionId})
     .subscribe( (data) => {
       if(data){
-        if(data && data.length > 0){
+        if(data){
           this.selectedBannerStory = data;
         }
       }
@@ -110,6 +104,14 @@ export class ComposeComponent implements OnInit {
         this.selectedNewsBits = data;
       }
     });
+
+    this.store
+    // .select(getUnassignedToCurrentEdition, {editionId} )
+    .select(getUnassignedStories, {editionId} )
+    .subscribe((data) => {
+      this.availableStories = data;
+    });
+
 
   }
 

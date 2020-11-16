@@ -2,6 +2,7 @@ import { Store } from '@ngrx/store';
 import * as actions from '../ngrx/edition.actions';
 import { NewspaperEdition } from '../models/editions';
 import { Component, Input, OnInit } from '@angular/core';
+import { selectedEdition as selectedEditionSelector } from '../ngrx/edition.selectors';
 
 @Component({
   selector: 'app-newspaper-edition-list',
@@ -10,12 +11,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NewspaperEditionListComponent implements OnInit {
 
-  selectedEdition: NewspaperEdition;
+  selectedEdition: NewspaperEdition = new NewspaperEdition();
   @Input('editions') editionsList: NewspaperEdition[];
 
   constructor(private store: Store) { }
 
   ngOnInit(): void {
+    this.store
+    .select(selectedEditionSelector)
+    .subscribe( (data: NewspaperEdition) => {
+      if(data){
+        this.selectedEdition = data;
+      }
+    });
   }
 
   showSelectedEdition($event){

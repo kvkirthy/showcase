@@ -7,6 +7,8 @@ export const getAllStoriesSuccess
         props<NewspaperPosts>()
     );
 
+// export const getStoryById = createAction('[Compose Component] getStoryById', props<String>());
+
 // export const getAvailableStories = createAction('[Compose Component getAvailableStories');
 export const categorizeStories = createAction('[Compose Component categorizeStories', props<StoryCategoryMap>());
 export const updateStory = createAction('[Compose Component updateStory', props<NewspaperPost>());

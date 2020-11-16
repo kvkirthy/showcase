@@ -26,12 +26,15 @@ export class NewspaperMainComponent implements OnInit {
     this.store
       .select(selectedEdition)
       .subscribe((data: NewspaperEdition) => {
+        this.bannerStories = [];
+        this.storyGroups = [];
+        this.currentEdition = data;
         if (data && data._id) {
           this.store
             .select(getStoryByCateory, { category: StoryCategory.Banner, editionId: data._id })
             .subscribe((data) => {
               if (data) {
-                if (data && data.length > 0) {
+                if (data && data.length > 0 && data[0].edition._id === this.currentEdition._id) {
                   this.bannerStories = this.bannerStories.concat(data);
                   // this.bannerStories = this.bannerStories.concat(data);
                 }
@@ -42,7 +45,7 @@ export class NewspaperMainComponent implements OnInit {
             .select(getStoryByCateory, { category: StoryCategory.Highlight, editionId: data._id })
             .subscribe((data) => {
               if (data) {
-                if (data && data.length > 0) {
+                if (data && data.length > 0 && data[0].edition._id === this.currentEdition._id) {
                   this.groupStories(data);
                 }
               }
@@ -52,7 +55,7 @@ export class NewspaperMainComponent implements OnInit {
             .select(getStoryByCateory, { category: StoryCategory.NewsBit, editionId: data._id })
             .subscribe((data) => {
               if (data) {
-                if (data && data.length > 0) {
+                if (data && data.length > 0 && data[0].edition._id === this.currentEdition._id) {
                   this.groupStories(data);
                 }
               }
