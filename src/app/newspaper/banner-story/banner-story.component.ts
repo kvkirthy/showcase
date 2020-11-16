@@ -12,6 +12,7 @@ export class BannerStoryComponent implements OnChanges {
   @Input() bannerImage: string;
   @Input() postLink: string;
   @Input() customActionTitle: string;
+  @Input() storyContent: string;
   @Input("ShouldUseImage") shouldUseImage: boolean = true;
 
   @Output() OnImageClick = new EventEmitter();

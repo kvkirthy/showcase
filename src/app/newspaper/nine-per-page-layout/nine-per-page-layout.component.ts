@@ -153,4 +153,16 @@ export class NewspaperMainComponent implements OnInit {
     }
   }
 
+  formatBannerText(str:string): string{
+    let bannerTextLength = 980;
+    let countOfNextLineChars = (str.split("\n\n") || []).length * 76;
+    bannerTextLength = bannerTextLength - countOfNextLineChars;
+    if(str.length > length){
+      return str.substring(0, bannerTextLength) + "...";
+    } else {
+      return str;
+    }
+  }
+  // 76
+
 }

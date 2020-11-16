@@ -11,6 +11,7 @@ export class StoryCardComponent implements OnInit {
   @Input() story: NewspaperPost;
   @Input() title: string;
   @Input() description: string;
+  @Input() storyContent: string;
   @Input() customActionTitle: string;
 
   @Output() OnStorySelected = new EventEmitter<NewspaperPost>();
