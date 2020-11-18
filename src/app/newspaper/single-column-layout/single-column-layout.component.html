@@ -1,20 +1,31 @@
 <div *ngFor="let story of bannerStories; let i = index" >
     <app-banner-story-card 
-    [title]="story.title" 
-    [description]="formatDescription(story.description + story.story,400)"
-    [bannerImage]="story.imageId"
-    [postLink]="story.linkToPost"
+    [story] = story
+    [storyContent]= "story.story"
+    (primaryAction)="openUrl(story)"
+    primaryActionTitle="Read Article"
     ></app-banner-story-card>
 
     <div *ngIf="i === 0 || i === 3" class="horizontal-scroll-container">
-        <!-- <div> -> </div> -->
         <div class="card-container" *ngFor="let story of highlightStories">
-            <app-story-card [story]="story" [title]="story.title" [description]="formatDescription(story.description, 300)"></app-story-card>
+            <app-story-card [story]="story" 
+             [showCardRaised]=true 
+             [title]="story.title" 
+             [description]="formatDescription(story.description, 300)"
+             (OnStorySelected)="showModelDialog($event)"
+             ></app-story-card>
         </div>
     </div>
-    
 </div>
 
-<div *ngFor="let story of newsbitStories">
-    <app-story-card [story]="story" [title]="story.title" [description]="formatDescription(story.description, 300)"></app-story-card>
+<div class="story-list" *ngFor="let story of newsbitStories">
+    <app-story-card 
+        [story]="story" 
+        [title]="story.title" 
+        [showCardRaised]=true 
+        [storyContent]="story.story"
+        primaryActionTitle="Read Article"
+        [description]="story.description" 
+        (OnStorySelected)="openUrl(story)"
+        ></app-story-card>
 </div>

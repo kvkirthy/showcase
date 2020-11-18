@@ -1,9 +1,10 @@
 import { Store } from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { NewspaperEdition } from '../models/editions';
 import { selectedEdition } from '../ngrx/edition.selectors';
 import { getStoryByCateory } from '../ngrx/story.selectors';
 import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-nine-per-page-layout',
@@ -16,10 +17,14 @@ export class NewspaperMainComponent implements OnInit {
 
   bannerStories: NewspaperPost[] = [];
   currentEdition: NewspaperEdition;
+  window: Window;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, 
+    @Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
+
+    this.window = this.document.defaultView;
 
     this.store
       .select(selectedEdition)
@@ -95,7 +100,15 @@ export class NewspaperMainComponent implements OnInit {
   }
 
   storySelected(story: NewspaperPost){
-    document.getElementById(story._id).scrollIntoView({ block:'center', inline:'center', behavior: 'smooth'});
+      this.document.getElementById(story._id).scrollIntoView({ block:'center', inline:'center', behavior: 'smooth'});
+  }
+
+  scrollTop(){
+    this.document.getElementById("home").scrollIntoView({ block:'center', inline:'center', behavior: 'smooth'});
+  }
+
+  openUrl(story:NewspaperPost){
+    this.window.open(story.linkToPost, "__blank");
   }
 
   groupStories(availableStories: NewspaperPost[]){

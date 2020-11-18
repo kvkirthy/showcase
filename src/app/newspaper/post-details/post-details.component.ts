@@ -1,7 +1,7 @@
 import { Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { NewspaperPost } from '../models/newspaper-post';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_BOTTOM_SHEET_DATA } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-post-details',
@@ -10,7 +10,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class PostDetailsComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: NewspaperPost) { }
+  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public data: NewspaperPost) { }
 
   ngOnInit(): void {
     

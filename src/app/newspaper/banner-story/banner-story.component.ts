@@ -1,3 +1,4 @@
+import { NewspaperPost } from '../models/newspaper-post';
 import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core';
 
 @Component({
@@ -7,16 +8,21 @@ import { Component, Input, Output, OnChanges, EventEmitter } from '@angular/core
 })
 export class BannerStoryComponent implements OnChanges {
 
-  @Input() title: string;
-  @Input() description: string;
-  @Input() bannerImage: string;
-  @Input() postLink: string;
-  @Input() customActionTitle: string;
-  @Input() storyContent: string;
-  @Input("ShouldUseImage") shouldUseImage: boolean = true;
+  bannerImage: string;
 
+  @Input() storyContent: string;
+  @Input() story: NewspaperPost;
+  @Input() customActionTitle: string;
+  @Input() primaryActionTitle = "more";
+  @Input("ShouldUseImage") shouldUseImage: boolean = true;
+  
   @Output() OnImageClick = new EventEmitter();
   @Output() customActionEvent = new EventEmitter();
+  @Output() primaryAction = new EventEmitter<NewspaperPost>();
+
+  ngInit(){
+    this.bannerImage = this.story.imageId;
+  }
 
   ngOnChanges(){
     this.bannerImage = this.bannerImage || 'assets/js.jpeg';
@@ -28,6 +34,10 @@ export class BannerStoryComponent implements OnChanges {
 
   customAction(){
     this.customActionEvent.emit();
+  }
+
+  onPrimaryAction(){
+    this.primaryAction.emit(this.story);
   }
 
 }

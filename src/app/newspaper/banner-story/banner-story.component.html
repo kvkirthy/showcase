@@ -3,18 +3,18 @@
         <a (click)="imageClicked()"><img [src]="bannerImage" /></a>
     </div>
     <mat-card-header>
-        <mat-card-title>{{title}}</mat-card-title>
+        <mat-card-title>{{story.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <div>
-            {{description}}
+            {{story.description}}
         </div>
-        <div *ngIf="storyContent">
+        <div *ngIf="story.story">
             {{storyContent}}
         </div>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>more</button>
+        <button mat-button (click)="onPrimaryAction()">{{primaryActionTitle}}</button>
         <button mat-button (click)="customAction()" *ngIf="customActionTitle">{{customActionTitle}}</button>
     </mat-card-actions>
 </mat-card>

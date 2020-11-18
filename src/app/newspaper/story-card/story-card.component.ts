@@ -14,7 +14,9 @@ export class StoryCardComponent implements OnInit {
   @Input() description: string;
   @Input() storyContent: string;
   @Input() customActionTitle: string;
-
+  @Input() showHeaderAction: boolean = false;
+  @Input() primaryActionTitle = "more"
+  @Output() headerAction= new EventEmitter();
   @Output() OnStorySelected = new EventEmitter<NewspaperPost>();
 
   constructor() { }
@@ -26,8 +28,11 @@ export class StoryCardComponent implements OnInit {
     this.OnStorySelected.emit(this.story);
   }
 
-  customAction(){
+  headerActionClicked(){
+    this.headerAction.emit(true);
+  }
 
+  customAction(){
   }
 
 }

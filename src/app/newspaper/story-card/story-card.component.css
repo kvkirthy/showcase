@@ -6,6 +6,14 @@ mat-card-header {
     font-size: 11.5pt;
 }
 
+.row {
+    width: 100% ;
+}
+
+.row button {
+    margin-top: -13px;
+}
+
 mat-card-content div{
     font-size: 10.5pt;
     text-align: justify;

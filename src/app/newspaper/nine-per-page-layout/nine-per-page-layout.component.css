@@ -37,10 +37,6 @@ mat-grid-tile{
     margin-left: 5px;
 }
 
-.no-margin-padding {
-    padding: 0px 0px 0px 0px;
-}
-
 app-story-card {
     margin-bottom: 10px;
 }

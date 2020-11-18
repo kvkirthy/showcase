@@ -10,4 +10,13 @@
 
 .card-container {
     min-width: 310px;
+    margin: 3px 5px 10px 5px;
+}
+
+.no-margin-padding {
+    padding: 0px 0px 0px 0px;
+}
+
+.story-list {
+    margin: 10px 5px 10px 5px;
 }

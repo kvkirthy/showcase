@@ -7,6 +7,26 @@ img {
     top: -60px;
 }
 
+/* @media only screen and (max-width: 767px){ */
+    mat-card-title {
+        margin: 10px auto auto auto;
+        font-weight: bold;
+        /* font-style: italic; */
+        /* font-family: 'Times New Roman', Times, serif; */
+        /* font-size: 26pt !important; */
+    }
+/* }
+
+@media only screen and (min-width: 768px){
+    mat-card-title {
+        margin: 10px auto auto auto;
+        font-weight: bold;
+        font-style: italic;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 26pt !important;
+    }
+} */
+
 div.storyImage {
     height: 123px;
     width: 100%;
@@ -24,14 +44,6 @@ mat-card {
 mat-card-content div{
     text-align: justify;
     white-space: pre-wrap;
-}
-
-mat-card-title {
-    margin: 10px auto auto auto;
-    font-weight: bold;
-    font-style: italic;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 26pt !important;
 }
 
 mat-card-actions {

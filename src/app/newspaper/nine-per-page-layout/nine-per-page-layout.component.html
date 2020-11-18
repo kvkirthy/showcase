@@ -1,3 +1,4 @@
+<span id="home"></span>
 <div class="row" *ngFor="let stories of storyGroups; let i=index">
     <ng-container *ngIf="bannerStories[i]; else secondaryLayout">
         <div [ngClass]="getSectionCssClassByRow(i,1)">
@@ -18,11 +19,9 @@
         
         <div class="col-4" *ngIf="bannerStories[i]" >
             <app-banner-story-card 
-            [title]="bannerStories[i].title" 
-            [description] = "bannerStories[i].description"
+            [story] = bannerStories[i]
             [storyContent]="formatBannerText(bannerStories[i].story)"
-            [bannerImage]="bannerStories[i].imageId"
-            [postLink]="bannerStories[i].linkToPost"
+            (primaryAction)="storySelected($event)"
             ></app-banner-story-card>
         </div>
     
@@ -51,29 +50,20 @@
     <div class="col-2"></div>
     <hr class="col-10" />
     <div class="col-2"></div>
-
-    <!-- <div class="col-4" *ngFor="let story of stories; let i= index">
-        <app-story-card *ngIf="i >= 2 && i< 4" [title]="story.title" 
-        [description]="story.description"></app-story-card>
-    </div> -->
-
-    <!-- <div class="col-8">
-        <div class="row">
-            <div class="col-6" *ngFor="let story of stories; let i= index">
-                <app-story-card *ngIf="i < 4" [title]="story.title" 
-                [description]="story.description"></app-story-card>
-            </div>
-        </div>
-    </div> -->
 </div>
 
 <div class="row" *ngFor="let story of bannerStories">
         <div class="col-2"[id]="story._id" ></div>
         <app-story-card class="col-8"
-        showCardRaised=true 
-        [title]="story.title" 
-        [description]="story.description"
-        [storyContent]="story.story"
+            showCardRaised=true 
+            showHeaderAction=true
+            (headerActionClicked)="scrollTop()"
+            [story]=story
+            [title]="story.title" 
+            [description]="story.description"
+            [storyContent]="story.story"
+            primaryActionTitle="Read complete story"
+            (OnStorySelected) = "openUrl($event)"
         ></app-story-card>
         <div class="col-2"></div>
 </div>
@@ -82,9 +72,14 @@
         <div class="col-2" [id]="story._id" ></div>
         <app-story-card  class="col-8"
         showCardRaised=true 
+        showHeaderAction=true
+        [story]=story
+        (headerAction)="scrollTop()"
         [title]="story.title" 
         [description]="story.description"
         [storyContent]="story.story"
+        primaryActionTitle="Read complete story"
+        (OnStorySelected) = "openUrl($event)"
         ></app-story-card>
         <div class="col-2"></div>
     </div>

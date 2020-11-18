@@ -17,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 import { StoryEffects } from './ngrx/story.effects';
 import { getStoryReducer } from './ngrx/story.reducer';
@@ -43,21 +44,21 @@ import { SingleColumnLayoutComponent } from './single-column-layout/single-colum
 @NgModule({
   declarations: [
     HomeComponent, 
+    MainComponent,
     LoginComponent, 
     ComposeComponent, 
     RegisterComponent, 
     StoryListComponent, 
+    StoryCardComponent,
     CreatePostComponent, 
     ImagePickerComponent,
     BannerStoryComponent,
-    CreateNewspaperEditionComponent,
-    StoryCardComponent,
-    NewspaperMainComponent,
-    UpdatePostsComponent,
-    MainComponent,
-    NewspaperEditionListComponent,
     PostDetailsComponent,
+    UpdatePostsComponent,
+    NewspaperMainComponent,
     SingleColumnLayoutComponent, 
+    NewspaperEditionListComponent,
+    CreateNewspaperEditionComponent,
   ],
   imports: [
     CommonModule,
@@ -74,10 +75,12 @@ import { SingleColumnLayoutComponent } from './single-column-layout/single-colum
     FlexLayoutModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    MatBottomSheetModule,
     NewspaperRoutingModule,
     EffectsModule.forFeature([StoryEffects, EditionEffects]),
     StoreModule.forFeature( 'newspaperStories', {stories: getStoryReducer }),
     StoreModule.forFeature( 'newspaperEditions', getEditionReducer),
-  ]
+  ],
+  entryComponents:[PostDetailsComponent]
 })
 export class NewspaperModule { }

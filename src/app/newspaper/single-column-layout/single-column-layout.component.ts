@@ -1,10 +1,13 @@
 import { Store } from '@ngrx/store';
-import { Component, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { NewspaperEdition } from '../models/editions';
+import { Component, Inject, OnInit } from '@angular/core';
 import { selectedEdition } from '../ngrx/edition.selectors';
 import { getStoryByCateory } from '../ngrx/story.selectors';
 import { NewspaperPost, StoryCategory } from '../models/newspaper-post';
+import { PostDetailsComponent } from '../post-details/post-details.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-single-column-layout',
@@ -16,10 +19,15 @@ export class SingleColumnLayoutComponent implements OnInit {
   bannerStories: NewspaperPost[] = [];
   highlightStories: NewspaperPost[] = [];
   newsbitStories: NewspaperPost[] = [];
+  window: Window;
 
-  constructor(private store: Store, private dialog: MatDialog) { }
+  constructor(private store: Store, 
+    @Inject(DOCUMENT) private document: Document,
+    private dialog: MatBottomSheet) { }
 
   ngOnInit(): void {
+
+    this.window = this.document.defaultView;
 
     this.store
       .select(selectedEdition)
@@ -64,6 +72,23 @@ export class SingleColumnLayoutComponent implements OnInit {
     } else {
       return str;
     }
+  }
+
+  openUrl(story:NewspaperPost){
+    this.window.open(story.linkToPost, "__blank");
+  }
+
+  showModelDialog(story: NewspaperPost){
+
+    this.dialog.open(PostDetailsComponent, {
+      data: story
+    });
+    // document.getElementById(story._id).scrollIntoView({ block:'center', inline:'center', behavior: 'smooth'});
+    // this.dialog.open(PostDetailsComponent, {
+    //   data: story,
+    //   width: '100%',
+    //   panelClass: 'no-margin-padding'
+    // });
   }
 
 }

@@ -18,8 +18,12 @@
         
                 <div class="col-6">
                     <div *ngIf="selectedTitle">
-                        <app-banner-story-card [title]="selectedTitle" [description]="selectedDescription"
-                            [bannerImage]="selectedBannerImage" [postLink]="selectedPostLink"
+                        <app-banner-story-card 
+                            [story] = "{
+                                description: selectedDescription,
+                                imageId: selectedBannerImage,
+                                postLink: selectedPostLink
+                            }" 
                             (OnImageClick)="imageClicked()"></app-banner-story-card>
         
                     </div>
