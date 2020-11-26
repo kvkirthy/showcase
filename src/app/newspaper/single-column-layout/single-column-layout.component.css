@@ -11,6 +11,9 @@
 .card-container {
     min-width: 310px;
     margin: 3px 5px 10px 5px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: lightgray;
 }
 
 .no-margin-padding {
