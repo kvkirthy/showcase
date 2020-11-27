@@ -7,6 +7,10 @@ img {
     top: -60px;
 }
 
+.mat-elevation-z2 {
+    margin : 17% 2% 5% 2%;
+}
+
 /* @media only screen and (max-width: 767px){ */
     mat-card-title {
         margin: 10px auto auto auto;

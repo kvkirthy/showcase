@@ -1,9 +1,10 @@
-<div *ngFor="let story of bannerStories; let i = index" >
+<div class="small-font" *ngFor="let story of bannerStories; let i = index" >
     <app-banner-story-card 
     [story] = story
     [storyContent]= "story.story"
     (primaryAction)="openUrl(story)"
     primaryActionTitle="Read Article"
+    [showCardRaised]=true
     ></app-banner-story-card>
 
     <div *ngIf="i === 0 || i === 3" class="horizontal-scroll-container">
