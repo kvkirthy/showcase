@@ -17,11 +17,12 @@ import { PostDetailsComponent } from '../post-details/post-details.component';
 })
 export class SingleColumnLayoutComponent implements OnInit, OnDestroy {
 
-  bannerStories: NewspaperPost[] = [];
-  highlightStories: NewspaperPost[] = [];
-  newsbitStories: NewspaperPost[] = [];
-  currentEditon: NewspaperEdition;
   window: Window;
+  showHideHelpTextCss="show";
+  currentEditon: NewspaperEdition;
+  bannerStories: NewspaperPost[] = [];
+  newsbitStories: NewspaperPost[] = [];
+  highlightStories: NewspaperPost[] = [];
 
   destory$ = new Subject<void>();
 
@@ -96,6 +97,10 @@ export class SingleColumnLayoutComponent implements OnInit, OnDestroy {
     this.bannerStories = [];
     this.newsbitStories = [];
     this.highlightStories = [];
+  }
+
+  closeHelpInfo(){
+    this.showHideHelpTextCss="hide";
   }
 
 }

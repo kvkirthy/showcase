@@ -6,8 +6,13 @@
     primaryActionTitle="Read Article"
     [showCardRaised]=true
     ></app-banner-story-card>
-
     <div *ngIf="i === 0 || i === 3" class="horizontal-scroll-container">
+        <div class="info-container" [ngClass]="showHideHelpTextCss" (click)="closeHelpInfo()">
+            <div class="info-message">
+                Scroll for more <br/>
+                <mat-icon class="big-icon">swap_horizontal_circle</mat-icon>
+            </div>
+        </div>
         <div class="card-container" *ngFor="let story of highlightStories">
             <app-story-card [story]="story" 
              [showCardRaised]=false  

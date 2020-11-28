@@ -6,7 +6,8 @@ div {
 
 strong {
     text-align: center;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 
 mat-toolbar {
@@ -40,4 +41,20 @@ mat-toolbar-row h6{
 
 .center-align {
     text-align: center;
+}
+
+button {
+    position: absolute;
+    width: 40px;
+    top:0;
+    right: -10px;
+}
+
+.row {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.pull-right {
+    text-align: right;
 }

@@ -7,7 +7,6 @@
                 <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
                 <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
             </div>
-            <!--todo: provide a title and date for the edition-->
         </div>
         <span class="col-4"></span>
     </mat-toolbar-row>
@@ -17,11 +16,10 @@
     <mat-toolbar-row>
         <div class="row">
             <img class="col-3" src="assets/jstimes2.png" alt="">
-            <div class="col-9" >
+            <div class="col-6" >
                 <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
                 <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
             </div>
-            <!--todo: provide a title and date for the edition-->
         </div>
     </mat-toolbar-row>
 </mat-toolbar>

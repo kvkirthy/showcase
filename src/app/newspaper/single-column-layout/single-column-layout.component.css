@@ -23,3 +23,36 @@
 .story-list {
     margin: 10px 5px 10px 5px;
 }
+
+.big-icon {
+    font-size: 48pt;
+}
+
+.info-container {
+    position: absolute;
+    width: 100%;
+    min-height: 350px;
+    background-color: whitesmoke;
+    opacity: 80%;
+    z-index: 1000;
+}
+
+.info-message {
+    position: relative;
+    margin: 20% auto auto auto;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+}
+
+.info-message mat-icon{
+    width: 100%;
+}
+
+.show{
+    display: block;
+}
+
+.hide {
+    display: none;
+}

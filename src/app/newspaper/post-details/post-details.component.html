@@ -1,37 +1,23 @@
-<!-- <mat-toolbar>
-    <mat-toolbar-row>
-        <span class="col-4"></span>
-        <div class="col-4 center-align">
-            <img src="assets/jstimes2.png" alt="">
-        </div>
-        <span class="col-4"></span>
-    </mat-toolbar-row>
-
-</mat-toolbar> -->
-
-<div >
-    <!-- <span class="col-1"></span> -->
-    <!-- <div class="col-10"> -->
-        <div class="row" *ngIf="data">
-            <div class="col-12">
-                <img [src]="data.imageId" alt="">
-            </div>
-            <strong class="col-12">
+<div>
+    <button mat-button (click)="close()"> <mat-icon>close</mat-icon> </button>
+    <div *ngIf="data">
+        <div  class="row">
+            <strong>
                 {{data.title}}
             </strong>
-
-            <div class="col-12">
-                {{data.description}}
-            </div>
-
-            <div class="col-12">
-                {{data.story}}
-            </div>
-        
-            <a  class="col-12" tabindex="-1" [href]="data.linkToPost" target="_blank">
-                Read full article
-            </a>
         </div>
-    <!-- </div> -->
-    <!-- <span class="col-1"></span> -->
+
+        <div class="row">
+            {{data.description}}
+        </div>
+
+        <div class="row">
+            {{data.story}}
+        </div>
+    
+        <a  class="row" tabindex="-1" [href]="data.linkToPost" target="_blank">
+            Read full article
+        </a>
+    </div>
+
 </div>
