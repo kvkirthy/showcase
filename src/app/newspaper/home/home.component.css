@@ -3,12 +3,15 @@ body {
 }
 
 mat-toolbar.md-and-above {
-    height: 86px;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 mat-toolbar.sm-and-below {
-    height: 55px;
-    margin-bottom: 45px;
+    height: auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
 div.intermediate.md-and-above {
@@ -28,7 +31,7 @@ div.intermediate.sm-and-below {
 }
 
 mat-toolbar-row {
-    margin: 10px auto 10px auto;
+    height: 25px;
 }
 
 mat-toolbar-row h1{
@@ -41,7 +44,18 @@ mat-toolbar-row strong{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 9pt;
     text-align: center;
-    margin-bottom: -10px;
+    /* margin-bottom: -10px; */
+}
+
+.second-row-md-screen {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.second-row {
+    padding-left: 15px;
+    /* font-style: italic; */
 }
 
 .center-align {

@@ -1,26 +1,34 @@
 <mat-toolbar class="fixed-header d-none d-md-block md-and-above">
     <mat-toolbar-row class="row">
-        <span class="col-4"></span>
-        <div class="col-4 center-align">
+        <span class="col-5"></span>
+        <div class="col-1 center-align">
             <img src="assets/jstimes2.png" alt="">
-            <div>
-                <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
-                <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
-            </div>
         </div>
+        <span class="col-6">
+            <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
+            <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span class="col-4"></span>
+        <strong class="col-4 second-row-md-screen">Be upto date with JavaScript news and updates.</strong>
         <span class="col-4"></span>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-toolbar class="fixed-header d-xs-block d-md-none sm-and-below">
     <mat-toolbar-row>
-        <div class="row">
-            <img class="col-3" src="assets/jstimes2.png" alt="">
-            <div class="col-6" >
-                <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
-                <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
-            </div>
+        <img src="assets/jstimes2.png" alt="">
+        <div>
+            <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
+            <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> |
+                {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
         </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row >
+        <strong class="second-row">
+            Be upto date with JavaScript news and updates.
+        </strong>
     </mat-toolbar-row>
 </mat-toolbar>
 <div class="d-xs-block d-md-none sm-and-below intermediate"></div>
