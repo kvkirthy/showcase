@@ -119,16 +119,15 @@ export class NewspaperMainComponent implements OnInit {
     let uniqueStories: NewspaperPost[] = this.getUniqueStories(availableStories);
 
     for(let i=this.storyGroups.length; uniqueStories.length > 0; i++){
-      if(this.storyGroups[i-1] && this.storyGroups[i-1].length < 9){
+      if(this.storyGroups[i-1] && this.storyGroups[i-1].length < 7){
         // there is a deficit in the previous count of story groups. 
         // add stories to fill up the length to 9
-        let remainingStories = uniqueStories.splice(0,9-this.storyGroups[i-1].length); 
+        let remainingStories = uniqueStories.splice(0,6-this.storyGroups[i-1].length); 
         this.storyGroups[i-1] = this.storyGroups[i-1].concat(remainingStories);
       }
-
-      this.storyGroups[i] = uniqueStories.splice(0,9);
-      
+      this.storyGroups[i] = uniqueStories.splice(0,6);
     }
+
   }
 
   private getUniqueStories(availableStories: NewspaperPost[]){

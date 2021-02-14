@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit {
   editions: NewspaperEdition[];
   selectedEditionTitle: string = '';
   selectedEditionDateCreated: Date;
-
+  sitePrimaryMessage = "Be up to date with JavaScript news and updates!";
+  siteSecondaryMessage = "In the fast moving technology space, it's important to know the trends. At the same time, it's not easy. It consumes energy and time. JavaScript Times makes life easy by providing regular updates in a quick summary.";
 
   constructor(private store: Store) { }
 

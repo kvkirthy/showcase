@@ -8,6 +8,24 @@ mat-grid-tile{
     height: 100%;
 }
 
+@media only screen and (min-width: 780px){
+    div.page-margin {
+        margin: auto 2% auto 2%;
+    }
+}
+
+@media only screen and (min-width: 1390px){
+    div.page-margin {
+        margin: auto 5% auto 5%;
+    }
+}
+
+@media only screen and (min-width: 1738px){
+    div.page-margin {
+        margin: auto 12% auto 12%;
+    }
+}
+
 .col-4 {
     padding-left: 0px;
     padding-right: 0px;

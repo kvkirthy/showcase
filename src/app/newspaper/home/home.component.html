@@ -1,23 +1,32 @@
-<mat-toolbar class="fixed-header d-none d-md-block md-and-above">
-    <mat-toolbar-row class="row">
-        <span class="col-5"></span>
-        <div class="col-1 center-align">
-            <img src="assets/jstimes2.png" alt="">
-        </div>
-        <span class="col-6">
-            <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
-            <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
+<p class="d-none d-md-block md-and-above">
+    <mat-toolbar class="fixed-header ">
+        <mat-toolbar-row class="row">
+            <span class="col-3"></span>
+            <div class="col-2 center-align">
+                <img src="assets/jstimes2.png" alt="">
+            </div>
+            <span class="col-7">
+                <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
+                <strong *ngIf="selectedEditionTitle && selectedEditionDateCreated"> | {{ selectedEditionDateCreated |
+                    date:'dd-MMM-yyyy' }}</strong>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+<div class="d-none d-md-block md-and-above">
+    <div class="empty-fill-toolbar-space"></div>
+    <div class="row site-message">
+        <span class="col-2">&nbsp;</span>
+        <span class="site-message col-8">
+            {{sitePrimaryMessage}}
+            {{siteSecondaryMessage}}
+            <hr>
         </span>
-    </mat-toolbar-row>
-    <mat-toolbar-row>
-        <span class="col-4"></span>
-        <strong class="col-4 second-row-md-screen">Be upto date with JavaScript news and updates.</strong>
-        <span class="col-4"></span>
-    </mat-toolbar-row>
-</mat-toolbar>
-
-<mat-toolbar class="fixed-header d-xs-block d-md-none sm-and-below">
-    <mat-toolbar-row>
+        <span class="col-2">&nbsp;</span>
+    </div>
+</div>
+<mat-toolbar class="fixed-header d-xs-block d-md-none">
+    <mat-toolbar-row class="fixed-header">
         <img src="assets/jstimes2.png" alt="">
         <div>
             <app-newspaper-edition-list class="col-8" [editions]="editions"></app-newspaper-edition-list>
@@ -25,14 +34,16 @@
                 {{ selectedEditionDateCreated | date:'dd-MMM-yyyy' }}</strong>
         </div>
     </mat-toolbar-row>
-    <mat-toolbar-row >
-        <strong class="second-row">
-            Be upto date with JavaScript news and updates.
-        </strong>
-    </mat-toolbar-row>
 </mat-toolbar>
-<div class="d-xs-block d-md-none sm-and-below intermediate"></div>
-<div class="d-none d-md-block md-and-above intermediate"></div>
+<div class="d-xs-block d-md-none sm-and-below">
+    <mat-card>
+        <mat-card-content>
+            {{sitePrimaryMessage}}
+            {{siteSecondaryMessage}}
+        </mat-card-content>
+    </mat-card>
+    <div class="hack"></div>
+</div>
 <div class="root-node">
     <router-outlet></router-outlet>
 </div>

@@ -1,9 +1,12 @@
+
 mat-card-header {
     margin-left: -16px;
 }
 
 .mat-card-title {
-    font-size: 11.5pt;
+    font-size: 10pt;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
 }
 
 .row {
@@ -15,10 +18,14 @@ mat-card-header {
 }
 
 mat-card-content div{
-    font-size: 10.5pt;
+    font-size: 9pt;
     text-align: justify;
     margin-bottom: 1px;
     white-space: pre-wrap;
+    /* font-family: 'Josefin Sans', sans-serif; */
+    font-family: 'Libre Baskerville', serif;
+    /* font-family: 'Merriweather', serif; */
+    /* font-family: 'Yanone Kaffeesatz', sans-serif; */
 }
 
 mat-card-actions {

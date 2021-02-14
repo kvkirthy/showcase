@@ -14,7 +14,7 @@ export class BannerStoryComponent implements OnChanges {
   @Input() story: NewspaperPost;
   @Input() showCardRaised:boolean = false;
   @Input() customActionTitle: string;
-  @Input() primaryActionTitle = "more";
+  @Input() primaryActionTitle: string = "more..."
   @Input("ShouldUseImage") shouldUseImage: boolean = true;
   
   @Output() OnImageClick = new EventEmitter();

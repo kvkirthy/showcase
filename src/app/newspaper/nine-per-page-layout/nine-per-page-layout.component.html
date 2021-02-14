@@ -1,5 +1,5 @@
 <span id="home"></span>
-<div class="row" *ngFor="let stories of storyGroups; let i=index">
+<div class="row page-margin" *ngFor="let stories of storyGroups; let i=index">
     <ng-container *ngIf="bannerStories[i]; else secondaryLayout">
         <div [ngClass]="getSectionCssClassByRow(i,1)">
             <div class="row">
@@ -29,7 +29,7 @@
             <div class="row">
                 <div [ngClass]="getStoryCssClassByRow(i,2)" *ngFor="let story of stories; let storyIndex= index">
                     <app-story-card *ngIf="isValidForRightSet(i, storyIndex)" [title]="story.title" 
-                    [description]="formatDescription(story.description, 227)"
+                    [description]="formatDescription(story.description + ' ' + story.story, 420)"
                     [story]="story"
                     (OnStorySelected) = "storySelected($event)"
                     ></app-story-card>
@@ -41,7 +41,7 @@
     <ng-template #secondaryLayout>
         <div class="col-4" *ngFor="let story of stories">
             <app-story-card [title]="story.title" 
-            [description]="formatDescription(story.description, 227)"
+            [description]="formatDescription(story.description + ' ' + story.story, 420)"
             [story]="story"
             (OnStorySelected) = "storySelected($event)"></app-story-card>
         </div>  
