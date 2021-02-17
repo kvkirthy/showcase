@@ -42,6 +42,10 @@ mat-card img.card-image {
     padding-top: 15px;
 }
 
+mat-card-content {
+    text-align: justify;
+}
+
 
 /* .img-logo {
     width: 40px;

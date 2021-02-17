@@ -1,11 +1,31 @@
 {
     "blogs": [
         {
-            "title": "Angular Cheatsheet | Everything about Memoization",
-            "description": "My two cents to the eighth edition of DNC magazine. Happy to have contributed. 1. Angular 9 & 10 cheatsheet 2. Article on Memoziation with implementations in Angular and React",
-            "imageUrl": "assets/js.jpeg",
-            "linkToBlog": "http://www.dotnetcurry.net/s/dnc-mag-eighthanniv-single",
+            "title": "State of HMR in Angular",
+            "description": "GOOD AND BAD WITH HOT MODULE REPLACEMENT IN ANGULAR 11.X. Hot Module Replacement speeds up development and debugging. It is a Webpack feature that updates changed modules without reloading the whole page. Angular 11 made it easy to use HMR by providing it out-of-box in the CLI.",
+            "imageUrl": "https://miro.medium.com/max/4800/0*55kr1t601sp22pkE",
+            "linkToBlog": "https://keertikotaru.medium.com/state-of-hmr-in-angular-b3c19b4ebc54",
             "isHighlighted": true
+        },        {
+            "title": "Memoization in JavaScript, Angular and React",
+            "description": "This tutorial demonstrates the Memoization technique via three implementations - JavaScript, Angular and React.js. Memoization (also spelled memoisation) is a caching technique for function calls. Many of us have written code that caches expensive database calls, network calls, I/O etc. ",
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+            "linkToBlog": "https://www.dotnetcurry.com/javascript/memoization-javascript-angular-reactjs",
+            "isHighlighted": false
+        },
+        {
+            "title": "Angular 9 and Angular 10 Development Cheat Sheet",
+            "description": "This Angular 10 Cheatsheet tutorial details significant changes in Angular 9 and some new features introduced in Angular 10. It also contains info to upgrade to Angular 10. This open source framework by Google is continuously enhanced and new features are added on a regular basis.",
+            "imageUrl": "https://angular.io/assets/images/logos/angular/angular.png",
+            "linkToBlog": "https://www.dotnetcurry.com/angularjs/angular-9-10-cheatsheet-new-features",
+            "isHighlighted": false
+        },
+        {
+            "title": "DNC Magazine: Angular Cheatsheet | Everything about Memoization",
+            "description": "My two cents to the eighth edition of DNC magazine. Happy to have contributed. 1. Angular 9 & 10 cheatsheet 2. Article on Memoziation with implementations in Angular and React",
+            "imageUrl": "https://angular.io/assets/images/logos/angular/angular.png",
+            "linkToBlog": "http://www.dotnetcurry.net/s/dnc-mag-eighthanniv-single",
+            "isHighlighted": false
         },
         {
             "title": "Private Members in JavaScript Classes",
