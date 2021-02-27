@@ -2,11 +2,13 @@
     <div class="row">
         <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-                <img mat-card-image class="card-image" [src]="highlightedBlog.bannerImage">
-
+                <img mat-card-image [src]="highlightedBlog.bannerImage">
                 <mat-card-header>
                     <mat-card-title>{{highlightedBlog.title}}
                         <mat-icon color="accent">fiber_new</mat-icon>
+                        <div>
+                            <mat-card-subtitle>{{ formatDate(highlightedBlog.dateAdded)}}</mat-card-subtitle>
+                        </div>
                     </mat-card-title>
                 </mat-card-header>
                 <mat-card-content>{{highlightedBlog.description}}</mat-card-content>
@@ -18,11 +20,15 @@
                 <ng-container *ngFor="let blog of blogList$ | async; let i=index">
                     <div class="col-md-6 small-cards-recent">
                         <mat-card *ngIf="i < 4" (click)="cardClickHandler(blog.linkToBlog)">
-
                             <mat-card-header>
                                 <img mat-card-avatar [src]="blog.imageUrl">
                                 <mat-card-subtitle>
-                                    {{blog.title}}
+                                    <div>
+                                        {{blog.title}}
+                                    </div>
+                                    <div>
+                                        {{formatDate(blog.dateAdded)}}
+                                    </div>
                                 </mat-card-subtitle>
                             </mat-card-header>
                             <mat-card-content>{{blog.description}}</mat-card-content>
@@ -58,6 +64,9 @@
                     <mat-card-title>{{highlightedBlog.title}}
                         <mat-icon color="accent">fiber_new</mat-icon>
                     </mat-card-title>
+                    <mat-card-subtitle *ngIf="highlightedBlog.dateAdded">
+                        {{formatDate(highlightedBlog.dateAdded)}}
+                    </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>{{highlightedBlog.description}}</mat-card-content>
             </mat-card>
@@ -69,7 +78,14 @@
                 <mat-card (click)="cardClickHandler(blog.linkToBlog)">
                     <mat-card-header>
                         <img mat-card-avatar class="avatar" [src]="blog.imageUrl">
-                        <mat-card-subtitle>{{blog.title}}</mat-card-subtitle>
+                        <mat-card-subtitle>
+                            <div>
+                                {{blog.title}}
+                            </div>
+                            <div *ngIf="blog.dateAdded">
+                                {{formatDate(blog.dateAdded)}}
+                            </div>
+                        </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>{{blog.description}}</mat-card-content>
                 </mat-card>

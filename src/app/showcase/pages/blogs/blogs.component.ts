@@ -36,4 +36,9 @@ export class BlogsComponent implements OnInit {
     window.open(linkToBlog, "__blog");
   }
 
+  formatDate(dateValue: string){
+    let d = new Date(dateValue) 
+    return d.toDateString();
+  }
+
 }

@@ -18,6 +18,7 @@ import { ShowcaseRoutingModule } from './showcase-routing.module';
 import { OpinionComponent } from './pages/opinion/opinion.component';
 import { ScToolbarComponent } from '../components/sc-toolbar/sc-toolbar.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 
 @NgModule({
   declarations: [    
@@ -27,7 +28,8 @@ import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
     BlogsComponent,
     OpinionComponent,
     ScToolbarComponent,
-    CreateBlogComponent
+    CreateBlogComponent,
+    ApplicationsComponent
   ],
   imports: [
     CommonModule,
