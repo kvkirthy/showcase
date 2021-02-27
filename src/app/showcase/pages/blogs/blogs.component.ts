@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 import { of, Observable } from 'rxjs';
-import { Blog } from 'src/app/showcase/models/blog';
 import { BlogsService } from './blogs.service';
-import * as blogData from './blogs-data.json';
+import { Component, OnInit } from '@angular/core';
+import { Blog } from 'src/app/showcase/models/blog';
 
 @Component({
   selector: 'app-blogs',
@@ -20,8 +20,14 @@ export class BlogsComponent implements OnInit {
     this.blogService
       .getBlogs()
       .subscribe(data => {
-        allBlogs = data;
+        allBlogs = data.sort( (a,b) =>  (a.dateAdded && b.dateAdded) ? a.dateAdded.localeCompare(b.dateAdded): 0);
+        allBlogs = allBlogs.reverse();
         this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
+        if( !!! this.highlightedBlog ){
+          allBlogs[0].isHighlighted = true;
+          this.highlightedBlog = allBlogs[0];
+        }
+
         this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
       });
   }

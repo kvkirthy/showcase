@@ -1,0 +1,48 @@
+<form [formGroup]="createPostFormGroup" class="row">
+<!-- <form class="row"> -->
+    <span class="col-sm-1 col-md-3"></span>
+    <div class="col-xs-12 col-sm-10 col-md-6">
+        <div class="row">
+            <!-- <div class="col-sm-1 col-md-3"></div>
+            <h1 class="col-sm-10 col-md-6">Contribute a Post</h1>
+            <div class="col-sm-1 col-md-3"></div> -->
+            <h1>Create A New Blog</h1>
+        </div>
+        <div class="row">
+            <!-- <input type="text" matInput id="title" name="title" formControl="title"  matInput> -->
+
+            <mat-form-field class="col-12" id="title" name="title" >
+                <mat-label> Title</mat-label>
+                <input type="text" formControlName="title" matInput>
+                <mat-hint>  Provide a title </mat-hint> 
+            </mat-form-field>
+            <mat-form-field id="description" name="description"  class="col-12">
+                <mat-label>Detailed Story</mat-label>
+                <textarea matInput formControlName="story" rows="10"></textarea>
+                <mat-hint> Tell us your story! </mat-hint> 
+            </mat-form-field>
+            <mat-form-field id="url" name="url" class="col-12">
+                <mat-label>Link</mat-label>
+                <input type="url" formControlName="linkToPost" matInput>
+                <mat-hint>Link to the post </mat-hint> 
+            </mat-form-field>
+            <label class="radio-label" for="avatar">Select Avatar</label>
+            <mat-radio-group class="col-12" formControlName="avatar">
+                <mat-radio-button checked="false" [value]="av" *ngFor="let av of avatars">
+                    <img class="avatar" [src]="av" [alt]="av" />
+                </mat-radio-button>
+            </mat-radio-group>
+            <label class="radio-label" for="banners">Select Banners</label>
+            <mat-radio-group class="col-12" formControlName="bannerImage">
+                <mat-radio-button checked="false" [value]="bn" *ngFor="let bn of banners">
+                    <img class="banner-preview" [src]="bn" [alt]="bn" />
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="row actions-row">
+            <button type="submit" mat-button (click)="submit()" color="primary">Submit</button>
+            <button mat-button (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+    <span class="col-sm-1 col-md-3"></span>
+</form>

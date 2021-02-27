@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-                <img mat-card-image class="card-image" [src]="highlightedBlog.imageUrl">
+                <img mat-card-image class="card-image" [src]="highlightedBlog.bannerImage">
 
                 <mat-card-header>
                     <mat-card-title>{{highlightedBlog.title}}

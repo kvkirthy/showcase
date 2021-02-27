@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
+import { HomeComponent } from './home/home.component';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
-import { HomeComponent } from './home/home.component';
+import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
 
 // import { HomeComponent } from './pages/home/home.component';
 // import { OpinionComponent } from './pages/opinion/opinion.component';
@@ -17,6 +18,11 @@ export const pages = [
         path: 'blog',
         component: BlogsComponent,
         label: "Blog"
+      },
+      {
+        path: 'create-blog',
+        component: CreateBlogComponent,
+        label: "Create Blog"
       },
       {
         path: 'books',

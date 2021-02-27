@@ -1,0 +1,31 @@
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 160px;
+    text-align: center;
+}
+
+img.avatar {
+    width: 40px;
+}
+
+img.banner-preview {
+    width: 80px
+}
+
+.radio-label {
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 10pt;
+    color: grey;
+}
+
+mat-radio-button {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+form {
+    padding-top: 1%;
+}
