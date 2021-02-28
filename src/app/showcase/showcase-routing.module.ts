@@ -5,6 +5,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { BooksComponent } from './pages/books/books.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
+import { ApplicationsComponent } from './pages/applications/applications.component';
 
 // import { HomeComponent } from './pages/home/home.component';
 // import { OpinionComponent } from './pages/opinion/opinion.component';
@@ -28,6 +29,11 @@ export const pages = [
         path: 'books',
         component: BooksComponent,
         label: "Books"
+      },
+      {
+        path: 'applications',
+        component: ApplicationsComponent,
+        label: "Applications"
       },
       {
         path: 'about',

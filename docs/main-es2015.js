@@ -3614,6 +3614,10 @@ class HomeComponent {
                 label: "Books"
             },
             {
+                path: 'applications',
+                label: 'Applications'
+            },
+            {
                 path: 'about',
                 label: "About Me!"
             }];
@@ -3808,6 +3812,64 @@ AboutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
                 selector: 'app-about',
                 templateUrl: './about.component.html',
                 styleUrls: ['./about.component.css']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "./src/app/showcase/pages/applications/applications.component.ts":
+/*!***********************************************************************!*\
+  !*** ./src/app/showcase/pages/applications/applications.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: ApplicationsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ApplicationsComponent", function() { return ApplicationsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/card.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm2015/button.js");
+
+
+
+
+class ApplicationsComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+ApplicationsComponent.ɵfac = function ApplicationsComponent_Factory(t) { return new (t || ApplicationsComponent)(); };
+ApplicationsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ApplicationsComponent, selectors: [["app-applications"]], decls: 13, vars: 0, consts: [[1, "row"], [1, "col-xs-12", "col-md-6"], ["src", "/assets/covid-asset.png", "mat-card-image", "", "alt", ""], ["mat-button", "", "color", "primary", "href", "https://github.com/kvkirthy/covid-sample/tree/develop", "target", "app"], ["mat-button", "", "color", "primary", "href", "https://kvkirthy.github.io/covid-sample/", "target", "app"]], template: function ApplicationsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-card", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "mat-card-header");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "mat-card-title");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " COVID India Visualization ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "mat-card-subtitle");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Bubble chart shows COVID data for all the states. Allows filter through and zoom in. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "img", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "mat-card-footer");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "a", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "a", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](12, "Launch");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, directives: [_angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCard"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardHeader"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardTitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardSubtitle"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardImage"], _angular_material_card__WEBPACK_IMPORTED_MODULE_1__["MatCardFooter"], _angular_material_button__WEBPACK_IMPORTED_MODULE_2__["MatAnchor"]], styles: [".row[_ngcontent-%COMP%] {\n    margin: 1% 1% 1% 1%;\n    padding-top: 3%\n}\n\nmat-card-footer[_ngcontent-%COMP%] {\n    text-align: right;\n    padding-right: 5%;\n    padding-bottom: 2%;\n}\n\na[_ngcontent-%COMP%] {\n    padding-left: 2%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hvd2Nhc2UvcGFnZXMvYXBwbGljYXRpb25zL2FwcGxpY2F0aW9ucy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksbUJBQW1CO0lBQ25CO0FBQ0o7O0FBRUE7SUFDSSxpQkFBaUI7SUFDakIsaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0Qjs7QUFFQTtJQUNJLGdCQUFnQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL3Nob3djYXNlL3BhZ2VzL2FwcGxpY2F0aW9ucy9hcHBsaWNhdGlvbnMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5yb3cge1xuICAgIG1hcmdpbjogMSUgMSUgMSUgMSU7XG4gICAgcGFkZGluZy10b3A6IDMlXG59XG5cbm1hdC1jYXJkLWZvb3RlciB7XG4gICAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gICAgcGFkZGluZy1yaWdodDogNSU7XG4gICAgcGFkZGluZy1ib3R0b206IDIlO1xufVxuXG5hIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIlO1xufSJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ApplicationsComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-applications',
+                templateUrl: './applications.component.html',
+                styleUrls: ['./applications.component.css']
             }]
     }], function () { return []; }, null); })();
 
@@ -4487,6 +4549,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_books_books_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/books/books.component */ "./src/app/showcase/pages/books/books.component.ts");
 /* harmony import */ var _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/blogs/blogs.component */ "./src/app/showcase/pages/blogs/blogs.component.ts");
 /* harmony import */ var _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/create-blog/create-blog.component */ "./src/app/showcase/pages/create-blog/create-blog.component.ts");
+/* harmony import */ var _pages_applications_applications_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/applications/applications.component */ "./src/app/showcase/pages/applications/applications.component.ts");
+
 
 
 
@@ -4517,6 +4581,11 @@ const pages = [
                 path: 'books',
                 component: _pages_books_books_component__WEBPACK_IMPORTED_MODULE_4__["BooksComponent"],
                 label: "Books"
+            },
+            {
+                path: 'applications',
+                component: _pages_applications_applications_component__WEBPACK_IMPORTED_MODULE_7__["ApplicationsComponent"],
+                label: "Applications"
             },
             {
                 path: 'about',
@@ -4580,6 +4649,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./pages/opinion/opinion.component */ "./src/app/showcase/pages/opinion/opinion.component.ts");
 /* harmony import */ var _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/sc-toolbar/sc-toolbar.component */ "./src/app/components/sc-toolbar/sc-toolbar.component.ts");
 /* harmony import */ var _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./pages/create-blog/create-blog.component */ "./src/app/showcase/pages/create-blog/create-blog.component.ts");
+/* harmony import */ var _pages_applications_applications_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pages/applications/applications.component */ "./src/app/showcase/pages/applications/applications.component.ts");
+
 
 
 
@@ -4624,7 +4695,8 @@ ShowcaseModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
         _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_14__["BlogsComponent"],
         _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_17__["OpinionComponent"],
         _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_18__["ScToolbarComponent"],
-        _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_19__["CreateBlogComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_19__["CreateBlogComponent"],
+        _pages_applications_applications_component__WEBPACK_IMPORTED_MODULE_20__["ApplicationsComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
         _angular_material_icon__WEBPACK_IMPORTED_MODULE_6__["MatIconModule"],
         _angular_material_tabs__WEBPACK_IMPORTED_MODULE_4__["MatTabsModule"],
         _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"],
@@ -4646,7 +4718,8 @@ ShowcaseModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInj
                     _pages_blogs_blogs_component__WEBPACK_IMPORTED_MODULE_14__["BlogsComponent"],
                     _pages_opinion_opinion_component__WEBPACK_IMPORTED_MODULE_17__["OpinionComponent"],
                     _components_sc_toolbar_sc_toolbar_component__WEBPACK_IMPORTED_MODULE_18__["ScToolbarComponent"],
-                    _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_19__["CreateBlogComponent"]
+                    _pages_create_blog_create_blog_component__WEBPACK_IMPORTED_MODULE_19__["CreateBlogComponent"],
+                    _pages_applications_applications_component__WEBPACK_IMPORTED_MODULE_20__["ApplicationsComponent"]
                 ],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
