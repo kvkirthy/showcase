@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1615497661233,
+  "timestamp": 1615739805323,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -13,14 +13,14 @@
       "urls": [
         "/favicon.ico",
         "/index.html",
-        "/main-es2015.447ae59d7c9f3634a90b.js",
-        "/main-es5.447ae59d7c9f3634a90b.js",
+        "/main-es2015.3f2a371f3e8e75ce2614.js",
+        "/main-es5.3f2a371f3e8e75ce2614.js",
         "/manifest.webmanifest",
         "/polyfills-es2015.09ee2f719bd21ab5c7b1.js",
         "/polyfills-es5.12b5c32d1603e35dd556.js",
         "/runtime-es2015.0dae8cbc97194c7caed4.js",
         "/runtime-es5.0dae8cbc97194c7caed4.js",
-        "/styles.7c294388090472188879.css"
+        "/styles.9f2efc1478b4c9e3a142.css"
       ],
       "patterns": []
     },
@@ -76,30 +76,30 @@
     "/assets/book-2.jpg": "467e9990428abef9f9a62a3fd3e1f9eea1931866",
     "/assets/covid-asset.png": "f45b36bd578939870acab748c97400043cd6414a",
     "/assets/github.png": "3600ce3961cc4803a87b8f88b87c94686bbacb0e",
-    "/assets/icons/icon-128x128.png": "f6b05675e4aa25f314e21948403ffa3db7eb6df0",
-    "/assets/icons/icon-144x144.png": "77d122fb21fb8c95e9553c4f4262c8c071935e03",
-    "/assets/icons/icon-152x152.png": "1a4b8197bf767f2bf8486b6be430fb8080c93b38",
-    "/assets/icons/icon-192x192.png": "70af055b239116103ec24102e9d116ff82e96aca",
-    "/assets/icons/icon-384x384.png": "bc39e3dcc4b54d26d40dbf836f2aad4920d1ba52",
-    "/assets/icons/icon-512x512.png": "baf6151e8536df7899da469843d0f3dd3eacacbc",
-    "/assets/icons/icon-72x72.png": "0a1f27e66da9063d857c6c7bf192876252c6c381",
-    "/assets/icons/icon-96x96.png": "23fac144fb8b4371e4c31dc2869bf4c234627d0f",
+    "/assets/icons/icon-128x128.png": "c4f7ed22c6a536966fbc50533ec0547ae540f508",
+    "/assets/icons/icon-144x144.png": "09e1445a2397f3dae72630599744bbe5be120055",
+    "/assets/icons/icon-152x152.png": "141a831a0753771d22d913d48b90896ae7dcf447",
+    "/assets/icons/icon-192x192.png": "0614a104ac5e588e0442f1b9161583505020dd3d",
+    "/assets/icons/icon-384x384.png": "01c4e40b369e9cd3410273ab699e2f2e8595942b",
+    "/assets/icons/icon-512x512.png": "edfe9a408299afe7b4c4e91cdbf26d34b27e3029",
+    "/assets/icons/icon-72x72.png": "2942bf809dffeacf967418f0cc004a2987772dd0",
+    "/assets/icons/icon-96x96.png": "66dcd5136cb022a3f60c6b439acd4125c390a9f6",
     "/assets/js.jpeg": "b53b4e60ce65d03e09dd6d7bffa5e905c28264b9",
     "/assets/jstimes2.png": "521e97bf0dec7821bae2c5cdbf82c47d56b3519c",
     "/assets/ny.jpg": "0409942fdb46d95f7b64f18e152d0a438360e2ab",
     "/assets/profile-pic.jpg": "acaf1a05c901ffeeed2ed4fe976881fc3f2572ee",
     "/assets/stackoverflow.png": "c4f7f5eafb958cf1f7444bb64c8b62d6102d0271",
     "/assets/twitter.png": "f2ae66d7fd9329500062e6e7e1cf2553ef9d9c81",
-    "/favicon.ico": "23fac144fb8b4371e4c31dc2869bf4c234627d0f",
-    "/index.html": "519372d82ee6d62a7b6d3342d4f6c38472c6b4ee",
-    "/main-es2015.447ae59d7c9f3634a90b.js": "168ef088c53df4916b06475f658d288395ffe641",
-    "/main-es5.447ae59d7c9f3634a90b.js": "3611e6de94cef75a1aea24eafe849abf089c1e1e",
-    "/manifest.webmanifest": "4bbff43303f58f650b975a87a9223e03211ff7ef",
+    "/favicon.ico": "548a70b74675dc21c6f88db1828c538eb30b1f2a",
+    "/index.html": "cf1840a1199623b54d86a6f894f4ca793eee2115",
+    "/main-es2015.3f2a371f3e8e75ce2614.js": "168ef088c53df4916b06475f658d288395ffe641",
+    "/main-es5.3f2a371f3e8e75ce2614.js": "3611e6de94cef75a1aea24eafe849abf089c1e1e",
+    "/manifest.webmanifest": "0d8347ab91c747c3cc9f6c07fd93f400ee57ce06",
     "/polyfills-es2015.09ee2f719bd21ab5c7b1.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
     "/polyfills-es5.12b5c32d1603e35dd556.js": "8aa26ea87b9958c6bd13b7c257c0e9940438e684",
     "/runtime-es2015.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
     "/runtime-es5.0dae8cbc97194c7caed4.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "/styles.7c294388090472188879.css": "1845df2d9860c11cbb89e70a7dec778825c376dd"
+    "/styles.9f2efc1478b4c9e3a142.css": "1845df2d9860c11cbb89e70a7dec778825c376dd"
   },
   "navigationUrls": [
     {
