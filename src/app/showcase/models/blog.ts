@@ -1,9 +1,10 @@
 export interface Blog{
     title: string,
-    description: string,
+    tags?: string[];
     imageUrl: string,
-    isHighlighted?: boolean,
     linkToBlog: string
     dateAdded?: string;
+    description: string,
     bannerImage: string;
+    isHighlighted?: boolean,
 };

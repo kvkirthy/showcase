@@ -16,8 +16,9 @@ import { BlogsComponent } from './pages/blogs/blogs.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ShowcaseRoutingModule } from './showcase-routing.module';
 import { OpinionComponent } from './pages/opinion/opinion.component';
-import { ScToolbarComponent } from '../components/sc-toolbar/sc-toolbar.component';
 import { CreateBlogComponent } from './pages/create-blog/create-blog.component';
+import { MatChipsModule, MAT_CHIPS_DEFAULT_OPTIONS } from '@angular/material/chips';
+import { ScToolbarComponent } from '../components/sc-toolbar/sc-toolbar.component';
 import { ApplicationsComponent } from './pages/applications/applications.component';
 
 @NgModule({
@@ -39,11 +40,18 @@ import { ApplicationsComponent } from './pages/applications/applications.compone
     MatListModule,
     MatRadioModule,
     MatInputModule,
+    MatChipsModule,
     MatButtonModule,
     MatToolbarModule,
     MatGridListModule,
     ReactiveFormsModule,
     ShowcaseRoutingModule
-  ]
+  ],
+  providers: [{
+    provide: MAT_CHIPS_DEFAULT_OPTIONS,
+    useValue: {
+      separatorKeyCodes: []
+    }
+  }]
 })
 export class ShowcaseModule { }

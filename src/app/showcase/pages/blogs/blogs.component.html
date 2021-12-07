@@ -1,3 +1,11 @@
+<div class="row">
+    <mat-chip-list class="col-12 tag-bar">
+        <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
+        <mat-chip color="primary" *ngFor="let tag of tags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
+            {{tag}}
+        </mat-chip>
+    </mat-chip-list>
+</div>
 <div class="d-none d-lg-block">
     <div class="row">
         <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
@@ -59,7 +67,6 @@
         <div class="col-sm-10" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
                 <img mat-card-image [src]="highlightedBlog.bannerImage">
-
                 <mat-card-header>
                     <mat-card-title>{{highlightedBlog.title}}
                         <mat-icon color="accent">fiber_new</mat-icon>

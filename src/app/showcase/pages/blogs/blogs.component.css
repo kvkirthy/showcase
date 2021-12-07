@@ -59,3 +59,8 @@ mat-card img.card-image {
 a {
     color: black;
 }
+
+.tag-bar{
+    padding-top: 1em;
+    font-size: 0.8em;
+}
