@@ -1,5 +1,5 @@
 <div class="d-none d-lg-block">
-    <div class="row">
+    <div class="row" *ngIf="desktopTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
             <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
             <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
@@ -63,7 +63,7 @@
     </div>
 </div>
 <div class="d-xs-block d-lg-none">
-    <div class="row">
+    <div class="row" *ngIf="mobileTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
             <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
             <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
