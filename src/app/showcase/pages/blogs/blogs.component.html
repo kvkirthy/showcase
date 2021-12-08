@@ -1,12 +1,12 @@
-<div class="row">
-    <mat-chip-list class="col-12 tag-bar">
-        <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
-        <mat-chip color="primary" *ngFor="let tag of tags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
-            {{tag}}
-        </mat-chip>
-    </mat-chip-list>
-</div>
 <div class="d-none d-lg-block">
+    <div class="row">
+        <mat-chip-list class="col-12 tag-bar">
+            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
+            <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
+                {{tag}}
+            </mat-chip>
+        </mat-chip-list>
+    </div>
     <div class="row">
         <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
@@ -63,6 +63,14 @@
     </div>
 </div>
 <div class="d-xs-block d-lg-none">
+    <div class="row">
+        <mat-chip-list class="col-12 tag-bar">
+            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
+            <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
+                {{tag}}
+            </mat-chip>
+        </mat-chip-list>
+    </div>
     <div class="row">
         <div class="col-sm-10" *ngIf="highlightedBlog">
             <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">

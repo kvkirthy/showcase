@@ -13,6 +13,8 @@ import { TileStyler } from '@angular/material/grid-list/tile-styler';
 export class BlogsComponent implements OnInit {
 
   tags = [];
+  mobileTags = [];
+  desktopTags = [];
   selectedTag: {} = {
     all: true
   };
@@ -38,15 +40,28 @@ export class BlogsComponent implements OnInit {
         this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
 
         this.allBlogs = allBlogs;
-        
-        allBlogs.map( (i: Blog) => {
-          if(i.tags){
-            this.tags = this.tags.concat(i.tags);
-          }
-        });
-        this.tags = [...new Set(this.tags)]; // tags are unique now
+
+        const extractTagsFromBlogs = () => {
+          allBlogs.map( (i: Blog) => {
+            if(i.tags){
+              this.tags = this.tags.concat(i.tags);
+            }
+          });
+          this.tags = [...new Set(this.tags)]; // tags are unique now
+        }
+
+        extractTagsFromBlogs();
+        this.willSetupTagsByScreenSize();
+
 
       });
+  }
+
+  private willSetupTagsByScreenSize(){
+    this.desktopTags= this.tags.slice(0,8);
+    this.mobileTags = this.tags.slice(0,2);
+    this.mobileTags.push("More...");
+    this.desktopTags.push("More...");
   }
 
   onChipSelected(value){
@@ -57,6 +72,30 @@ export class BlogsComponent implements OnInit {
       if(value === 'all'){
         this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted);
         this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted ));
+        return;
+      }
+
+      if(value === 'More...'){
+        this.mobileTags = this.desktopTags = this.tags;
+
+        if(this.mobileTags.indexOf("Less") < 0){
+          this.mobileTags.push("Less");
+        }
+        if(this.desktopTags.indexOf("Less") < 0){
+          this.desktopTags.push("Less");
+        }
+        
+        this.selectedTag = {
+          all: true
+        };
+        return;
+      }
+
+      if(value === "Less"){
+        this.willSetupTagsByScreenSize();
+        this.selectedTag = {
+          all: true
+        };
         return;
       }
       
