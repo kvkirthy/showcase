@@ -16,7 +16,7 @@
       }
     }, {
       "name": "assets",
-      "installMode": "lazy",
+      "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
         "files": [
@@ -31,11 +31,11 @@
       "name": "blogs",
       "cacheConfig": {
         "maxAge": "30d",
-        "maxSize": 1024,
-        "strategy": "performance"
+        "maxSize": 180000,
+        "strategy": "freshness"
       },
       "urls": [
-        "/showcase/blog"
+        "/blog-posts"
       ]
     }
   ]

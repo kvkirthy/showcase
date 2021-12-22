@@ -1,6 +1,7 @@
 {
     "name": "Code Venkey",
     "short_name": "Code Venkey",
+    "id": "code_venkey_az",
     "theme_color": "#1976d2",
     "background_color": "#fafafa",
     "display": "standalone",
@@ -9,42 +10,36 @@
     "icons": [{
             "src": "assets/icons/icon-72x72.png",
             "sizes": "72x72",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
         {
             "src": "assets/icons/icon-96x96.png",
             "sizes": "96x96",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
         {
             "src": "assets/icons/icon-128x128.png",
             "sizes": "128x128",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
         {
             "src": "assets/icons/icon-144x144.png",
             "sizes": "144x144",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
         {
             "src": "assets/icons/icon-152x152.png",
             "sizes": "152x152",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
         {
             "src": "assets/icons/icon-192x192.png",
             "sizes": "192x192",
-            "rel": "apple-touch-icon",
             "type": "image/png",
             "purpose": "any"
         },
