@@ -1,42 +1,39 @@
 {
-  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
-  "index": "/index.html",
-  "assetGroups": [
-    {
-      "name": "app",
-      "installMode": "prefetch",
-      "resources": {
-        "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/manifest.webmanifest",
-          "/*.css",
-          "/*.js"
-        ]
-      }
+    "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+    "index": "/index.html",
+    "assetGroups": [{
+        "name": "app",
+        "installMode": "prefetch",
+        "resources": {
+            "files": [
+                "/favicon.ico",
+                "/index.html",
+                "/manifest.webmanifest",
+                "/*.css",
+                "/*.js"
+            ]
+        }
     }, {
-      "name": "assets",
-      "installMode": "prefetch",
-      "updateMode": "prefetch",
-      "resources": {
-        "files": [
-          "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        "name": "assets",
+        "installMode": "prefetch",
+        "updateMode": "prefetch",
+        "resources": {
+            "files": [
+                "/assets/**",
+                "/*.(eot|svg|cur|jpg|jpeg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+            ]
+        }
+    }],
+    "dataGroups": [{
+        "name": "blogs",
+        "cacheConfig": {
+            "maxAge": "30d",
+            "maxSize": 180000,
+            "strategy": "freshness"
+        },
+        "urls": [
+            "/blog-posts",
+            "https://storage4showcase.blob.core.windows.net"
         ]
-      }
-    }
-  ],
-  "dataGroups": [
-    {
-      "name": "blogs",
-      "cacheConfig": {
-        "maxAge": "30d",
-        "maxSize": 180000,
-        "strategy": "freshness"
-      },
-      "urls": [
-        "/blog-posts"
-      ]
-    }
-  ]
+    }]
 }
