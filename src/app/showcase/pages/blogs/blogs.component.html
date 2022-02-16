@@ -72,7 +72,7 @@
 <div class="d-xs-block d-lg-none">
     <div class="row" *ngIf="mobileTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
-            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
+            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All ({{blogCount}})</mat-chip>
             <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag.tag]" (click)="onChipSelected(tag)">
                 {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container> 
             </mat-chip>
