@@ -15,6 +15,7 @@ export class BlogsComponent implements OnInit {
   tags = [];
   mobileTags = [];
   desktopTags = [];
+  blogCount = 0;
   selectedTag: {} = {
     all: true
   };
@@ -30,6 +31,7 @@ export class BlogsComponent implements OnInit {
       .getBlogs()
       .subscribe(data => {
         allBlogs = data.sort( (a,b) =>  (a.dateAdded && b.dateAdded) ? a.dateAdded.localeCompare(b.dateAdded): 0);
+        this.blogCount = allBlogs.length;
         allBlogs = allBlogs.reverse();
 
         this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
@@ -40,14 +42,19 @@ export class BlogsComponent implements OnInit {
         this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
 
         this.allBlogs = allBlogs;
-
+        let allTags = []
         const extractTagsFromBlogs = () => {
           allBlogs.map( (i: Blog) => {
             if(i.tags){
-              this.tags = this.tags.concat(i.tags);
+              allTags = allTags.concat(i.tags);
             }
           });
-          this.tags = [...new Set(this.tags)]; // tags are unique now
+          let originalTags = allTags;
+          allTags = [...new Set(allTags)]; // tags are unique now
+          this.tags = allTags.map( tag => {
+             return { tag, count: originalTags.filter( t => t === tag ).length};
+          })
+          .sort( (t1,t2) => t2.count - t1.count);
         }
 
         extractTagsFromBlogs();
@@ -60,13 +67,13 @@ export class BlogsComponent implements OnInit {
   private willSetupTagsByScreenSize(){
     this.desktopTags= this.tags.slice(0,8);
     this.mobileTags = this.tags.slice(0,2);
-    this.mobileTags.push("More...");
-    this.desktopTags.push("More...");
+    this.mobileTags.push({tag:"More..."});
+    this.desktopTags.push({tag:"More..."});
   }
 
   onChipSelected(value){
       this.selectedTag ={
-        [value]: true
+        [value.tag]: true
       };
 
       if(value === 'all'){
@@ -75,14 +82,14 @@ export class BlogsComponent implements OnInit {
         return;
       }
 
-      if(value === 'More...'){
+      if(value.tag === 'More...'){
         this.mobileTags = this.desktopTags = this.tags;
 
-        if(this.mobileTags.indexOf("Less") < 0){
-          this.mobileTags.push("Less");
+        if(this.mobileTags.findIndex(t => t.tag === "Less") < 0){
+          this.mobileTags.push({tag: "Less"});
         }
-        if(this.desktopTags.indexOf("Less") < 0){
-          this.desktopTags.push("Less");
+        if(this.desktopTags.findIndex(t => t.tag === "Less") < 0){
+          this.desktopTags.push({tag: "Less"});
         }
         
         this.selectedTag = {
@@ -91,7 +98,7 @@ export class BlogsComponent implements OnInit {
         return;
       }
 
-      if(value === "Less"){
+      if(value.tag === "Less"){
         this.willSetupTagsByScreenSize();
         this.selectedTag = {
           all: true
@@ -99,8 +106,8 @@ export class BlogsComponent implements OnInit {
         return;
       }
       
-      this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted && i?.tags?.includes(value));
-      this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted &&  i?.tags?.includes(value)));
+      this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted && i?.tags?.includes(value.tag));
+      this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted &&  i?.tags?.includes(value.tag)));
   }
 
   cardClickHandler(linkToBlog){
@@ -108,8 +115,12 @@ export class BlogsComponent implements OnInit {
   }
 
   formatDate(dateValue: string){
-    let d = new Date(dateValue) 
-    return d.toDateString();
+    if(dateValue){
+      let d = new Date(dateValue) 
+      return d.toDateString();
+    }
+
+    return '-';
   }
 
 }

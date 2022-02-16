@@ -1,9 +1,9 @@
 <div class="d-none d-lg-block">
     <div class="row" *ngIf="desktopTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
-            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
-            <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
-                {{tag}}
+            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All ({{blogCount}}) </mat-chip>
+            <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag.tag]" (click)="onChipSelected(tag)">
+                {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container> 
             </mat-chip>
         </mat-chip-list>
     </div>
@@ -15,7 +15,9 @@
                     <mat-card-title>{{highlightedBlog.title}}
                         <mat-icon color="accent">fiber_new</mat-icon>
                         <div>
-                            <mat-card-subtitle>{{ formatDate(highlightedBlog.dateAdded)}}</mat-card-subtitle>
+                            <mat-card-subtitle>
+                                {{formatDate(highlightedBlog.dateAdded)}}<ng-container *ngFor="let t of highlightedBlog.tags">, {{t}}</ng-container>
+                            </mat-card-subtitle>
                         </div>
                     </mat-card-title>
                 </mat-card-header>
@@ -35,7 +37,7 @@
                                         {{blog.title}}
                                     </div>
                                     <div>
-                                        {{formatDate(blog.dateAdded)}}
+                                        {{blog.dateAdded?formatDate(blog.dateAdded):''}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
                                     </div>
                                 </mat-card-subtitle>
                             </mat-card-header>
@@ -53,7 +55,12 @@
                     <mat-card-header>
                         <img mat-card-avatar [src]="blog.imageUrl">
                         <mat-card-subtitle>
-                            {{blog.title}}
+                            <div>
+                                {{blog.title}}
+                            </div>
+                            <div>
+                                {{formatDate(blog.dateAdded)}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
+                            </div>
                         </mat-card-subtitle>
                     </mat-card-header>
                     <mat-card-content>{{blog.description}}</mat-card-content>
@@ -66,8 +73,8 @@
     <div class="row" *ngIf="mobileTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
             <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All </mat-chip>
-            <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag]" (click)="onChipSelected(tag)">
-                {{tag}}
+            <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag.tag]" (click)="onChipSelected(tag)">
+                {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container> 
             </mat-chip>
         </mat-chip-list>
     </div>
@@ -80,7 +87,7 @@
                         <mat-icon color="accent">fiber_new</mat-icon>
                     </mat-card-title>
                     <mat-card-subtitle *ngIf="highlightedBlog.dateAdded">
-                        {{formatDate(highlightedBlog.dateAdded)}}
+                        {{formatDate(highlightedBlog.dateAdded)}}<ng-container *ngFor="let t of highlightedBlog.tags">, {{t}}</ng-container>
                     </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>{{highlightedBlog.description}}</mat-card-content>
@@ -98,7 +105,7 @@
                                 {{blog.title}}
                             </div>
                             <div *ngIf="blog.dateAdded">
-                                {{formatDate(blog.dateAdded)}}
+                                {{formatDate(blog.dateAdded)}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
                             </div>
                         </mat-card-subtitle>
                     </mat-card-header>
