@@ -79,6 +79,9 @@ export class BlogsComponent implements OnInit {
       if(value === 'all'){
         this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted);
         this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted ));
+        this.selectedTag = {
+          all: true
+        };
         return;
       }
 
