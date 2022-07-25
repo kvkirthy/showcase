@@ -19,32 +19,22 @@ export class BlogsComponent implements OnInit {
   selectedTag: {} = {
     all: true
   };
-  highlightedBlog: Blog;
   allBlogs: Array<Blog> = [];
-  blogList$: Observable<Array<Blog>>;
+  blogList: Array<Blog>;
 
   constructor(private blogService: BlogsService) { }
 
   ngOnInit() {
-    let allBlogs = [];
     this.blogService
       .getBlogs()
       .subscribe(data => {
-        allBlogs = data.sort( (a,b) =>  (a.dateAdded && b.dateAdded) ? a.dateAdded.localeCompare(b.dateAdded): 0);
-        this.blogCount = allBlogs.length;
-        allBlogs = allBlogs.reverse();
+        this.allBlogs = data.sort( (a,b) =>  (a.dateAdded && b.dateAdded) ? a.dateAdded.localeCompare(b.dateAdded): 0);
+        this.blogCount = this.allBlogs.length;
+        this.blogList = this.allBlogs.reverse();
 
-        this.highlightedBlog = allBlogs.find(i => i.isHighlighted);
-        if( !!! this.highlightedBlog ){
-          allBlogs[0].isHighlighted = true;
-          this.highlightedBlog = allBlogs[0];
-        }
-        this.blogList$ = of(allBlogs.filter(i => !i.isHighlighted ));
-
-        this.allBlogs = allBlogs;
         let allTags = []
         const extractTagsFromBlogs = () => {
-          allBlogs.map( (i: Blog) => {
+          this.allBlogs.map( (i: Blog) => {
             if(i.tags){
               allTags = allTags.concat(i.tags);
             }
@@ -72,45 +62,43 @@ export class BlogsComponent implements OnInit {
   }
 
   onChipSelected(value){
-      this.selectedTag ={
-        [value.tag]: true
+    let previousTag= this.selectedTag;
+    this.selectedTag = {
+      [value.tag]: true
+    };
+
+    if(value === 'all'){
+      this.blogList = this.allBlogs;
+      this.selectedTag = {
+        all: true
       };
+      return;
+    }
 
-      if(value === 'all'){
-        this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted);
-        this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted ));
-        this.selectedTag = {
-          all: true
-        };
-        return;
+    if(value.tag === 'More...'){
+      this.mobileTags = this.desktopTags = this.tags;
+
+      if(this.mobileTags.findIndex(t => t.tag === "Less") < 0){
+        this.mobileTags.push({tag: "Less"});
       }
-
-      if(value.tag === 'More...'){
-        this.mobileTags = this.desktopTags = this.tags;
-
-        if(this.mobileTags.findIndex(t => t.tag === "Less") < 0){
-          this.mobileTags.push({tag: "Less"});
-        }
-        if(this.desktopTags.findIndex(t => t.tag === "Less") < 0){
-          this.desktopTags.push({tag: "Less"});
-        }
-        
-        this.selectedTag = {
-          all: true
-        };
-        return;
-      }
-
-      if(value.tag === "Less"){
-        this.willSetupTagsByScreenSize();
-        this.selectedTag = {
-          all: true
-        };
-        return;
+      if(this.desktopTags.findIndex(t => t.tag === "Less") < 0){
+        this.desktopTags.push({tag: "Less"});
       }
       
-      this.highlightedBlog = this.allBlogs.find(i => i.isHighlighted && i?.tags?.includes(value.tag));
-      this.blogList$ = of(this.allBlogs.filter(i => !i.isHighlighted &&  i?.tags?.includes(value.tag)));
+      this.selectedTag = previousTag;
+      return;
+    }
+
+    if(value.tag === "Less"){
+      this.willSetupTagsByScreenSize();
+      this.blogList = this.allBlogs;
+      this.selectedTag = {
+        all: true
+      };
+      return;
+    }
+    
+    this.blogList = this.allBlogs.filter(i => i?.tags?.includes(value.tag));
   }
 
   cardClickHandler(linkToBlog){

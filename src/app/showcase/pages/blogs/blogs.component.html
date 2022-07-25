@@ -1,118 +1,52 @@
-<div class="d-none d-lg-block">
+<div class="custom-container">
     <div class="row" *ngIf="desktopTags.length > 0">
         <mat-chip-list class="col-12 tag-bar">
-            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All ({{blogCount}}) </mat-chip>
-            <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag.tag]" (click)="onChipSelected(tag)">
-                {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container> 
+            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All
+                ({{blogCount}}) </mat-chip>
+            <mat-chip color="primary" *ngFor="let tag of desktopTags" [selected]="selectedTag[tag.tag]"
+                (click)="onChipSelected(tag)">
+                {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container>
             </mat-chip>
         </mat-chip-list>
     </div>
-    <div class="row">
-        <div class="col-sm-4 primary-card" *ngIf="highlightedBlog">
-            <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-                <img mat-card-image [src]="highlightedBlog.bannerImage">
-                <mat-card-header>
-                    <mat-card-title>{{highlightedBlog.title}}
-                        <mat-icon color="accent">fiber_new</mat-icon>
-                        <div>
-                            <mat-card-subtitle>
-                                {{formatDate(highlightedBlog.dateAdded)}}<ng-container *ngFor="let t of highlightedBlog.tags">, {{t}}</ng-container>
-                            </mat-card-subtitle>
-                        </div>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>
-            </mat-card>
-        </div>
 
-        <div class="col-sm-8">
-            <div class="row">
-                <ng-container *ngFor="let blog of blogList$ | async; let i=index">
-                    <div class="col-md-6 small-cards-recent">
-                        <mat-card *ngIf="i < 4" (click)="cardClickHandler(blog.linkToBlog)">
-                            <mat-card-header>
-                                <img mat-card-avatar [src]="blog.imageUrl">
-                                <mat-card-subtitle>
-                                    <div>
-                                        {{blog.title}}
-                                    </div>
-                                    <div>
-                                        {{blog.dateAdded?formatDate(blog.dateAdded):''}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
-                                    </div>
-                                </mat-card-subtitle>
-                            </mat-card-header>
-                            <mat-card-content>{{blog.description}}</mat-card-content>
-                        </mat-card>
-                    </div>
-                </ng-container>
-            </div>
-        </div>
-    </div>
     <div class="row">
-        <ng-container *ngFor="let blog of blogList$ | async; let i=index">
-            <div *ngIf="i >= 4" class="col-sm-4 small-cards">
+        <ng-container *ngFor="let blog of blogList; let i=index">
+            <div class="col-sm-4 small-cards">
                 <mat-card (click)="cardClickHandler(blog.linkToBlog)">
+                    <ng-container *ngIf="i < 3">
+                        <img mat-card-image [src]="blog.bannerImage">
+                    </ng-container>
                     <mat-card-header>
-                        <img mat-card-avatar [src]="blog.imageUrl">
-                        <mat-card-subtitle>
-                            <div>
+                        <ng-container *ngIf="i >= 3">
+                            <img mat-card-avatar class="avatar" [src]="blog.imageUrl">
+                            <mat-card-subtitle>
+                                <div>
+                                    {{blog.title}}
+                                </div>
+                                <div>
+                                    {{formatDate(blog.dateAdded)}}
+                                    <span class="tags">
+                                        <ng-container *ngFor="let t of blog.tags">, {{t}}
+                                        </ng-container>
+                                    </span>
+                                </div>
+                            </mat-card-subtitle>
+                        </ng-container>
+
+                        <ng-container *ngIf="i < 3">
+                            <mat-card-title>
                                 {{blog.title}}
-                            </div>
-                            <div>
-                                {{formatDate(blog.dateAdded)}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
-                            </div>
-                        </mat-card-subtitle>
+                                <mat-icon *ngIf="i === 0 && selectedTag['all'] !== undefined" color="accent">fiber_new</mat-icon>
+                            </mat-card-title>
+                        </ng-container>
                     </mat-card-header>
+                    <mat-card-subtitle>
+                            {{formatDate(blog.dateAdded)}}<span class="tags" *ngFor="let t of blog.tags">,
+                                {{t}}</span>
+                    </mat-card-subtitle>
                     <mat-card-content>{{blog.description}}</mat-card-content>
                 </mat-card>
             </div>
         </ng-container>
     </div>
-</div>
-<div class="d-xs-block d-lg-none">
-    <div class="row" *ngIf="mobileTags.length > 0">
-        <mat-chip-list class="col-12 tag-bar">
-            <mat-chip color="primary" (click)="onChipSelected('all')" [selected]="selectedTag['all']">All ({{blogCount}})</mat-chip>
-            <mat-chip color="primary" *ngFor="let tag of mobileTags" [selected]="selectedTag[tag.tag]" (click)="onChipSelected(tag)">
-                {{tag.tag}} <ng-container *ngIf="tag.count">({{tag.count}})</ng-container> 
-            </mat-chip>
-        </mat-chip-list>
-    </div>
-    <div class="row">
-        <div class="col-sm-10" *ngIf="highlightedBlog">
-            <mat-card (click)="cardClickHandler(highlightedBlog.linkToBlog)">
-                <img mat-card-image [src]="highlightedBlog.bannerImage">
-                <mat-card-header>
-                    <mat-card-title>{{highlightedBlog.title}}
-                        <mat-icon color="accent">fiber_new</mat-icon>
-                    </mat-card-title>
-                    <mat-card-subtitle *ngIf="highlightedBlog.dateAdded">
-                        {{formatDate(highlightedBlog.dateAdded)}}<ng-container *ngFor="let t of highlightedBlog.tags">, {{t}}</ng-container>
-                    </mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>{{highlightedBlog.description}}</mat-card-content>
-            </mat-card>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-10">
-            <ng-container *ngFor="let blog of blogList$ | async;">
-                <mat-card (click)="cardClickHandler(blog.linkToBlog)">
-                    <mat-card-header>
-                        <img mat-card-avatar class="avatar" [src]="blog.imageUrl">
-                        <mat-card-subtitle>
-                            <div>
-                                {{blog.title}}
-                            </div>
-                            <div *ngIf="blog.dateAdded">
-                                {{formatDate(blog.dateAdded)}}<ng-container *ngFor="let t of blog.tags">, {{t}}</ng-container>
-                            </div>
-                        </mat-card-subtitle>
-                    </mat-card-header>
-                    <mat-card-content>{{blog.description}}</mat-card-content>
-                </mat-card>
-            </ng-container>
-        </div>
-
-    </div>
-</div>
