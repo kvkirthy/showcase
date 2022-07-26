@@ -41,7 +41,7 @@
                             </mat-card-title>
                         </ng-container>
                     </mat-card-header>
-                    <mat-card-subtitle>
+                    <mat-card-subtitle *ngIf="i < 3">
                             {{formatDate(blog.dateAdded)}}<span class="tags" *ngFor="let t of blog.tags">,
                                 {{t}}</span>
                     </mat-card-subtitle>
