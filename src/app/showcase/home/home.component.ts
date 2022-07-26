@@ -14,10 +14,10 @@ export class HomeComponent {
     path: 'books',
     label: "Books"
   },
-  {
-    path: 'applications',
-    label: 'Applications'
-  },
+  // {
+  //   path: 'applications',
+  //   label: 'Applications'
+  // },
   {
     path: 'about',
     label: "About Me!"

@@ -14,3 +14,7 @@ nav{
     width: 100%;
     z-index:999;
 }
+
+::ng-deep .mat-tab-links {
+    justify-content: center;
+}
