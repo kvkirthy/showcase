@@ -1,43 +1,38 @@
 div{
-    margin: 30px 1px 1px 5px;
-  }
+  margin: 30px 1px 1px 5px;
+}
 
-  mat-card{
-    width: 100%;
-    border-radius: 10px;
-  }
+mat-card{
+  width: 100%;
+  border-radius: 10px;
+}
 
 .img-logo{
-  width: 40px;
+width: 40px;
 }
 
 .link{
-  font-size: 10pt;
-  font-weight: bold;
+font-size: 10pt;
+font-weight: bold;
 }
 
 a{
-  color: black;
+color: black;
 }
 
 mat-grid-tile{
-  border-radius: 5px;
+border-radius: 5px;
 }
 
 span{
-  margin: 15px;
-  font-family: "Book Antiqua"
+margin: 15px;
+font-family: "Book Antiqua"
 }
 
 i{
-  font-size: 24pt
+font-size: 24pt
 }
 
 mat-grid-list.single-item{
-  margin-bottom: 15px;
-}
-
-img#mediumLogo{
-  width: 120px;
-  height: auto;
+margin-bottom: 15px;
 }
