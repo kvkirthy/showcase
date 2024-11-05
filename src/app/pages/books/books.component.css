@@ -1,10 +1,5 @@
-.col-6 mat-card{
-  width: 309px;
-}
-
-.col-md-6 mat-card{
-  width: 200px;
-  margin-top: 10px;
+.col-md-4 mat-card{
+  max-width: 400px;
 }
 mat-card{
   margin-top: 10px;
@@ -18,19 +13,22 @@ button{
   padding: 2px;
 }
 
-.col-6 .book-image {
-  height: 440px;
-  width: auto;
-}
-
-.col-md-6 .book-image {
-  height: 287px;
-  width: auto;
+col-sm-12 mat-card{
+  max-width: 200px;
 }
 
 .row{
-  margin-top: 10px;
-  margin-left: 1px;
-  padding-top: 10px;
+  padding-top: 1%;
   width: 100%;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box div {
+  width: auto;
+  height: auto;
 }

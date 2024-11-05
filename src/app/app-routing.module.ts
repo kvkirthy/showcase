@@ -8,16 +8,16 @@ import { OpinionComponent } from './pages/opinion/opinion.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 
 
-export const pages= [  
-  {
-    path: 'blog',
-    component: BlogsComponent,
-    label: "Blog"
-  },
+export const pages= [
   {
     path: 'books',
     component: BooksComponent,
     label: "Books"
+  },
+  {
+    path: 'blog',
+    component: BlogsComponent,
+    label: "Blog"
   },
   {
     path: 'about',
