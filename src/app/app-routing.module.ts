@@ -29,7 +29,7 @@ export const pages= [
 const routes: Routes = [ ...pages,
   {
     path: '',
-    redirectTo: '/blog',
+    redirectTo: '/books',
     pathMatch: 'full'
   },
   {
